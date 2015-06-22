@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace lab7
 {
-    public partial class Form1 : Form
+    public partial class StockEnter : Form
     {
-        public Form1()
+        public StockEnter()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,14 +44,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="SellEnter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SellEnter.Designer.cs">
+      <DependentUpon>SellEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockEnter.Designer.cs">
+      <DependentUpon>StockEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEnter.Designer.cs">
+      <DependentUpon>UserEnter.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SellEnter.resx">
+      <DependentUpon>SellEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockEnter.resx">
+      <DependentUpon>StockEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEnter.resx">
+      <DependentUpon>UserEnter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
