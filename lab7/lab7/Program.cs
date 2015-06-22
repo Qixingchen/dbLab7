@@ -16,11 +16,7 @@ namespace lab7
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new MainForm());
-=======
-            Application.Run(new UserEnter());
->>>>>>> origin/master
         }
     }
 }

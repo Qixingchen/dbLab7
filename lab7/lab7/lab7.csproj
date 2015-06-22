@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D3AC8EB-83CA-41E1-88A5-D66A888941A6}</ProjectGuid>
+    <ProjectGuid>{584AD89A-2079-4927-A306-FBA1F5E351B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>lab7</RootNamespace>
@@ -44,18 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MainFrom.Designer.cs">
+      <DependentUpon>MainFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-=======
     <Compile Include="SellEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,18 +70,6 @@
     <Compile Include="UserEnter.Designer.cs">
       <DependentUpon>UserEnter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SellEnter.resx">
-      <DependentUpon>SellEnter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StockEnter.resx">
-      <DependentUpon>StockEnter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserEnter.resx">
-      <DependentUpon>UserEnter.cs</DependentUpon>
->>>>>>> origin/master
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

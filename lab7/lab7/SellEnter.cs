@@ -16,7 +16,6 @@ namespace lab7
         {
             InitializeComponent();
         }
-
         private void SellEnter_Load(object sender, EventArgs e)
         {
 
