@@ -19,6 +19,7 @@ namespace lab7
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            goods_methods S_enter = new goods_methods();
             //检查是否填写完整
             if (userName.Text == "")
             {
@@ -31,7 +32,7 @@ namespace lab7
                 return;
             }
             //检查登录状态，相关函数封装在 goods_methods
-            if (S_enter.tb_JoinChoice(userName.Text, userPwd.Text) == 1)
+            if (S_enter.LoginCheck(userName.Text, userPwd.Text) == true)
             {
                 MainForm form = new MainForm();
                 form.Show();
@@ -41,6 +42,11 @@ namespace lab7
             {
                 MessageBox.Show("无访问权利，登录失败！");
             }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

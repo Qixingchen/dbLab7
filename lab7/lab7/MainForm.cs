@@ -21,5 +21,12 @@ namespace lab7
         {
 
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Application.Restart();
+            Environment.Exit(0);
+        }
     }
 }

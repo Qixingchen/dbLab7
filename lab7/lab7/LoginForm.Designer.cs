@@ -39,18 +39,16 @@
             // 
             // userName
             // 
-            this.userName.Location = new System.Drawing.Point(167, 147);
-            this.userName.Multiline = true;
+            this.userName.Location = new System.Drawing.Point(167, 151);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(132, 29);
+            this.userName.Size = new System.Drawing.Size(132, 21);
             this.userName.TabIndex = 0;
             // 
             // userPwd
             // 
-            this.userPwd.Location = new System.Drawing.Point(166, 191);
-            this.userPwd.Multiline = true;
+            this.userPwd.Location = new System.Drawing.Point(166, 194);
             this.userPwd.Name = "userPwd";
-            this.userPwd.Size = new System.Drawing.Size(132, 31);
+            this.userPwd.Size = new System.Drawing.Size(132, 21);
             this.userPwd.TabIndex = 1;
             // 
             // LoginBtn
@@ -73,6 +71,7 @@
             this.cancelBtn.TabIndex = 3;
             this.cancelBtn.Text = "取消";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // nameLabel
             // 

@@ -42,7 +42,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.PwdEditBtn = new System.Windows.Forms.Button();
             this.UserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -163,7 +162,6 @@
             // 
             this.groupBox3.Controls.Add(this.LogoutBtn);
             this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.PwdEditBtn);
             this.groupBox3.Controls.Add(this.UserName);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -176,12 +174,13 @@
             // LogoutBtn
             // 
             this.LogoutBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LogoutBtn.Location = new System.Drawing.Point(75, 209);
+            this.LogoutBtn.Location = new System.Drawing.Point(8, 208);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(48, 33);
             this.LogoutBtn.TabIndex = 3;
             this.LogoutBtn.Text = "退出";
             this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // groupBox5
             // 
@@ -191,16 +190,6 @@
             this.groupBox5.Size = new System.Drawing.Size(138, 109);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            // 
-            // PwdEditBtn
-            // 
-            this.PwdEditBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.PwdEditBtn.Location = new System.Drawing.Point(10, 209);
-            this.PwdEditBtn.Name = "PwdEditBtn";
-            this.PwdEditBtn.Size = new System.Drawing.Size(48, 33);
-            this.PwdEditBtn.TabIndex = 2;
-            this.PwdEditBtn.Text = "密码";
-            this.PwdEditBtn.UseVisualStyleBackColor = true;
             // 
             // UserName
             // 
@@ -273,7 +262,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Button PwdEditBtn;
         private System.Windows.Forms.Label UserName;
         private System.Windows.Forms.Label label1;
     }
