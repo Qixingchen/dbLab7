@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SellInfoInsertBtn = new System.Windows.Forms.Button();
             this.StoreInfoInsertBtn = new System.Windows.Forms.Button();
@@ -40,12 +40,12 @@
             this.StoreInfoActBtn = new System.Windows.Forms.Button();
             this.StaffInfoActBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.UserName = new System.Windows.Forms.Label();
-            this.PwdEditBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.PwdEditBtn = new System.Windows.Forms.Button();
+            this.UserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,39 +173,34 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // label2
+            // LogoutBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("华文楷体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(14, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "商品管理系统";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.LogoutBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LogoutBtn.Location = new System.Drawing.Point(75, 209);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.Size = new System.Drawing.Size(48, 33);
+            this.LogoutBtn.TabIndex = 3;
+            this.LogoutBtn.Text = "退出";
+            this.LogoutBtn.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
-            //this.groupBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox5.BackgroundImage")));
+            this.groupBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox5.BackgroundImage")));
             this.groupBox5.Location = new System.Drawing.Point(6, 42);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(138, 109);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
-            // label1
+            // PwdEditBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(12, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "您好,";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.PwdEditBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.PwdEditBtn.Location = new System.Drawing.Point(10, 209);
+            this.PwdEditBtn.Name = "PwdEditBtn";
+            this.PwdEditBtn.Size = new System.Drawing.Size(48, 33);
+            this.PwdEditBtn.TabIndex = 2;
+            this.PwdEditBtn.Text = "密码";
+            this.PwdEditBtn.UseVisualStyleBackColor = true;
             // 
             // UserName
             // 
@@ -219,25 +214,30 @@
             this.UserName.Text = "先生";
             this.UserName.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // PwdEditBtn
+            // label2
             // 
-            this.PwdEditBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.PwdEditBtn.Location = new System.Drawing.Point(10, 209);
-            this.PwdEditBtn.Name = "PwdEditBtn";
-            this.PwdEditBtn.Size = new System.Drawing.Size(48, 33);
-            this.PwdEditBtn.TabIndex = 2;
-            this.PwdEditBtn.Text = "密码";
-            this.PwdEditBtn.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("华文楷体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(14, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 21);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "商品管理系统";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // LogoutBtn
+            // label1
             // 
-            this.LogoutBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LogoutBtn.Location = new System.Drawing.Point(75, 209);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(48, 33);
-            this.LogoutBtn.TabIndex = 3;
-            this.LogoutBtn.Text = "退出";
-            this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.Location = new System.Drawing.Point(12, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "您好,";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainForm
             // 
