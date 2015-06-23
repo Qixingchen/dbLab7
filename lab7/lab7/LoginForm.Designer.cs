@@ -62,6 +62,7 @@
             this.LoginBtn.TabIndex = 2;
             this.LoginBtn.Text = "登录";
             this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // cancelBtn
             // 
