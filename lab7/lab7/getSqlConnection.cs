@@ -10,18 +10,28 @@ namespace lab7
     class getSqlConnection
     {
         #region   代码中用到的变量
-        //string G_Str_ConnectionString = "(Data Source=.\\SQLExpress;Integrated Security=SSPI;AttachDBFilename=C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\SmallMarket.mdf;User Instance=true";
-        string strConnection ;
-        SqlConnection getConnect;  //声明链接对象
+        private static string strConnection ;
+        private static SqlConnection getConnect;  //声明链接对象
+        private static String userName;
+        private static String userPwd;
+        //单例模式
+        private static getSqlConnection Instance;
         #endregion
 
-        #region  构造函数
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        public getSqlConnection()
+        #region   私有的构造函数
+        private getSqlConnection()
         {
+        }
+        #endregion
 
+        #region 获取实例
+        public static getSqlConnection getInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new getSqlConnection();
+            }
+            return Instance;
         }
         #endregion
 
@@ -30,6 +40,15 @@ namespace lab7
         /// 连接数据库
         /// </summary>
         /// <returns></returns>
+        public SqlConnection GetConnect()
+        {
+            if (userName == null)
+            {
+                return null;
+            }
+            return GetConnect(userName, userPwd);
+        }
+
         public SqlConnection GetConnect(string userName,string userPwd)
         {
             strConnection = "server=localhost;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
@@ -38,7 +57,7 @@ namespace lab7
                 getConnect.Open(); //打开数据库
                 return getConnect;
             }
-            catch (Exception ee)
+            catch (Exception)
             {
                 return null;
             }
