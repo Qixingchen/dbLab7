@@ -40,13 +40,13 @@
             this.StoreInfoActBtn = new System.Windows.Forms.Button();
             this.StaffInfoActBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.securityLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.UserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.securityLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -122,6 +122,7 @@
             this.InventorySelectBtn.TabIndex = 5;
             this.InventorySelectBtn.Text = "库存信息查询";
             this.InventorySelectBtn.UseVisualStyleBackColor = true;
+            this.InventorySelectBtn.Click += new System.EventHandler(this.InventorySelectBtn_Click);
             // 
             // GoodsInfoActBtn
             // 
@@ -178,6 +179,29 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
+            // securityLabel
+            // 
+            this.securityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.securityLabel.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.securityLabel.Location = new System.Drawing.Point(3, 233);
+            this.securityLabel.Name = "securityLabel";
+            this.securityLabel.Size = new System.Drawing.Size(132, 120);
+            this.securityLabel.TabIndex = 9;
+            this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label4.Location = new System.Drawing.Point(-1, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 18);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "您的权限为:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -233,29 +257,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "商品管理系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label4.Location = new System.Drawing.Point(-1, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "您的权限为:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // securityLabel
-            // 
-            this.securityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.securityLabel.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.securityLabel.Location = new System.Drawing.Point(3, 233);
-            this.securityLabel.Name = "securityLabel";
-            this.securityLabel.Size = new System.Drawing.Size(132, 120);
-            this.securityLabel.TabIndex = 9;
-            this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
             // 
             // MainForm
             // 

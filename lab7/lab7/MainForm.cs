@@ -80,5 +80,13 @@ namespace lab7
             }
         }
 
+        #region 库存信息查询
+        private void InventorySelectBtn_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory();
+            inventory.Owner = this;
+            inventory.ShowDialog();
+        }
+        #endregion 
     }
 }
