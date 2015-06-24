@@ -130,6 +130,7 @@
             this.InventorySelectBtn.TabIndex = 5;
             this.InventorySelectBtn.Text = "库存信息查询";
             this.InventorySelectBtn.UseVisualStyleBackColor = true;
+            this.InventorySelectBtn.Click += new System.EventHandler(this.InventorySelectBtn_Click);
             // 
             // GoodsInfoActBtn
             // 
@@ -199,10 +200,14 @@
             this.securityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.securityLabel.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+
             this.securityLabel.Location = new System.Drawing.Point(6, 466);
             this.securityLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.securityLabel.Name = "securityLabel";
             this.securityLabel.Size = new System.Drawing.Size(264, 240);
+            this.securityLabel.Location = new System.Drawing.Point(3, 233);
+            this.securityLabel.Name = "securityLabel";
+            this.securityLabel.Size = new System.Drawing.Size(132, 120);
             this.securityLabel.TabIndex = 9;
             this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
             // 
@@ -211,10 +216,16 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+
             this.label4.Location = new System.Drawing.Point(-2, 416);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 36);
+
+            this.label4.Location = new System.Drawing.Point(-1, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 18);
+
             this.label4.TabIndex = 7;
             this.label4.Text = "您的权限为:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;

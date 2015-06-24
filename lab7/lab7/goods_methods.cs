@@ -5,11 +5,26 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace lab7
 {
     class goods_methods
     {
+        private static goods_methods Instance = null;
+        private goods_methods()
+        {
+        }
+
+        public static goods_methods getInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new goods_methods();
+            }
+            return Instance;
+        }
+
         #region 登录状态查询
         public bool LoginCheck(String userName, String userPwd)
         {
@@ -39,6 +54,16 @@ namespace lab7
         {
             return null;
         }
+        #endregion
+
+        #region 库存查询
+
+        public DataTable getInventoryInfo()
+        {
+           String sqlString = "select goodsname as '商品名称',goodscount as '库存数量' from goodsInfo";
+            return QueryDataAdapt(sqlString);
+        }
+
         #endregion
 
         #region  执行简单SQL语句
@@ -113,6 +138,22 @@ namespace lab7
             }
         }
 
+        #endregion
+
+        #region 查询返回 DataTable 可以填充 DataGridView
+        public DataTable QueryDataAdapt(string selectCommand)
+        {
+            // Create a new data adapter based on the specified query.
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            dataAdapter.SelectCommand = new SqlCommand(selectCommand, getSqlConnection.getInstance().GetConnect());
+
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            return table;
+        }
         #endregion
 
         #endregion

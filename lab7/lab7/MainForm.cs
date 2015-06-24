@@ -80,6 +80,7 @@ namespace lab7
             }
         }
 
+
         private void SellInfoActBtn_Click(object sender, EventArgs e)
         {
             SellInfo sellinfo = new SellInfo();
@@ -94,5 +95,14 @@ namespace lab7
             productinfo.ShowDialog();
         }
 
+
+        #region 库存信息查询
+        private void InventorySelectBtn_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory();
+            inventory.Owner = this;
+            inventory.ShowDialog();
+        }
+        #endregion 
     }
 }

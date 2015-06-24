@@ -19,7 +19,6 @@ namespace lab7
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            goods_methods S_enter = new goods_methods();
             //检查是否填写完整
             if (userName.Text == "")
             {
@@ -32,7 +31,8 @@ namespace lab7
                 return;
             }
             //检查登录状态，相关函数封装在 goods_methods
-            if (S_enter.LoginCheck(userName.Text, userPwd.Text) == true)
+            if (goods_methods.getInstance().LoginCheck(userName.Text, userPwd.Text)
+                == true)
             {
                 MainForm form = new MainForm();
                 form.Something = userName.Text.ToString();
