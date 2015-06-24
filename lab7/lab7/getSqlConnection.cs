@@ -12,8 +12,8 @@ namespace lab7
         #region   代码中用到的变量
         private static string strConnection ;
         private static SqlConnection getConnect;  //声明链接对象
-        private static String userName;
-        private static String userPwd;
+        private static String mUserName;
+        private static String mUserPwd;
         //单例模式
         private static getSqlConnection Instance;
         #endregion
@@ -42,15 +42,18 @@ namespace lab7
         /// <returns></returns>
         public SqlConnection GetConnect()
         {
-            if (userName == null)
+            if (mUserName == null)
             {
                 return null;
             }
-            return GetConnect(userName, userPwd);
+            return GetConnect(mUserName, mUserPwd);
         }
 
         public SqlConnection GetConnect(string userName,string userPwd)
         {
+            mUserName = userName;
+            mUserPwd = userPwd;
+
             strConnection = "server=localhost;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
             try { 
