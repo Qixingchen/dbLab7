@@ -117,5 +117,10 @@ namespace lab7
 
         #endregion
 
+        public static DataSet querySellInfo(String queryName)
+        {
+            String sqlString = "select * from sellInfo where id=" + queryName;
+            return Query(sqlString);
+        }
     }
 }

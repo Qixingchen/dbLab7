@@ -80,5 +80,19 @@ namespace lab7
             }
         }
 
+        private void SellInfoActBtn_Click(object sender, EventArgs e)
+        {
+            SellInfo sellinfo = new SellInfo();
+            sellinfo.Owner = this;
+            sellinfo.ShowDialog();
+        }
+
+        private void GoodsInfoActBtn_Click(object sender, EventArgs e)
+        {
+            ProductInfo productinfo = new ProductInfo();
+            productinfo.Owner = this;
+            productinfo.ShowDialog();
+        }
+
     }
 }

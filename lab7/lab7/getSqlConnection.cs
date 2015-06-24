@@ -54,7 +54,7 @@ namespace lab7
             mUserName = userName;
             mUserPwd = userPwd;
 
-            strConnection = "server=localhost;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
+            strConnection = "server=mac-PC\\SQLEXPRESS;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
             try { 
                 getConnect.Open(); //打开数据库
