@@ -17,8 +17,11 @@ namespace lab7
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void flush()
         {
+            goods_methods getname = new goods_methods();
+            string userName = getname.getUserName();
+            this.UserName.Text = userName;
 
         }
 
@@ -27,6 +30,27 @@ namespace lab7
             Application.Exit();
             Application.Restart();
             Environment.Exit(0);
+        }
+
+        private void StaffInfoInsertBtn_Click(object sender, EventArgs e)
+        {
+            UserEnter staffs = new UserEnter();
+            staffs.Owner = this;
+            staffs.ShowDialog();
+        }
+
+        private void SellInfoInsertBtn_Click(object sender, EventArgs e)
+        {
+            SellEnter sells = new SellEnter();
+            sells.Owner = this;
+            sells.ShowDialog();
+        }
+
+        private void StoreInfoInsertBtn_Click(object sender, EventArgs e)
+        {
+            StockEnter stocks = new StockEnter();
+            stocks.Owner = this;
+            stocks.ShowDialog();
         }
     }
 }

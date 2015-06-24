@@ -33,5 +33,12 @@ namespace lab7
         }
 
         #endregion
+
+        #region
+        public string getUserName()
+        {
+            return null;
+        }
+        #endregion
     }
 }

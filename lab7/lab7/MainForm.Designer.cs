@@ -72,6 +72,7 @@
             this.SellInfoInsertBtn.TabIndex = 2;
             this.SellInfoInsertBtn.Text = "销售信息录入";
             this.SellInfoInsertBtn.UseVisualStyleBackColor = true;
+            this.SellInfoInsertBtn.Click += new System.EventHandler(this.SellInfoInsertBtn_Click);
             // 
             // StoreInfoInsertBtn
             // 
@@ -82,6 +83,7 @@
             this.StoreInfoInsertBtn.TabIndex = 1;
             this.StoreInfoInsertBtn.Text = "进货信息录入";
             this.StoreInfoInsertBtn.UseVisualStyleBackColor = true;
+            this.StoreInfoInsertBtn.Click += new System.EventHandler(this.StoreInfoInsertBtn_Click);
             // 
             // StaffInfoInsertBtn
             // 
@@ -92,6 +94,7 @@
             this.StaffInfoInsertBtn.TabIndex = 0;
             this.StaffInfoInsertBtn.Text = "员工信息录入";
             this.StaffInfoInsertBtn.UseVisualStyleBackColor = true;
+            this.StaffInfoInsertBtn.Click += new System.EventHandler(this.StaffInfoInsertBtn_Click);
             // 
             // groupBox2
             // 
@@ -160,11 +163,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.LogoutBtn);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.UserName);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(151, 428);
@@ -196,7 +199,7 @@
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.UserName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.UserName.Location = new System.Drawing.Point(60, 172);
+            this.UserName.Location = new System.Drawing.Point(67, 172);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(40, 18);
             this.UserName.TabIndex = 1;
@@ -220,13 +223,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(12, 172);
+            this.label1.Location = new System.Drawing.Point(14, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "您好,";
+            this.label1.Size = new System.Drawing.Size(56, 18);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "您好，";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainForm
             // 
