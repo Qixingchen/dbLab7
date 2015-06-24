@@ -34,7 +34,7 @@ namespace lab7
 
         #endregion
 
-        #region
+        #region 获取用户名
         public string getUserName()
         {
             return null;

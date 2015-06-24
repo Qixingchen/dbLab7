@@ -48,6 +48,7 @@
             // 
             this.userPwd.Location = new System.Drawing.Point(166, 194);
             this.userPwd.Name = "userPwd";
+            this.userPwd.PasswordChar = '*';
             this.userPwd.Size = new System.Drawing.Size(132, 21);
             this.userPwd.TabIndex = 1;
             // 

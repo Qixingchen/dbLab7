@@ -12,17 +12,23 @@ namespace lab7
 {
     public partial class MainForm : Form
     {
+        #region 窗口传值（username）
+        private string something;
+        public string Something
+        {
+            get //读
+            {
+                return something;
+            }
+            set //写
+            {
+                something = value;
+            }
+        }
+        #endregion
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        public void flush()
-        {
-            goods_methods getname = new goods_methods();
-            string userName = getname.getUserName();
-            this.UserName.Text = userName;
-
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -52,5 +58,27 @@ namespace lab7
             stocks.Owner = this;
             stocks.ShowDialog();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.UserName.Text = something;
+            if(something.CompareTo("rootMa") == 0 )
+            {
+                securityLabel.Text = "IT运维人员，具有所有权限";
+            }else if(something.CompareTo("adminMa") == 0)
+            {
+                securityLabel.Text = "负责人，具有对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
+            }else if(something.CompareTo("staffMa") == 0)
+            {
+                securityLabel.Text = "人事管理人员，具有对员工信息的所有增删改查权限";
+            }else if(something.CompareTo("sellMa") == 0)
+            {
+                securityLabel.Text = "销售管理人员，具有对销售信息、商品信息、库存信息的所有增删改查权限";
+            }else if(something.CompareTo("stockMa") == 0)
+            {
+                securityLabel.Text = "仓储管理人员，具有对进货信息、商品信息、库存信息的所有增删改查权限";
+            }
+        }
+
     }
 }

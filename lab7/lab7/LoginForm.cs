@@ -35,6 +35,7 @@ namespace lab7
             if (S_enter.LoginCheck(userName.Text, userPwd.Text) == true)
             {
                 MainForm form = new MainForm();
+                form.Something = userName.Text.ToString();
                 form.Show();
                 this.Hide();
             }
