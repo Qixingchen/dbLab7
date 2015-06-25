@@ -16,43 +16,8 @@ namespace lab7
         {
             InitializeComponent();
         }
+        //潘晨星是猪你好 我是PLY 你在写下面这个函数的时候要判断一下加入的东西是新的还是更新的，因为我的更新界面也用的你的这个界面
 
-        private void SellEnter_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
          private void button1_Click(object sender, EventArgs e)
         {
             String sellid;
@@ -73,5 +38,14 @@ namespace lab7
             DBUtility.DbHelperSQL.ExecuteSql(sql);    
 
         }  
+        public void setValue(string sellid,DateTime selltime,string sellcount,string payment,string goodsid,string staffid)
+        {
+            textBox1.Text = sellid;
+            textBox2.Text = goodsid;
+            textBox4.Text = payment;
+            textBox3.Text = sellcount;
+            textBox5.Text = staffid;
+            dateTimePicker1.Value = selltime;
+        }
     }
 }
