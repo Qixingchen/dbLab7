@@ -69,12 +69,34 @@ namespace lab7
         }
         public DataTable getInventoryInfo(String SQLname)
         {
-            String sqlString = "select goodsname as '商品名称',goodscount as '库存数量' from goodsInfo";
+            String sqlString = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
             if (SQLname != null)
             {
                 sqlString += " where goodsname = '" + SQLname + "'";
             }
+            return QueryDataAdapt(sqlString);
+        }
 
+        #endregion
+
+        #region 商品清单查询
+
+        public DataTable getGoodsInfo(int which,string key)
+        {
+            String sqlString = string.Empty;
+            if(which == 1)
+            {
+                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量'," 
+                    + "goodsprice as '单价',photourl as '商品图片url'from "
+                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
+            }
+            else if(which == 2)
+            {
+                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量',"
+                    + "goodsprice as '单价',photourl as '商品图片url'from "
+                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid "
+                    +"and goodsname like '%" + key + "%' ";
+            }
             return QueryDataAdapt(sqlString);
         }
 

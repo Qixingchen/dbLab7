@@ -184,25 +184,5 @@ namespace lab7
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button1;
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox3;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private Button button1;
-
     }
 }

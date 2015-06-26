@@ -33,6 +33,27 @@ namespace lab7
         /// </summary>
         private void InitializeComponent()
         {
+            /*System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SellInfoInsertBtn = new System.Windows.Forms.Button();
+            this.StoreInfoInsertBtn = new System.Windows.Forms.Button();
+            this.StaffInfoInsertBtn = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.InventorySelectBtn = new System.Windows.Forms.Button();
+            this.GoodsInfoActBtn = new System.Windows.Forms.Button();
+            this.SellInfoActBtn = new System.Windows.Forms.Button();
+            this.StoreInfoActBtn = new System.Windows.Forms.Button();
+            this.StaffInfoActBtn = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.securityLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.UserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();*/
+
             ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new GroupBox();
             this.SellInfoInsertBtn = new Button();
@@ -56,9 +77,11 @@ namespace lab7
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            this.button1 = new Button();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.SellInfoInsertBtn);
             this.groupBox1.Controls.Add(this.StoreInfoInsertBtn);
             this.groupBox1.Controls.Add(this.StaffInfoInsertBtn);
@@ -70,6 +93,17 @@ namespace lab7
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "信息录入";
             this.groupBox1.Enter += new EventHandler(this.groupBox1_Enter);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Location = new System.Drawing.Point(24, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 38);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "商品清单";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SellInfoInsertBtn
             // 
@@ -95,6 +129,8 @@ namespace lab7
             // 
             // StaffInfoInsertBtn
             // 
+            //this.StaffInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            //this.StaffInfoInsertBtn.Location = new System.Drawing.Point(165, 42);
             this.StaffInfoInsertBtn.ForeColor = SystemColors.ControlDarkDark;
             this.StaffInfoInsertBtn.Location = new Point(24, 42);
             this.StaffInfoInsertBtn.Name = "StaffInfoInsertBtn";
@@ -269,7 +305,6 @@ namespace lab7
             // MainForm
             // 
             this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(485, 447);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -287,6 +322,25 @@ namespace lab7
 
         #endregion
 
+        /*private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button SellInfoInsertBtn;
+        private System.Windows.Forms.Button StoreInfoInsertBtn;
+        private System.Windows.Forms.Button StaffInfoInsertBtn;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button InventorySelectBtn;
+        private System.Windows.Forms.Button GoodsInfoActBtn;
+        private System.Windows.Forms.Button SellInfoActBtn;
+        private System.Windows.Forms.Button StoreInfoActBtn;
+        private System.Windows.Forms.Button StaffInfoActBtn;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button LogoutBtn;
+        private System.Windows.Forms.Label UserName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label securityLabel;
+        private System.Windows.Forms.Button button1;*/
         private GroupBox groupBox1;
         private Button SellInfoInsertBtn;
         private Button StoreInfoInsertBtn;
@@ -305,6 +359,7 @@ namespace lab7
         private Label label1;
         private Label label4;
         private Label securityLabel;
+        private Button button1;
     }
 }
 

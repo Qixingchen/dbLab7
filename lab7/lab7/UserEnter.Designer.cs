@@ -135,7 +135,6 @@ namespace lab7
             // UserEnter
             // 
             this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(499, 269);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
