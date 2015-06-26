@@ -79,7 +79,6 @@ namespace lab7
                 {
                     try
                     {
-                        connection.Open();
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
@@ -103,7 +102,6 @@ namespace lab7
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
             {
-                connection.Open();
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
@@ -126,7 +124,6 @@ namespace lab7
                 DataSet ds = new DataSet();
                 try
                 {
-                    connection.Open();
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }
