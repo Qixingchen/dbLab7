@@ -32,10 +32,10 @@ namespace lab7
         private void InitializeComponent()
         {
             this.groupbox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.search = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goodid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,21 +60,14 @@ namespace lab7
             this.groupbox.TabStop = false;
             this.groupbox.Text = "商品信息管理";
             // 
-            // textBox1
+            // delete
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 35);
-            this.textBox1.TabIndex = 0;
-            // 
-            // search
-            // 
-            this.search.Location = new System.Drawing.Point(405, 49);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(231, 50);
-            this.search.TabIndex = 1;
-            this.search.Text = "查询";
-            this.search.UseVisualStyleBackColor = true;
+            this.delete.Location = new System.Drawing.Point(948, 49);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(217, 50);
+            this.delete.TabIndex = 3;
+            this.delete.Text = "删除";
+            this.delete.UseVisualStyleBackColor = true;
             // 
             // update
             // 
@@ -85,14 +78,21 @@ namespace lab7
             this.update.Text = "更新";
             this.update.UseVisualStyleBackColor = true;
             // 
-            // delete
+            // search
             // 
-            this.delete.Location = new System.Drawing.Point(948, 49);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(217, 50);
-            this.delete.TabIndex = 3;
-            this.delete.Text = "删除";
-            this.delete.UseVisualStyleBackColor = true;
+            this.search.Location = new System.Drawing.Point(405, 49);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(231, 50);
+            this.search.TabIndex = 1;
+            this.search.Text = "查询";
+            this.search.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 59);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(290, 21);
+            this.textBox1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -142,7 +142,7 @@ namespace lab7
             // 
             // ProductInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 645);
             this.Controls.Add(this.dataGridView1);
