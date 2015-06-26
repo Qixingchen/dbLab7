@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -77,29 +70,20 @@ namespace lab7
             String stockid;
             String stocktime;
             String goodsid;
-            String goodsname;
             String goodscount;
-            String goodsprice;
-            String goodsphotoid;
-            String photourl;
             String staffid;
 
             stockid = textBox1.Text;  //获取窗口数据
             goodsid = textBox2.Text;
-            goodsname = textBox3.Text;
-            goodscount = textBox4.Text;
-            goodsprice = textBox5.Text;
-            goodsphotoid = textBox6.Text;
-            photourl = textBox7.Text;
+            goodscount = textBox4.Text;         
             staffid = textBox8.Text;
-            stocktime = dateTimePicker1.Text;
+            stocktime = dateTimePicker1.Value.ToString();
 
-            string sql = "insert into goodsinfo values(" + goodsid + "," + goodsname + "," + goodscount + "," + goodsprice + "," + goodsphotoid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
-            sql = "insert into goodsphoto values(" + goodsphotoid + "," + photourl + "," + goodsid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
-            sql = "insert into stockinfo values(" + stockid + "," + stocktime + "," + goodscount + "," + goodsid + "," + staffid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
+            string sql = "insert into stockinfo values(" + stockid + "," + "'" + stocktime + "'" + "," + goodscount + "," + goodsid + "," + staffid + ")";
+            goods_methods.ExecuteSql(sql);
+
+              Popup popup = new Popup();
+              popup.ShowDialog();
         }
         //Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\jiyu\net\dblab7\databaseLab7\lab7\db\Goods.mdf;Integrated Security=True;Connect Timeout=30
     }

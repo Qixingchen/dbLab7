@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -32,10 +25,12 @@ namespace lab7
             sellcount = textBox3.Text;
             payment = textBox4.Text;
             staffid = textBox5.Text;
-            selltime = dateTimePicker1.Text;
+            selltime = dateTimePicker1.Value.ToString();
 
-            string sql = "insert into sellInfo values(" + sellid + "," + selltime + "," + goodsid + "," + sellcount + "," + payment + "," + staffid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);    
+            string sql = "insert into sellInfo values(" + sellid + "," + "'" + selltime + "'" + "," + sellcount + "," + payment + "," + goodsid + "," + staffid + ")";
+            goods_methods.ExecuteSql(sql);
+            Popup popup = new Popup();
+            popup.ShowDialog();
 
         }  
         public void setValue(string sellid,DateTime selltime,string sellcount,string payment,string goodsid,string staffid)
@@ -46,6 +41,11 @@ namespace lab7
             textBox3.Text = sellcount;
             textBox5.Text = staffid;
             dateTimePicker1.Value = selltime;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

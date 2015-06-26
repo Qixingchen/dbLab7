@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>lab7.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -72,6 +75,11 @@
     </Compile>
     <Compile Include="GoodsList.Designer.cs">
       <DependentUpon>GoodsList.cs</DependentUpon>
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
     </Compile>
     <Compile Include="PubConstant.cs" />
     <Compile Include="getSqlConnection.cs" />
@@ -141,6 +149,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,8 +164,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SellEnter.resx">
+      <DependentUpon>SellEnter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellInfo.resx">
       <DependentUpon>SellInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockEnter.resx">
+      <DependentUpon>StockEnter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
