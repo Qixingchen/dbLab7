@@ -79,7 +79,6 @@ namespace lab7
                 {
                     try
                     {
-                        connection.Open();
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
@@ -103,7 +102,6 @@ namespace lab7
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
             {
-                connection.Open();
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
@@ -126,7 +124,6 @@ namespace lab7
                 DataSet ds = new DataSet();
                 try
                 {
-                    connection.Open();
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }
@@ -158,10 +155,15 @@ namespace lab7
 
         #endregion
 
-        public static DataSet querySellInfo(String queryName)
+        public DataTable querySellInfo(String queryName)
         {
-            String sqlString = "select * from sellInfo where id=" + queryName;
-            return Query(sqlString);
+            String sqlString = "select sellid as '销售ID',selltime as '销售日期',sellcount as '销售数量',payment as '销售价格',goodsid as '商品ID',staffid as '销售员ID' from sellInfo where sellid=" + queryName;
+            return QueryDataAdapt(sqlString);
+        }
+        public DataTable queryProductInfo(String queryName)
+        {
+            String sqlString = "select goodsid as '商品ID',goodsname as '商品名称',goodscount as '商品数量',goodsprice as '商品价格',goodsphotoid as '商品照片ID',(select photourl from goodsphoto where goodsphotoid = goodsInfo.goodsphotoid) as '商品照片URL' from goodsInfo where goodsid=" + queryName;
+            return QueryDataAdapt(sqlString);
         }
     }
 }

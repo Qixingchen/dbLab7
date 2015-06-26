@@ -34,19 +34,14 @@
             this.Search = new System.Windows.Forms.Button();
             this.Textbox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.销售ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.delete);
             this.groupBox1.Controls.Add(this.update);
             this.groupBox1.Controls.Add(this.Search);
@@ -99,54 +94,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.销售ID,
-            this.日期,
-            this.Column1,
-            this.Column2,
-            this.商品ID,
-            this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(57, 190);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 37;
             this.dataGridView1.Size = new System.Drawing.Size(1006, 410);
             this.dataGridView1.TabIndex = 1;
             // 
-            // id
+            // label1
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // 销售ID
-            // 
-            this.销售ID.HeaderText = "销售ID";
-            this.销售ID.Name = "销售ID";
-            // 
-            // 日期
-            // 
-            this.日期.HeaderText = "日期";
-            this.日期.Name = "日期";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "销售数量";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "价格";
-            this.Column2.Name = "Column2";
-            // 
-            // 商品ID
-            // 
-            this.商品ID.HeaderText = "商品ID";
-            this.商品ID.Name = "商品ID";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "销售员ID";
-            this.Column3.Name = "Column3";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("楷体", 6.375F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(27, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "请输入销售信息ID";
             // 
             // SellInfo
             // 
@@ -157,6 +119,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SellInfo";
             this.Text = "SellInfo";
+            this.Load += new System.EventHandler(this.SellInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -172,12 +135,6 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.TextBox Textbox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 销售ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 日期;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label1;
     }
 }

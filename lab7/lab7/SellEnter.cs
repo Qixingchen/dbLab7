@@ -12,24 +12,58 @@ namespace lab7
 {
     public partial class SellEnter : Form
     {
+        Boolean isUpdate = false;
         public SellEnter()
         {
             InitializeComponent();
         }
-        //潘晨星是猪你好 我是PLY 你在写下面这个函数的时候要判断一下加入的东西是新的还是更新的，因为我的更新界面也用的你的这个界面
+
         private void SellEnter_Load(object sender, EventArgs e)
         {
 
+            string SQLString = "select goodsid as sid from goodsInfo";
+            comboBox1.DisplayMember = "sid";
+            comboBox1.ValueMember = "sid";
+            comboBox1.DataSource = goods_methods.Query(SQLString).Tables[0];
+            string SQLString1 = "select staffid as sid1 from staffInfo";
+            comboBox2.DisplayMember = "sid1";
+            comboBox2.ValueMember = "sid1";
+            comboBox2.DataSource = goods_methods.Query(SQLString1).Tables[0];
+
         }
 
-        public void setValue(string sellid,DateTime selltime,string sellcount,string payment,string goodsid,string staffid)
+        public void setValue(string sellid, DateTime selltime, string sellcount, string payment, string goodsid, string staffid)
         {
             textBox1.Text = sellid;
-            textBox2.Text = goodsid;
+            comboBox1.Text = goodsid;
             textBox4.Text = payment;
             textBox3.Text = sellcount;
-            textBox5.Text = staffid;
+            comboBox2.Text = staffid;
             dateTimePicker1.Value = selltime;
+            textBox1.ReadOnly = true;
+            isUpdate = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sellid = textBox1.Text;
+            string goodsid = comboBox1.Text;
+            string payment = textBox4.Text;
+            string sellcount = textBox3.Text;
+            string staffid = comboBox2.Text;
+            DateTime selltime = dateTimePicker1.Value;
+            if (isUpdate)
+            {
+                string SQLString1 = "update sellInfo set sellid=" + sellid + ", goodsid = '" + goodsid + "', payment = " + payment + ",sellcount = " + sellcount + ", staffid =" + staffid + ",selltime = '" + selltime + "' where sellid=" + sellid;
+                goods_methods.ExecuteSql(SQLString1);
+            }
+            else
+            {
+                string SQLString2 = "insert into  sellInfo values('" + sellid + "','" + selltime + "','" + sellcount + "','" + payment + "','" + goodsid + "','" + staffid + "')";
+                goods_methods.ExecuteSql(SQLString2);
+            }
+        }
+
+
     }
 }
