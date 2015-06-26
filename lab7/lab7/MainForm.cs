@@ -12,6 +12,7 @@ namespace lab7
 {
     public partial class MainForm : Form
     {
+     
         #region 窗口传值（username）
         private string something;
         public string Something
@@ -104,5 +105,10 @@ namespace lab7
             inventory.ShowDialog();
         }
         #endregion 
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

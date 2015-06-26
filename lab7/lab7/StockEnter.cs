@@ -95,11 +95,14 @@ namespace lab7
             stocktime = dateTimePicker1.Text;
 
             string sql = "insert into goodsinfo values(" + goodsid + "," + goodsname + "," + goodscount + "," + goodsprice + "," + goodsphotoid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
+            goods_methods.ExecuteSql(sql);
             sql = "insert into goodsphoto values(" + goodsphotoid + "," + photourl + "," + goodsid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
+            goods_methods.ExecuteSql(sql);
             sql = "insert into stockinfo values(" + stockid + "," + stocktime + "," + goodscount + "," + goodsid + "," + staffid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);
+            goods_methods.ExecuteSql(sql);
+
+              Popup popup = new Popup();
+              popup.ShowDialog();
         }
         //Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\jiyu\net\dblab7\databaseLab7\lab7\db\Goods.mdf;Integrated Security=True;Connect Timeout=30
     }

@@ -35,7 +35,9 @@ namespace lab7
             selltime = dateTimePicker1.Text;
 
             string sql = "insert into sellInfo values(" + sellid + "," + selltime + "," + goodsid + "," + sellcount + "," + payment + "," + staffid + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);    
+            goods_methods.ExecuteSql(sql);
+            Popup popup = new Popup();
+            popup.ShowDialog();
 
         }  
         public void setValue(string sellid,DateTime selltime,string sellcount,string payment,string goodsid,string staffid)
