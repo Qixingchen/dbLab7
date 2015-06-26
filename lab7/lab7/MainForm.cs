@@ -104,5 +104,14 @@ namespace lab7
             inventory.ShowDialog();
         }
         #endregion 
+
+        #region 商品清单
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GoodsList goodslist = new GoodsList();
+            goodslist.Owner = this;
+            goodslist.ShowDialog();
+        }
+        #endregion
     }
 }
