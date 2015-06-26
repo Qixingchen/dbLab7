@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -18,6 +11,8 @@ namespace lab7
             InitializeComponent();
 
             dataGridView1.DataSource = bindingSource;
+            dataGridView1.AutoResizeColumns(
+                DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
 
@@ -28,10 +23,6 @@ namespace lab7
                 bindingSource.DataSource = goods_methods.getInstance()
                     .getInventoryInfo();
             }
-
-            // Resize the DataGridView columns to fit the newly loaded content.
-            dataGridView1.AutoResizeColumns(
-                DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
     }
 }

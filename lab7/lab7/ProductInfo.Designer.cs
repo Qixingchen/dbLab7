@@ -1,11 +1,14 @@
-﻿namespace lab7
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace lab7
 {
     partial class ProductInfo
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -156,17 +159,17 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupbox;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button update;
-        private System.Windows.Forms.Button search;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodsname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodprice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodphotoid;
+        private GroupBox groupbox;
+        private Button delete;
+        private Button update;
+        private Button search;
+        private TextBox textBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn goodid;
+        private DataGridViewTextBoxColumn goodsname;
+        private DataGridViewTextBoxColumn goodscount;
+        private DataGridViewTextBoxColumn goodprice;
+        private DataGridViewTextBoxColumn goodphotoid;
     }
 }

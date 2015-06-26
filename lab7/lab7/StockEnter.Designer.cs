@@ -1,11 +1,14 @@
-﻿namespace lab7
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace lab7
 {
     partial class StockEnter
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -256,24 +259,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox3;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private TextBox textBox7;
+        private TextBox textBox8;
+        private Button button1;
     }
 }

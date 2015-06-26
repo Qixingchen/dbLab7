@@ -1,11 +1,14 @@
-﻿namespace lab7
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace lab7
 {
     partial class Inventory
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -78,8 +81,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox selectName;
-        private System.Windows.Forms.Button inquire;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private TextBox selectName;
+        private Button inquire;
+        private DataGridView dataGridView1;
     }
 }
