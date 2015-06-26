@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace lab7
 {
@@ -48,13 +49,13 @@ namespace lab7
             }
             return GetConnect(mUserName, mUserPwd);
         }
-
+        
         public SqlConnection GetConnect(string userName,string userPwd)
         {
             mUserName = userName;
             mUserPwd = userPwd;
 
-            strConnection = "server=localhost;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
+            strConnection = "server=localhost;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=False";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
             try { 
                 getConnect.Open(); //打开数据库
@@ -62,6 +63,7 @@ namespace lab7
             }
             catch (Exception)
             {
+                MessageBox.Show("无权操作");
                 return null;
             }
         }

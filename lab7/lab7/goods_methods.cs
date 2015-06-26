@@ -29,22 +29,8 @@ namespace lab7
         public bool LoginCheck(String userName, String userPwd)
         {
             SqlConnection conn = null;
-            SqlCommand cmd = null;
-            SqlDataReader qlddr = null;
-            string strLogin = null;
-            bool LoginStatus = false;
-            strLogin = "select * from loginuser where userName = '" + userName + "' and  userPwd = '" + userPwd + "' ";
-            conn = getSqlConnection.getInstance().GetConnect("rootMa", "123456");  //数据库连接，返回数据库连接对象
-            cmd = new SqlCommand(strLogin, conn); //创建command对象
-            qlddr = cmd.ExecuteReader();
-            //通过Read方法可以判断数据是否还有下一行，如果存在数据，则继续运行并返回true，否则返回false
-            qlddr.Read();
-            if (qlddr.HasRows)
-            {
-                LoginStatus = true; //用户名密码正确
-            }
-            return LoginStatus;
-
+            conn = getSqlConnection.getInstance().GetConnect(userName, userPwd); 
+            return conn != null;
         }
 
         #endregion
@@ -60,7 +46,17 @@ namespace lab7
 
         public DataTable getInventoryInfo()
         {
-           String sqlString = "select goodsname as '商品名称',goodscount as '库存数量' from goodsInfo";
+            string SQLname = null;
+            return getInventoryInfo(SQLname);
+        }
+        public DataTable getInventoryInfo(String SQLname)
+        {
+            String sqlString = "select goodsname as '商品名称',goodscount as '库存数量' from goodsInfo";
+            if (SQLname != null)
+            {
+                sqlString += " where goodsname = '" + SQLname + "'";
+            }
+
             return QueryDataAdapt(sqlString);
         }
 
