@@ -25,24 +25,32 @@ namespace lab7
         public bool LoginCheck(String userName, String userPwd)
         {
             SqlConnection conn = null;
-            SqlCommand cmd = null;
-            SqlDataReader qlddr = null;
-            string strLogin = null;
-            bool LoginStatus = false;
-            strLogin = "select * from loginuser where userName = '" + userName + "' and  userPwd = '" + userPwd + "' ";
-            conn = getSqlConnection.getInstance().GetConnect("rootMa", "123456");  //数据库连接，返回数据库连接对象
-            cmd = new SqlCommand(strLogin, conn); //创建command对象
-            qlddr = cmd.ExecuteReader();
-            //通过Read方法可以判断数据是否还有下一行，如果存在数据，则继续运行并返回true，否则返回false
-            qlddr.Read();
-            if (qlddr.HasRows)
-            {
-                LoginStatus = true; //用户名密码正确
-            }
-            return LoginStatus;
-
+            conn = getSqlConnection.getInstance().GetConnect(userName, userPwd);
+            return conn != null;
         }
 
+        #endregion
+
+        #region 新增用户
+        public string AddUser(String username, String UserType)
+        {
+            string SQL = @"EXEC sp_addlogin " + username + @",'123456','Goods'
+	EXEC sp_adduser " + username + "," + username;
+
+            if (UserType.CompareTo("root") == 0)
+            {
+                SQL += @"
+        GRANT insert,select,update,delete ON staffinfo TO " + username + @";
+		GRANT insert,select,update,delete ON stockinfo TO " + username + @";
+		GRANT insert,select,update,delete ON goodsinfo TO " + username + @";
+		GRANT insert,select,update,delete ON goodsphoto TO " + username + @";
+		GRANT insert,select,update,delete ON sellinfo TO " + username + @";
+		GRANT insert,select,update,delete ON loginuser TO " + username + ";";
+            }
+            goods_methods.MAXPermissionExecuteSql(SQL);
+
+            return null;
+        }
         #endregion
 
         #region 获取用户名
@@ -56,7 +64,16 @@ namespace lab7
 
         public DataTable getInventoryInfo()
         {
+            string SQLname = null;
+            return getInventoryInfo(SQLname);
+        }
+        public DataTable getInventoryInfo(String SQLname)
+        {
             String sqlString = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
+            if (SQLname != null)
+            {
+                sqlString += " where goodsname = '" + SQLname + "'";
+            }
             return QueryDataAdapt(sqlString);
         }
 
@@ -98,7 +115,31 @@ namespace lab7
                 {
                     try
                     {
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        connection.Close();
+                        throw e;
+                    }
+                }
+            }
+        }
 
+        #endregion
+
+        #region  最高权限执行SQL语句，返回影响的记录数
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public static int MAXPermissionExecuteSql(string SQLString)
+        {
+            using (SqlConnection connection = getSqlConnection.getInstance().GetMaxPermissionSQLConnect())
+            {
+                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                {
+                    try
+                    {
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }

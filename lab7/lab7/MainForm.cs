@@ -108,9 +108,13 @@ namespace lab7
         }
         #endregion
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        #region 员工信息录入
+        private void staffInfoBtn_Click(object sender, EventArgs e)
         {
-
+            UserEnter userenter = new UserEnter();
+            userenter.Owner = this;
+            userenter.ShowDialog();
         }
+        #endregion
     }
 }

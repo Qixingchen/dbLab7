@@ -1,8 +1,8 @@
+Use Goods
+GO
+
 alter table goodsinfo
 add foreign key(goodsphotoid) references goodsphoto(goodsphotoid);
-
-alter table goodsphoto
-add foreign key(goodsid) references goodsinfo(goodsid);
 
 alter table sellInfo
 add foreign key(goodsid) references goodsinfo(goodsid);

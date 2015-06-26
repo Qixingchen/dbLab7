@@ -114,7 +114,7 @@ namespace lab7
             // 
             // ProductInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 645);
             this.Controls.Add(this.dataGridView1);

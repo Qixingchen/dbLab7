@@ -56,8 +56,8 @@ namespace lab7
 
         private void SellInfo_Load(object sender, EventArgs e)
         {
-
         }
+        
 
     }
 }
