@@ -29,10 +29,32 @@ namespace lab7
         public bool LoginCheck(String userName, String userPwd)
         {
             SqlConnection conn = null;
-            conn = getSqlConnection.getInstance().GetConnect(userName, userPwd); 
+            conn = getSqlConnection.getInstance().GetConnect(userName, userPwd);
             return conn != null;
         }
 
+        #endregion
+
+        #region 新增用户
+        public string AddUser(String username, String UserType)
+        {
+            string SQL = @"EXEC sp_addlogin " + username + @",'123456','Goods'
+	EXEC sp_adduser " + username + "," + username;
+
+            if (UserType.CompareTo("root") == 0)
+            {
+                SQL += @"
+        GRANT insert,select,update,delete ON staffinfo TO " + username + @";
+		GRANT insert,select,update,delete ON stockinfo TO " + username + @";
+		GRANT insert,select,update,delete ON goodsinfo TO " + username + @";
+		GRANT insert,select,update,delete ON goodsphoto TO " + username + @";
+		GRANT insert,select,update,delete ON sellinfo TO " + username + @";
+		GRANT insert,select,update,delete ON loginuser TO " + username + ";";
+            }
+            goods_methods.MAXPermissionExecuteSql(SQL);
+
+            return null;
+        }
         #endregion
 
         #region 获取用户名
@@ -75,7 +97,31 @@ namespace lab7
                 {
                     try
                     {
-                        connection.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        connection.Close();
+                        throw e;
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region  最高权限执行SQL语句，返回影响的记录数
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public static int MAXPermissionExecuteSql(string SQLString)
+        {
+            using (SqlConnection connection = getSqlConnection.getInstance().GetMaxPermissionSQLConnect())
+            {
+                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                {
+                    try
+                    {
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
@@ -99,7 +145,6 @@ namespace lab7
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
             {
-                connection.Open();
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
@@ -122,7 +167,6 @@ namespace lab7
                 DataSet ds = new DataSet();
                 try
                 {
-                    connection.Open();
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }

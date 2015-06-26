@@ -1,6 +1,5 @@
-select goodsname,stocktime,stockinfo.goodscount,staffname from stockInfo,staffInfo,goodsInfo 
-where stockinfo.staffid = staffinfo.staffid and stockinfo.goodsid = goodsinfo.goodsid
-
+use Goods
+GO
 /*--说明
         在数据库Goods中创建:
 	IT运维人员：对数据库Goods的所有权限（rootMa:123456）；
@@ -56,16 +55,3 @@ GRANT insert,select,update,delete ON goodsphoto TO stockMa
 GRANT insert,select,update,delete ON goodsinfo TO sellMa
 GRANT insert,select,update,delete ON goodsphoto TO sellMa
 GRANT insert,select,update,delete ON sellinfo TO sellMa
-
---记录用户表
-create table loginuser
-(
-	userName varchar(30),
-	userPwd varchar(30)
-)
-
-insert into loginuser values('rootMa','123456');
-insert into loginuser values('adminMa','123456');
-insert into loginuser values('staffMa','123456');
-insert into loginuser values('stockMa','123456');
-insert into loginuser values('sellMa','123456');

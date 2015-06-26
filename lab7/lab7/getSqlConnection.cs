@@ -68,5 +68,26 @@ namespace lab7
             }
         }
         #endregion
+
+        #region   获取最高权限的数据连接
+
+        public SqlConnection GetMaxPermissionSQLConnect()
+        {
+            strConnection = "server=localhost;database=Goods;Trusted_Connection=SSPI";
+            getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
+            try
+            {
+                getConnect.Open(); //打开数据库
+                return getConnect;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("无权操作");
+                return null;
+            }
+        }
+
+        #endregion
+
     }
 }
