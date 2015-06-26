@@ -32,9 +32,9 @@ namespace lab7
             sellcount = textBox3.Text;
             payment = textBox4.Text;
             staffid = textBox5.Text;
-            selltime = dateTimePicker1.Text;
+            selltime = dateTimePicker1.Value.ToString();
 
-            string sql = "insert into sellInfo values(" + sellid + "," + selltime + "," + goodsid + "," + sellcount + "," + payment + "," + staffid + ")";
+            string sql = "insert into sellInfo values(" + sellid + "," + "'" + selltime + "'" + "," + sellcount + "," + payment + "," + goodsid + "," + staffid + ")";
             goods_methods.ExecuteSql(sql);
             Popup popup = new Popup();
             popup.ShowDialog();
@@ -48,6 +48,11 @@ namespace lab7
             textBox3.Text = sellcount;
             textBox5.Text = staffid;
             dateTimePicker1.Value = selltime;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

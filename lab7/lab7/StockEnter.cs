@@ -77,28 +77,16 @@ namespace lab7
             String stockid;
             String stocktime;
             String goodsid;
-            String goodsname;
             String goodscount;
-            String goodsprice;
-            String goodsphotoid;
-            String photourl;
             String staffid;
 
             stockid = textBox1.Text;  //获取窗口数据
             goodsid = textBox2.Text;
-            goodsname = textBox3.Text;
-            goodscount = textBox4.Text;
-            goodsprice = textBox5.Text;
-            goodsphotoid = textBox6.Text;
-            photourl = textBox7.Text;
+            goodscount = textBox4.Text;         
             staffid = textBox8.Text;
-            stocktime = dateTimePicker1.Text;
+            stocktime = dateTimePicker1.Value.ToString();
 
-            string sql = "insert into goodsinfo values(" + goodsid + "," + goodsname + "," + goodscount + "," + goodsprice + "," + goodsphotoid + ")";
-            goods_methods.ExecuteSql(sql);
-            sql = "insert into goodsphoto values(" + goodsphotoid + "," + photourl + "," + goodsid + ")";
-            goods_methods.ExecuteSql(sql);
-            sql = "insert into stockinfo values(" + stockid + "," + stocktime + "," + goodscount + "," + goodsid + "," + staffid + ")";
+            string sql = "insert into stockinfo values(" + stockid + "," + "'" + stocktime + "'" + "," + goodscount + "," + goodsid + "," + staffid + ")";
             goods_methods.ExecuteSql(sql);
 
               Popup popup = new Popup();

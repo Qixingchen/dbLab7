@@ -58,9 +58,9 @@ namespace lab7
             staffage = textBox3.Text;
             staffgender = comboBox1.Text;
 
-            string sql = "insert into staffinfo values(" + staffid + "," + staffname + "," + staffgender + "," + staffage + ")";
+            string sql = "insert into staffinfo values(" + staffid + "," + "'"+staffname+"'" + "," + "'"+staffgender +"'"+ "," + staffage + ")";
             goods_methods.ExecuteSql(sql);
-            
+
             Popup popup = new Popup();
             popup.ShowDialog();
 
