@@ -8,6 +8,7 @@ namespace lab7
         public LoginForm()
         {
             InitializeComponent();
+            AcceptButton = LoginBtn;
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
@@ -31,10 +32,6 @@ namespace lab7
                 form.Something = userName.Text.ToString();
                 form.Show();
                 this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("无访问权利，登录失败！");
             }
         }
 

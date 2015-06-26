@@ -73,6 +73,7 @@ namespace lab7
             this.Controls.Add(this.selectName);
             this.Name = "Inventory";
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

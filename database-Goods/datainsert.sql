@@ -1,68 +1,37 @@
-alter table staffinfo add id int  IDENTITY(1,1) NOT NULL
-insert into staffinfo values('10001','sdfads','女',23);
-insert into staffinfo values('10002','sasdsd','男',22);
-insert into staffinfo values('10003','qefvdvds','女',17);
-insert into staffinfo values('10004','sdvchy','女',30);
-insert into staffinfo values('10005','modfg','男',29);
-insert into staffinfo values('10006','wevcffgb','女',37);
-insert into staffinfo values('10007','sgth','女',25);
-insert into staffinfo values('10008','werrt','女',22);
-insert into staffinfo values('10009','jmynhjy','女',17);
-insert into staffinfo values('10010','dcdcwec','女',23);
-insert into staffinfo values('10011','regtg','男',35);
-insert into staffinfo values('10012','sdctg','男',23);
-insert into staffinfo values('10013','vadfg','女',40);
-insert into staffinfo values('10014','jfgvd','男',36);
-insert into staffinfo values('10015','wefewc','女',33);
-insert into staffinfo values('10016','xcvgdf','女',31);
-insert into staffinfo values('10017','xcgvdcw','女',21);
-insert into staffinfo values('10018','qewdsx','男',23);
-insert into staffinfo values('10019','fght','女',19);
-insert into staffinfo values('10020','uyjybt','女',23);
-insert into staffinfo values('10021','acwe','男',18);
-insert into staffinfo values('10022','wcdc','女',26);
-insert into staffinfo values('10023','dxff','女',23);
-insert into staffinfo values('10024','sterfc','男',23);
-insert into staffinfo values('10025','asdf','女',23);
-insert into staffinfo values('10026','waerwefc','女',26);
-insert into staffinfo values('10027','cadfr','男',23);
-insert into staffinfo values('10028','asfwefw','女',20);
-insert into staffinfo values('10029','asdcver','女',27);
-insert into staffinfo values('10030','AWD','男',24);
+Use Goods
+go
 
-alter table goodsInfo add id int  IDENTITY(1,1) NOT NULL
-insert into goodsInfo values('20001','肥皂',200,3,'30001');
-insert into goodsInfo values('20002','脸盆',222,10,'30002');
-insert into goodsInfo values('20003','毛巾',249,6,'30003');
-insert into goodsInfo values('20004','刷子',500,7,'30004');
-insert into goodsInfo values('20005','畚斗',199,13,'30005');
-insert into goodsInfo values('20006','垃圾桶',23,12,'30006');
-insert into goodsInfo values('20007','洗面奶',68,79,'30007');
-insert into goodsInfo values('20008','椅子',46,90,'30008');
-insert into goodsInfo values('20009','桌子',23,130,'30009');
-insert into goodsInfo values('20010','餐巾纸',1000,2,'30010');
-insert into goodsInfo values('20011','扫把',58,21,'30011');
-insert into goodsInfo values('20012','拖把',80,31,'30012');
-insert into goodsInfo values('20013','垃圾袋',599,8,'30013');
-insert into goodsInfo values('20014','牛奶',577,60,'30014');
-insert into goodsInfo values('20015','牛肉粒',356,15,'30015');
-insert into goodsInfo values('20016','果冻',899,3,'30016');
-insert into goodsInfo values('20017','巧克力',700,13,'30017');
-insert into goodsInfo values('20018','香肠',356,4,'30018');
-insert into goodsInfo values('20019','泡面',689,6,'30019');
-insert into goodsInfo values('20020','柜子',45,70,'30020');
-insert into goodsInfo values('20021','洗衣机',34,1300,'30021');
-insert into goodsInfo values('20022','电冰箱',78,3400,'30022');
-insert into goodsInfo values('20023','消毒柜',46,3200,'30023');
-insert into goodsInfo values('20024','空调',38,4000,'30024');
-insert into goodsInfo values('20025','热水壶',390,199,'30025');
-insert into goodsInfo values('20026','热水器',470,3000,'30026');
-insert into goodsInfo values('20027','水杯',600,5,'30027');
-insert into goodsInfo values('20028','茶杯',500,3,'30028');
-insert into goodsInfo values('20029','茶壶',467,14,'30029');
-insert into goodsInfo values('20030','洗洁精',600,10,'30030');
+insert into staffinfo values('10001','sdfads','女',23,'sell');
+insert into staffinfo values('10002','sasdsd','男',22,'sell');
+insert into staffinfo values('10003','qefvdvds','女',17,'sell');
+insert into staffinfo values('10004','sdvchy','女',30,'sell');
+insert into staffinfo values('10005','modfg','男',29,'sell');
+insert into staffinfo values('10006','wevcffgb','女',37,'sell');
+insert into staffinfo values('10007','sgth','女',25,'sell');
+insert into staffinfo values('10008','werrt','女',22,'sell');
+insert into staffinfo values('10009','jmynhjy','女',17,'sell');
+insert into staffinfo values('10010','dcdcwec','女',23,'sell');
+insert into staffinfo values('10011','regtg','男',35,'sell');
+insert into staffinfo values('10012','sdctg','男',23,'sell');
+insert into staffinfo values('10013','vadfg','女',40,'sell');
+insert into staffinfo values('10014','jfgvd','男',36,'sell');
+insert into staffinfo values('10015','wefewc','女',33,'sell');
+insert into staffinfo values('10016','xcvgdf','女',31,'sell');
+insert into staffinfo values('10017','xcgvdcw','女',21,'sell');
+insert into staffinfo values('10018','qewdsx','男',23,'sell');
+insert into staffinfo values('10019','fght','女',19,'sell');
+insert into staffinfo values('10020','uyjybt','女',23,'sell');
+insert into staffinfo values('10021','acwe','男',18,'sell');
+insert into staffinfo values('10022','wcdc','女',26,'sell');
+insert into staffinfo values('10023','dxff','女',23,'root');
+insert into staffinfo values('10024','sterfc','男',23,'root');
+insert into staffinfo values('10025','asdf','女',23,'staff');
+insert into staffinfo values('10026','waerwefc','女',26,'staff');
+insert into staffinfo values('10027','cadfr','男',23,'stock');
+insert into staffinfo values('10028','asfwefw','女',20,'stock');
+insert into staffinfo values('10029','asdcver','女',27,'stock');
+insert into staffinfo values('10030','AWD','男',24,'stock');
 
-alter table goodsphoto add id int  IDENTITY(1,1) NOT NULL
 insert into goodsphoto values('30001','.\barcode\barcode1.jpg');
 insert into goodsphoto values('30002','.\barcode\barcode1.jpg');
 insert into goodsphoto values('30003','.\barcode\barcode2.jpg');
@@ -94,7 +63,24 @@ insert into goodsphoto values('30028','.\barcode\barcode1.jpg');
 insert into goodsphoto values('30029','.\barcode\barcode3.jpg');
 insert into goodsphoto values('30030','.\barcode\barcode1.jpg');
 
-alter table sellInfo add id int  IDENTITY(1,1) NOT NULL
+insert into goodsInfo values('20001','肥皂',200,'30001');
+insert into goodsInfo values('20002','脸盆',222,'30002');
+insert into goodsInfo values('20003','毛巾',249,'30003');
+insert into goodsInfo values('20004','刷子',500,'30004');
+insert into goodsInfo values('20005','畚斗',199,'30005');
+insert into goodsInfo values('20006','垃圾桶',23,'30006');
+insert into goodsInfo values('20007','洗面奶',68,'30007');
+insert into goodsInfo values('20008','椅子',46,'30008');
+insert into goodsInfo values('20009','桌子',23,'30009');
+insert into goodsInfo values('20010','餐巾纸',1000,'30010');
+insert into goodsInfo values('20011','扫把',58,'30011');
+insert into goodsInfo values('20012','拖把',80,'30012');
+insert into goodsInfo values('20013','垃圾袋',8,'30013');
+insert into goodsInfo values('20014','牛奶',60,'30014');
+insert into goodsInfo values('20015','牛肉粒',15,'30015');
+insert into goodsInfo values('20016','果冻',3,'30016');
+
+
 insert into sellInfo values('40001','2015-06-23',2,6,'20001','10001');
 insert into sellInfo values('40002','2015-05-23',2,40,'20002','10002');
 insert into sellInfo values('40003','2015-04-23',2,34,'20003','10003');
@@ -126,7 +112,7 @@ insert into sellInfo values('40028','2015-01-23',2,89,'20006','10006');
 insert into sellInfo values('40029','2015-06-18',2,10,'20007','10007');
 insert into sellInfo values('40030','2015-06-12',2,11,'20008','10008');
 
-alter table stockInfo add id int  IDENTITY(1,1) NOT NULL
+
 insert into stockInfo values('50001','2014-12-20',100,'20001','10001');
 insert into stockInfo values('50002','2014-12-19',100,'20002','10001');
 insert into stockInfo values('50003','2014-12-18',100,'20003','10001');
@@ -143,17 +129,3 @@ insert into stockInfo values('50013','2014-12-20',100,'20013','10003');
 insert into stockInfo values('50014','2014-12-19',100,'20014','10003');
 insert into stockInfo values('50015','2014-12-18',100,'20015','10003');
 insert into stockInfo values('50016','2014-12-20',100,'20016','10003');
-insert into stockInfo values('50017','2014-12-21',100,'20017','10003');
-insert into stockInfo values('50018','2014-12-22',100,'20018','10004');
-insert into stockInfo values('50019','2014-12-20',100,'20019','10004');
-insert into stockInfo values('50020','2014-12-19',100,'20020','10004');
-insert into stockInfo values('50021','2014-12-18',100,'20021','10004');
-insert into stockInfo values('50022','2014-12-20',100,'20022','10004');
-insert into stockInfo values('50023','2014-12-21',100,'20023','10004');
-insert into stockInfo values('50024','2014-12-22',100,'20024','10005');
-insert into stockInfo values('50025','2014-12-20',100,'20025','10005');
-insert into stockInfo values('50026','2014-12-19',100,'20026','10005');
-insert into stockInfo values('50027','2014-12-18',100,'20027','10005');
-insert into stockInfo values('50028','2014-12-20',100,'20028','10005');
-insert into stockInfo values('50029','2014-12-21',100,'20029','10005');
-insert into stockInfo values('50030','2014-12-22',100,'20030','10002');

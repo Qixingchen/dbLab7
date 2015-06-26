@@ -1,3 +1,6 @@
+Use [Goods]
+GO
+
 create trigger T_inventory on stockInfo
 for insert,update
 as
@@ -12,17 +15,13 @@ begin
 			select goodsid,goodsname,@goodscount from goodsInfo where goodsid=@goodsid;
 end;
 
-
 create trigger T_inventory_2 on sellInfo
 for insert,update
 as
 begin
-	declare @goodsid varchar(10),@sellcount smallint;
-	set @goodsid=(select goodsid from inserted);
-	set @sellcount=(select sellcount from inserted);
-	update inventoryInfo set reserve=reserve-@sellcount where goodsid=@goodsid;
+	declare @goodsid2 varchar(10),@sellcount2 smallint;
+	set @goodsid2=(select goodsid from inserted);
+	set @sellcount2=(select sellcount from inserted);
+	update inventoryInfo set reserve=reserve-@sellcount2 where goodsid=@goodsid2;
 end;
 
-
-drop trigger T_inventory
-drop trigger T_inventory_2
