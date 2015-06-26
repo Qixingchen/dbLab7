@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -17,7 +10,6 @@ namespace lab7
         {
             InitializeComponent();
         }
-
         private void SellEnter_Load(object sender, EventArgs e)
         {
 
@@ -31,7 +23,6 @@ namespace lab7
             comboBox2.DataSource = goods_methods.Query(SQLString1).Tables[0];
 
         }
-
         public void setValue(string sellid, DateTime selltime, string sellcount, string payment, string goodsid, string staffid)
         {
             textBox1.Text = sellid;
@@ -63,7 +54,5 @@ namespace lab7
                 goods_methods.ExecuteSql(SQLString2);
             }
         }
-
-
     }
 }

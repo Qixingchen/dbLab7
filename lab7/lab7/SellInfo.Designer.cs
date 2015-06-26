@@ -1,11 +1,14 @@
-﻿namespace lab7
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace lab7
 {
     partial class SellInfo
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -129,12 +132,20 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button update;
-        private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.TextBox Textbox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+
+        private Label label1;
+        private GroupBox groupBox1;
+        private Button delete;
+        private Button update;
+        private Button Search;
+        private TextBox Textbox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn 销售ID;
+        private DataGridViewTextBoxColumn 日期;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn 商品ID;
+        private DataGridViewTextBoxColumn Column3;
     }
 }

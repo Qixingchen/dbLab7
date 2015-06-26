@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 namespace lab7
@@ -10,7 +6,7 @@ namespace lab7
     class getSqlConnection
     {
         #region   代码中用到的变量
-        private static string strConnection ;
+        private static string strConnection;
         private static SqlConnection getConnect;  //声明链接对象
         private static String mUserName;
         private static String mUserPwd;
@@ -49,14 +45,15 @@ namespace lab7
             return GetConnect(mUserName, mUserPwd);
         }
 
-        public SqlConnection GetConnect(string userName,string userPwd)
+        public SqlConnection GetConnect(string userName, string userPwd)
         {
             mUserName = userName;
             mUserPwd = userPwd;
 
-            strConnection = "server=mac-PC\\SQLEXPRESS;database=Goods;uid= " + userName + " ;pwd= "+ userPwd +";Trusted_Connection=SSPI";
+            strConnection = "server=mac-PC\\SQLEXPRESS;database=Goods;uid= " + userName + " ;pwd= " + userPwd + ";Trusted_Connection=SSPI";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
-            try { 
+            try
+            {
                 getConnect.Open(); //打开数据库
                 return getConnect;
             }

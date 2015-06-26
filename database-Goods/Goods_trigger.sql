@@ -1,0 +1,28 @@
+create trigger T_inventory on stockInfo
+for insert,update
+as
+begin
+	declare @goodsid varchar(10),@goodscount smallint;
+	set @goodsid=(select goodsid from inserted);
+	set @goodscount=(select goodscount from inserted);
+	if exists(select * from inventoryInfo where goodsid=@goodsid)
+		update inventoryInfo set reserve=reserve+@goodscount where goodsid=@goodsid;
+	else
+		insert into inventoryInfo 
+			select goodsid,goodsname,@goodscount from goodsInfo where goodsid=@goodsid;
+end;
+
+
+create trigger T_inventory_2 on sellInfo
+for insert,update
+as
+begin
+	declare @goodsid varchar(10),@sellcount smallint;
+	set @goodsid=(select goodsid from inserted);
+	set @sellcount=(select sellcount from inserted);
+	update inventoryInfo set reserve=reserve-@sellcount where goodsid=@goodsid;
+end;
+
+
+drop trigger T_inventory
+drop trigger T_inventory_2

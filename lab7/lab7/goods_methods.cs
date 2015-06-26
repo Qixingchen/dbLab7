@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
 using System.Data;
-using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace lab7
 {
@@ -60,7 +56,30 @@ namespace lab7
 
         public DataTable getInventoryInfo()
         {
-           String sqlString = "select goodsname as '商品名称',goodscount as '库存数量' from goodsInfo";
+            String sqlString = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
+            return QueryDataAdapt(sqlString);
+        }
+
+        #endregion
+
+        #region 商品清单查询
+
+        public DataTable getGoodsInfo(int which,string key)
+        {
+            String sqlString = string.Empty;
+            if(which == 1)
+            {
+                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量'," 
+                    + "goodsprice as '单价',photourl as '商品图片url'from "
+                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
+            }
+            else if(which == 2)
+            {
+                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量',"
+                    + "goodsprice as '单价',photourl as '商品图片url'from "
+                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid "
+                    +"and goodsname like '%" + key + "%' ";
+            }
             return QueryDataAdapt(sqlString);
         }
 
@@ -79,10 +98,11 @@ namespace lab7
                 {
                     try
                     {
+
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         connection.Close();
                         throw e;
@@ -105,7 +125,7 @@ namespace lab7
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlException e)
             {
                 throw e;
             }
@@ -127,7 +147,7 @@ namespace lab7
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (SqlException ex)
                 {
                     throw new Exception(ex.Message);
                 }
@@ -147,7 +167,7 @@ namespace lab7
 
             // Populate a new data table and bind it to the BindingSource.
             DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            table.Locale = CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             return table;
         }
