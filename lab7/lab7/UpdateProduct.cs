@@ -17,11 +17,10 @@ namespace lab7
         {
             InitializeComponent();
         }
-        public void setValue(string goodsid1, string goodsname, string goodscount, string goodsprice, string goodsphotoid, string photourl)
+        public void setValue(string goodsid1, string goodsname, string goodsprice, string goodsphotoid, string photourl)
         {
             textBox1.Text = goodsid1;
             textBox2.Text = goodsname;
-            textBox3.Text = goodscount;
             textBox4.Text = goodsprice;
             comboBox1.Text = goodsphotoid;
             isUpdate = true;
@@ -37,12 +36,15 @@ namespace lab7
             string goodsphotoid = comboBox1.Text;
             if (isUpdate)
             {
-                string SQLString2 = "update goodsInfo set goodsid=" + goodsid1 + ", goodsname = '" + goodsname + "', goodscount = " + goodscount + ",goodsprice = " + goodsprice + ", goodsphotoid =" + goodsphotoid + "where goodsid=" + goodsid1;
+                string SQLString2 = "update goodsInfo set goodsid=" + goodsid1 + ", goodsname = '" 
+                    + goodsname + "',goodsprice = " 
+                    + goodsprice + ", goodsphotoid =" + goodsphotoid + " where goodsid=" + goodsid1;
                 goods_methods.ExecuteSql(SQLString2);
             }
             else
             {
-                string SQLString4 = "insert into  goodsInfo values('" + goodsid1 + "','" + goodsname + "','" + goodscount + "','" + goodsprice + "','" + goodsphotoid + "')";
+                string SQLString4 = "insert into  goodsInfo values('" + goodsid1 + "','" + goodsname 
+                    + "','" + goodsprice + "','" + goodsphotoid + "')";
                 goods_methods.ExecuteSql(SQLString4);
             }
         }

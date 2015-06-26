@@ -86,16 +86,16 @@ namespace lab7
             String sqlString = string.Empty;
             if(which == 1)
             {
-                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量'," 
-                    + "goodsprice as '单价',photourl as '商品图片url'from "
-                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
+                sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
+                    goodsprice as '单价',photourl as '商品图片url'from 
+                    goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
             }
             else if(which == 2)
             {
-                sqlString = "select goodsid as '商品编号',goodsname as '商品名称',goodscount as '商品数量',"
-                    + "goodsprice as '单价',photourl as '商品图片url'from "
-                    + "goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid "
-                    +"and goodsname like '%" + key + "%' ";
+                sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
+                   goodsprice as '单价',photourl as '商品图片url'from 
+                    goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid 
+                    and goodsname like '%" + key + "%' ";
             }
             return QueryDataAdapt(sqlString);
         }
@@ -218,12 +218,17 @@ namespace lab7
 
         public DataTable querySellInfo(String queryName)
         {
-            String sqlString = "select sellid as '销售ID',selltime as '销售日期',sellcount as '销售数量',payment as '销售价格',goodsid as '商品ID',staffid as '销售员ID' from sellInfo where sellid=" + queryName;
+            String sqlString = @"select sellid as '销售ID',selltime as '销售日期',
+            sellcount as '销售数量',payment as '销售价格',goodsid as '商品ID',
+            staffid as '销售员ID' from sellInfo where sellid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
         public DataTable queryProductInfo(String queryName)
         {
-            String sqlString = "select goodsid as '商品ID',goodsname as '商品名称',goodscount as '商品数量',goodsprice as '商品价格',goodsphotoid as '商品照片ID',(select photourl from goodsphoto where goodsphotoid = goodsInfo.goodsphotoid) as '商品照片URL' from goodsInfo where goodsid=" + queryName;
+            String sqlString = @"select goodsid as '商品ID',goodsname as '商品名称',
+            goodsprice as '商品价格',goodsphotoid as '商品照片ID',
+            (select photourl from goodsphoto where goodsphotoid = goodsInfo.goodsphotoid) as '商品照片URL' 
+            from goodsInfo where goodsid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
     }

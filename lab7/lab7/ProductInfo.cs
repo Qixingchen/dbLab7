@@ -27,18 +27,17 @@ namespace lab7
             string SQLString = "select * from goodsInfo where goodsid=" + goodsid;
             SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
             reader.Read();
-            string goodsid1 = reader.GetString(1);
-            string goodsname = reader.GetString(2);
-            string goodscount = reader.GetInt16(3).ToString();
-            string goodsprice = reader.GetInt16(4).ToString();
-            string goodsphotoid = reader.GetString(5);
+            string goodsid1 = reader.GetString(0);
+            string goodsname = reader.GetString(1);
+            string goodsprice = reader.GetSqlMoney(2).ToString();
+            string goodsphotoid = reader.GetString(3);
             reader.Close();
             string SQLString1 = "select * from goodsphoto where goodsphotoid=" + goodsphotoid;
             SqlDataReader reader1 = goods_methods.ExecuteReader(SQLString1);
             reader1.Read();
-            string photourl = reader1.GetString(2);
+            string photourl = reader1.GetString(1);
             reader1.Close();
-            updateproduct.setValue(goodsid1, goodsname, goodscount, goodsprice, goodsphotoid, photourl);
+            updateproduct.setValue(goodsid1, goodsname, goodsprice, goodsphotoid, photourl);
             updateproduct.ShowDialog();
         }
 
