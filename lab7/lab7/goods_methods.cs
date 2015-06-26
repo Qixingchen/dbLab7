@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
 using System.Data;
-using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace lab7
 {
@@ -78,11 +74,13 @@ namespace lab7
                 using (SqlCommand cmd = new SqlCommand(SQLString, connection))
                 {
                     try
-                    {                      
+
+                    {                     
+
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         connection.Close();
                         throw e;
@@ -102,11 +100,11 @@ namespace lab7
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
             {
-                
+
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlException e)
             {
                 throw e;
             }
@@ -125,11 +123,11 @@ namespace lab7
                 DataSet ds = new DataSet();
                 try
                 {
-                 
+
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (SqlException ex)
                 {
                     throw new Exception(ex.Message);
                 }
@@ -149,7 +147,7 @@ namespace lab7
 
             // Populate a new data table and bind it to the BindingSource.
             DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            table.Locale = CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             return table;
         }
