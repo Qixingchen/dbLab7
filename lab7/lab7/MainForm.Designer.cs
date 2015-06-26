@@ -77,6 +77,7 @@ namespace lab7
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            this.button1 = new Button();
             // 
             // groupBox1
             // 
@@ -304,7 +305,6 @@ namespace lab7
             // MainForm
             // 
             this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(485, 447);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -359,6 +359,7 @@ namespace lab7
         private Label label1;
         private Label label4;
         private Label securityLabel;
+        private Button button1;
     }
 }
 

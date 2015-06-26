@@ -63,7 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbHelperSQL.cs" />
     <Compile Include="GoodsInsert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +74,7 @@
     </Compile>
     <Compile Include="GoodsList.Designer.cs">
       <DependentUpon>GoodsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup.cs">
       <SubType>Form</SubType>
     </Compile>
