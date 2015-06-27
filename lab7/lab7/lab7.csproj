@@ -102,6 +102,12 @@
     <Compile Include="SellInfo.Designer.cs">
       <DependentUpon>SellInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff_Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Sell.Designer.cs">
+      <DependentUpon>Staff_Sell.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="SellInfo.resx">
       <DependentUpon>SellInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Sell.resx">
+      <DependentUpon>Staff_Sell.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
