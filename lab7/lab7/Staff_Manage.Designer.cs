@@ -28,56 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Add = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.Update = new System.Windows.Forms.Button();
+            this.Staff_Info_Manage = new System.Windows.Forms.DataGridView();
+            this.Staff_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Staff_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Staff_Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Staff_Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Staff_Info_Manage)).BeginInit();
             this.SuspendLayout();
             // 
-            // Add
+            // Staff_Info_Manage
             // 
-            this.Add.Location = new System.Drawing.Point(86, 40);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(100, 30);
-            this.Add.TabIndex = 0;
-            this.Add.Text = "添加员工信息";
-            this.Add.UseVisualStyleBackColor = true;
+            this.Staff_Info_Manage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Staff_Info_Manage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Staff_ID,
+            this.Staff_Name,
+            this.Staff_Sex,
+            this.Staff_Age,
+            this.delete,
+            this.Update});
+            this.Staff_Info_Manage.Location = new System.Drawing.Point(28, 44);
+            this.Staff_Info_Manage.Name = "Staff_Info_Manage";
+            this.Staff_Info_Manage.RowTemplate.Height = 23;
+            this.Staff_Info_Manage.Size = new System.Drawing.Size(684, 330);
+            this.Staff_Info_Manage.TabIndex = 0;
+            this.Staff_Info_Manage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellContentClick);
             // 
-            // Delete
+            // Staff_ID
             // 
-            this.Delete.Location = new System.Drawing.Point(86, 107);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(100, 30);
-            this.Delete.TabIndex = 1;
-            this.Delete.Text = "删除员工信息";
-            this.Delete.UseVisualStyleBackColor = true;
+            this.Staff_ID.HeaderText = "ID";
+            this.Staff_ID.Name = "Staff_ID";
+            this.Staff_ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Staff_Name
+            // 
+            this.Staff_Name.HeaderText = "员工姓名";
+            this.Staff_Name.Name = "Staff_Name";
+            // 
+            // Staff_Sex
+            // 
+            this.Staff_Sex.HeaderText = "员工性别";
+            this.Staff_Sex.Name = "Staff_Sex";
+            // 
+            // Staff_Age
+            // 
+            this.Staff_Age.HeaderText = "员工年龄";
+            this.Staff_Age.Name = "Staff_Age";
+            // 
+            // delete
+            // 
+            this.delete.DataPropertyName = "删除";
+            this.delete.FillWeight = 80F;
+            this.delete.HeaderText = "操作";
+            this.delete.Name = "delete";
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Text = "删除";
+            this.delete.UseColumnTextForButtonValue = true;
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(86, 182);
+            this.Update.HeaderText = "编辑";
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(100, 30);
-            this.Update.TabIndex = 2;
-            this.Update.Text = "更改员工信息";
-            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Text = "编辑";
+            this.Update.UseColumnTextForButtonValue = true;
             // 
             // Staff_Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.Update);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Add);
+            this.ClientSize = new System.Drawing.Size(738, 386);
+            this.Controls.Add(this.Staff_Info_Manage);
             this.Name = "Staff_Manage";
             this.Text = "Staff_Manage";
+            this.Load += new System.EventHandler(this.Staff_Manage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Staff_Info_Manage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button Add;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.DataGridView Staff_Info_Manage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Age;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Update;
+
     }
 }

@@ -16,5 +16,15 @@ namespace lab7
         {
             InitializeComponent();
         }
+
+        private void Staff_Manage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Info_Manage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
