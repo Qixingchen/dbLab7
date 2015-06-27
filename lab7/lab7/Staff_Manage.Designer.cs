@@ -33,9 +33,9 @@
             this.Staff_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Staff_Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Staff_Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Staff_Info_Manage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,13 +46,11 @@
             this.Staff_ID,
             this.Staff_Name,
             this.Staff_Sex,
-            this.Staff_Age,
-            this.delete,
-            this.Update});
+            this.Staff_Age});
             this.Staff_Info_Manage.Location = new System.Drawing.Point(28, 44);
             this.Staff_Info_Manage.Name = "Staff_Info_Manage";
             this.Staff_Info_Manage.RowTemplate.Height = 23;
-            this.Staff_Info_Manage.Size = new System.Drawing.Size(684, 330);
+            this.Staff_Info_Manage.Size = new System.Drawing.Size(501, 259);
             this.Staff_Info_Manage.TabIndex = 0;
             this.Staff_Info_Manage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellContentClick);
             // 
@@ -77,40 +75,41 @@
             this.Staff_Age.HeaderText = "员工年龄";
             this.Staff_Age.Name = "Staff_Age";
             // 
-            // delete
+            // Add
             // 
-            this.delete.DataPropertyName = "删除";
-            this.delete.FillWeight = 80F;
-            this.delete.HeaderText = "操作";
-            this.delete.Name = "delete";
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Text = "删除";
-            this.delete.UseColumnTextForButtonValue = true;
+            this.Add.Location = new System.Drawing.Point(44, 336);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 1;
+            this.Add.Text = "增 加";
+            this.Add.UseVisualStyleBackColor = true;
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(240, 336);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(75, 23);
+            this.Delete.TabIndex = 2;
+            this.Delete.Text = "删 除";
+            this.Delete.UseVisualStyleBackColor = true;
             // 
             // Update
             // 
-            this.Update.HeaderText = "编辑";
+            this.Update.Location = new System.Drawing.Point(429, 336);
             this.Update.Name = "Update";
-            this.Update.Text = "编辑";
-            this.Update.UseColumnTextForButtonValue = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("仿宋_GB2312", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(325, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "添   加";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Update.Size = new System.Drawing.Size(75, 23);
+            this.Update.TabIndex = 3;
+            this.Update.Text = "修 改";
+            this.Update.UseVisualStyleBackColor = true;
             // 
             // Staff_Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 386);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(553, 386);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.Staff_Info_Manage);
             this.Name = "Staff_Manage";
             this.Text = "Staff_Manage";
@@ -127,9 +126,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Age;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private System.Windows.Forms.DataGridViewButtonColumn Update;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Update;
 
     }
 }
