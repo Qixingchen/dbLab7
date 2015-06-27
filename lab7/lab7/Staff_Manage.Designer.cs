@@ -35,6 +35,7 @@
             this.Staff_Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Staff_Info_Manage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             this.Update.Text = "编辑";
             this.Update.UseColumnTextForButtonValue = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("仿宋_GB2312", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(325, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 34);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "添   加";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Staff_Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 386);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Staff_Info_Manage);
             this.Name = "Staff_Manage";
             this.Text = "Staff_Manage";
@@ -117,6 +129,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Age;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
+        private System.Windows.Forms.Button button1;
 
     }
 }
