@@ -158,7 +158,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
 
         #endregion
 
-        #region  执行简单SQL语句
+    #region  执行简单SQL语句
 
         #region  执行SQL语句，返回影响的记录数
 
@@ -304,6 +304,8 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             from goodsInfo where goodsid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
+        #endregion
+
         #region 查询进货信息表
         public DataTable queryPurchaseInfo(String queryName)
         {
