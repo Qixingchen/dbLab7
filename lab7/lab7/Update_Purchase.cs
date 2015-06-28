@@ -46,10 +46,17 @@ namespace lab7
             string staffid = textBox5.Text;
             if (isUpdate)
             {
-                string SQLString1 = "update stockInfo set stocksid=" + stockid + ", stocktime = "
-                    + stocktime + ",goodscount = "
-                    + goodscount + ", goodsid =" + goodsid + ",staffid = " + staffid +" where stockid =" + stockid;
+                string SQLString1 = "update stockInfo set stockid='" + stockid + "', stocktime = '"
+                    + stocktime + "',goodscount = "
+                    + goodscount + ", goodsid ='" + goodsid + "',staffid = '" + staffid +"' where stockid =" + stockid;
                 goods_methods.ExecuteSql(SQLString1);
+                string string1 = "您所更新的数据已更新成功！";
+                string string2 = "更新成功";
+                DialogResult result = MessageBox.Show(string1,string2, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if(result == DialogResult.OK)
+                {
+                    this.Hide();
+                }
             }
             else
             {

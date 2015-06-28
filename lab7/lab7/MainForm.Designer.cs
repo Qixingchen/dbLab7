@@ -197,6 +197,7 @@ namespace lab7
             this.StaffInfoActBtn.TabIndex = 1;
             this.StaffInfoActBtn.Text = "员工信息管理";
             this.StaffInfoActBtn.UseVisualStyleBackColor = true;
+            this.StaffInfoActBtn.Click += new System.EventHandler(this.StaffInfoActBtn_Click);
             // 
             // groupBox3
             // 

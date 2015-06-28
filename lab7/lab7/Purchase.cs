@@ -23,6 +23,7 @@ namespace lab7
         #region 查询
         private void button1_Click(object sender, EventArgs e)
         {
+           
             bindingSource.DataSource = goods_methods.getInstance().queryPurchaseInfo(textBox1.Text);
         }
         #endregion

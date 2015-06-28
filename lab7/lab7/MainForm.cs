@@ -125,5 +125,15 @@ namespace lab7
             purchase.ShowDialog();
         }
         #endregion
+
+        #region 员工信息管理
+        private void StaffInfoActBtn_Click(object sender, EventArgs e)
+        {
+            Staff_Manage manage = new Staff_Manage();
+            manage.Owner = this;
+            manage.ShowDialog();
+        }
+        #endregion
+
     }
 }
