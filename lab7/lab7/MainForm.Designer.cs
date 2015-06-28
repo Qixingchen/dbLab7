@@ -256,7 +256,7 @@ namespace lab7
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
-            // UserName
+            // userNameString
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -310,25 +310,6 @@ namespace lab7
 
         #endregion
 
-        /*private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button SellInfoInsertBtn;
-        private System.Windows.Forms.Button StoreInfoInsertBtn;
-        private System.Windows.Forms.Button StaffInfoInsertBtn;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button InventorySelectBtn;
-        private System.Windows.Forms.Button GoodsInfoActBtn;
-        private System.Windows.Forms.Button SellInfoActBtn;
-        private System.Windows.Forms.Button StoreInfoActBtn;
-        private System.Windows.Forms.Button StaffInfoActBtn;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Label UserName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label securityLabel;
-        private System.Windows.Forms.Button button1;*/
         private GroupBox groupBox1;
         private Button SellInfoInsertBtn;
         private Button StoreInfoInsertBtn;
