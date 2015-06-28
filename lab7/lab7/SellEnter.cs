@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace lab7
@@ -16,11 +17,24 @@ namespace lab7
             string SQLString = "select goodsid as sid from goodsInfo";
             comboBox1.DisplayMember = "sid";
             comboBox1.ValueMember = "sid";
-            comboBox1.DataSource = goods_methods.Query(SQLString).Tables[0];
-            string SQLString1 = "select staffid as sid1 from staffInfo";
+            DataSet dataset = goods_methods.Query(SQLString);
+            if (dataset==null)
+            {
+                Hide();
+                return;
+            }
+            comboBox1.DataSource = dataset.Tables[0];
+            
+            SQLString = "select staffid as sid1 from staffInfo";
             comboBox2.DisplayMember = "sid1";
             comboBox2.ValueMember = "sid1";
-            comboBox2.DataSource = goods_methods.Query(SQLString1).Tables[0];
+            dataset = goods_methods.Query(SQLString);
+            if (dataset == null)
+            {
+                this.Hide();
+                return;
+            }
+            comboBox2.DataSource = dataset.Tables[0];
 
         }
         public void setValue(string sellid, DateTime selltime, string sellcount, string payment, string goodsid, string staffid)

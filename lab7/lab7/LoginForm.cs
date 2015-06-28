@@ -29,7 +29,9 @@ namespace lab7
                 == true)
             {
                 MainForm form = new MainForm();
-                form.Something = userName.Text.ToString();
+                form.UserType = goods_methods.getInstance().getUserType(userName.Text);
+                form.UserNameString = userName.Text;
+                
                 form.Show();
                 this.Hide();
             }

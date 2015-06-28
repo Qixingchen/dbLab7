@@ -38,33 +38,27 @@ namespace lab7
             this.Search = new System.Windows.Forms.Button();
             this.Textbox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.销售ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.delete);
             this.groupBox1.Controls.Add(this.update);
             this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.Textbox1);
             this.groupBox1.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(28, 13);
+            this.groupBox1.Location = new System.Drawing.Point(11, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(503, 68);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "销售信息管理";
             // 
             // label1
             // 
@@ -78,10 +72,10 @@ namespace lab7
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(394, 27);
+            this.delete.Location = new System.Drawing.Point(415, 26);
             this.delete.Margin = new System.Windows.Forms.Padding(2);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(82, 24);
+            this.delete.Size = new System.Drawing.Size(59, 24);
             this.delete.TabIndex = 4;
             this.delete.Text = "删除";
             this.delete.UseVisualStyleBackColor = true;
@@ -89,10 +83,10 @@ namespace lab7
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(280, 27);
+            this.update.Location = new System.Drawing.Point(326, 25);
             this.update.Margin = new System.Windows.Forms.Padding(2);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(84, 24);
+            this.update.Size = new System.Drawing.Size(57, 24);
             this.update.TabIndex = 3;
             this.update.Text = "编辑";
             this.update.UseVisualStyleBackColor = true;
@@ -100,10 +94,10 @@ namespace lab7
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(168, 27);
+            this.Search.Location = new System.Drawing.Point(248, 25);
             this.Search.Margin = new System.Windows.Forms.Padding(2);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(83, 24);
+            this.Search.Size = new System.Drawing.Size(53, 24);
             this.Search.TabIndex = 2;
             this.Search.Text = "查询";
             this.Search.UseVisualStyleBackColor = true;
@@ -111,68 +105,44 @@ namespace lab7
             // 
             // Textbox1
             // 
-            this.Textbox1.Location = new System.Drawing.Point(9, 27);
+            this.Textbox1.Location = new System.Drawing.Point(80, 27);
             this.Textbox1.Margin = new System.Windows.Forms.Padding(2);
             this.Textbox1.Name = "Textbox1";
-            this.Textbox1.Size = new System.Drawing.Size(139, 21);
+            this.Textbox1.Size = new System.Drawing.Size(110, 21);
             this.Textbox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.销售ID,
-            this.日期,
-            this.Column1,
-            this.Column2,
-            this.商品ID,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(37, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 97);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(503, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(503, 248);
             this.dataGridView1.TabIndex = 1;
             // 
-            // id
+            // label2
             // 
-            this.id.Name = "id";
-            // 
-            // 销售ID
-            // 
-            this.销售ID.Name = "销售ID";
-            // 
-            // 日期
-            // 
-            this.日期.Name = "日期";
-            // 
-            // Column1
-            // 
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.Name = "Column2";
-            // 
-            // 商品ID
-            // 
-            this.商品ID.Name = "商品ID";
-            // 
-            // Column3
-            // 
-            this.Column3.Name = "Column3";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(5, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "关键字";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // SellInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 313);
+            this.ClientSize = new System.Drawing.Size(527, 356);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SellInfo";
-            this.Text = "SellInfo";
+            this.Text = "销售信息管理";
             this.Load += new System.EventHandler(this.SellInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -198,5 +168,6 @@ namespace lab7
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn 商品ID;
         private DataGridViewTextBoxColumn Column3;
+        private Label label2;
     }
 }

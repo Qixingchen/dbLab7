@@ -32,44 +32,59 @@ namespace lab7
         private void InitializeComponent()
         {
             this.selectName = new System.Windows.Forms.TextBox();
-            this.inquire = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.inquire = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // selectName
             // 
-            this.selectName.Location = new System.Drawing.Point(47, 12);
+            this.selectName.Location = new System.Drawing.Point(118, 12);
             this.selectName.Name = "selectName";
             this.selectName.Size = new System.Drawing.Size(100, 21);
             this.selectName.TabIndex = 0;
             // 
-            // inquire
-            // 
-            this.inquire.Location = new System.Drawing.Point(169, 10);
-            this.inquire.Name = "inquire";
-            this.inquire.Size = new System.Drawing.Size(75, 23);
-            this.inquire.TabIndex = 1;
-            this.inquire.Text = "查询";
-            this.inquire.UseVisualStyleBackColor = true;
-            this.inquire.Click += new System.EventHandler(this.inquire_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 62);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(654, 326);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.Location = new System.Drawing.Point(44, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "关键字";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // inquire
+            // 
+            this.inquire.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.inquire.Location = new System.Drawing.Point(244, 9);
+            this.inquire.Name = "inquire";
+            this.inquire.Size = new System.Drawing.Size(60, 25);
+            this.inquire.TabIndex = 16;
+            this.inquire.Text = "查询";
+            this.inquire.UseVisualStyleBackColor = true;
+            this.inquire.Click += new System.EventHandler(this.inquire_Click);
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 400);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.inquire);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.selectName);
             this.Name = "Inventory";
             this.Text = "Inventory";
@@ -83,7 +98,8 @@ namespace lab7
         #endregion
 
         private TextBox selectName;
-        private Button inquire;
         private DataGridView dataGridView1;
+        private Label label1;
+        private Button inquire;
     }
 }

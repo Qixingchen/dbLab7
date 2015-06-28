@@ -75,6 +75,12 @@
     <Compile Include="GoodsList.Designer.cs">
       <DependentUpon>GoodsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="photoUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="photoUploadForm.Designer.cs">
+      <DependentUpon>photoUploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +107,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductInfo.Designer.cs">
-      <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,11 +185,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="photoUploadForm.resx">
+      <DependentUpon>photoUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup.resx">
       <DependentUpon>Popup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductInfo.resx">
-      <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -215,9 +215,6 @@
     <EmbeddedResource Include="Staff_Sell.resx">
       <DependentUpon>Staff_Sell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateProduct.resx">
-      <DependentUpon>UpdateProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StockEnter.resx">
       <DependentUpon>StockEnter.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Staff.resx">
       <DependentUpon>Update_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEnter.resx">
+      <DependentUpon>UserEnter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

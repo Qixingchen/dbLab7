@@ -37,6 +37,7 @@ GRANT insert,select,update,delete ON goodsinfo TO rootMa
 GRANT insert,select,update,delete ON goodsphoto TO rootMa
 GRANT insert,select,update,delete ON sellinfo TO rootMa
 GRANT insert,select,update,delete ON loginuser TO rootMa
+GRANT insert,select,update,delete ON inventoryInfo TO rootMa
 
 --adminMa
 GRANT select ON staffinfo TO adminMa
