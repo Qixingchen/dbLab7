@@ -27,11 +27,11 @@ namespace lab7
             string SQLString = "select * from sellInfo where sellid=" + sellid;
             SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
             reader.Read();
-            DateTime selltime = reader.GetDateTime(2);
-            string sellcount = reader.GetInt16(3).ToString();
-            string payment = reader.GetInt16(4).ToString();
-            string goodsid = reader.GetString(5);
-            string staffid = reader.GetString(6);
+            DateTime selltime = reader.GetDateTime(1);
+            string sellcount = reader.GetInt16(2).ToString();
+            string payment = reader.GetInt16(3).ToString();
+            string goodsid = reader.GetString(4);
+            string staffid = reader.GetString(5);
             reader.Close();
             sells.setValue(sellid, selltime, sellcount, payment, goodsid, staffid);
             sells.ShowDialog();
@@ -47,7 +47,7 @@ namespace lab7
             switch (result)
             {
                 case DialogResult.OK:
-                    //删除操作      
+//删除操作
                     string SQLString = "delete from sellInfo where sellid=" + sellid;
                     goods_methods.ExecuteSql(SQLString);
                     break;
@@ -56,8 +56,7 @@ namespace lab7
 
         private void SellInfo_Load(object sender, EventArgs e)
         {
-        }
-        
 
+        }
     }
 }
