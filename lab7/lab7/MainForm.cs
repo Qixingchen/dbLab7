@@ -104,6 +104,7 @@ namespace lab7
         {
             GoodsList goodslist = new GoodsList();
             goodslist.Owner = this;
+            goodslist.flush();
             goodslist.ShowDialog();
         }
         #endregion

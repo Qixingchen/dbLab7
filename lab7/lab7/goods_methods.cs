@@ -87,13 +87,13 @@ namespace lab7
             if(which == 1)
             {
                 sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
-                    goodsprice as '单价',photourl as '商品图片url'from 
+                    goodsprice as '单价',goodsphoto.goodsphotoid as '图片编号',photourl as '商品图片url'from 
                     goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
             }
             else if(which == 2)
             {
                 sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
-                   goodsprice as '单价',photourl as '商品图片url'from 
+                   goodsprice as '单价',goodsphoto.goodsphotoid as '图片编号',photourl as '商品图片url'from 
                     goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid 
                     and goodsname like '%" + key + "%' ";
             }

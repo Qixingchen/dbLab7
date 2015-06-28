@@ -35,12 +35,15 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.UserName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.goodsname_key = new System.Windows.Forms.TextBox();
             this.GoodsInsertBtn = new System.Windows.Forms.Button();
             this.GoodsDeleteBtn = new System.Windows.Forms.Button();
             this.GoodsEditBtn = new System.Windows.Forms.Button();
             this.GoodsSelectBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.goodsname_key = new System.Windows.Forms.TextBox();
+            this.row_text = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,6 +86,7 @@
             this.goods_dataGridView.RowTemplate.Height = 23;
             this.goods_dataGridView.Size = new System.Drawing.Size(544, 355);
             this.goods_dataGridView.TabIndex = 0;
+            this.goods_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_dataGridView_CellContentClick);
             // 
             // groupBox3
             // 
@@ -117,25 +121,6 @@
             this.groupBox1.Size = new System.Drawing.Size(557, 64);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 18);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "商品名";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // goodsname_key
-            // 
-            this.goodsname_key.Location = new System.Drawing.Point(62, 22);
-            this.goodsname_key.Name = "goodsname_key";
-            this.goodsname_key.Size = new System.Drawing.Size(133, 21);
-            this.goodsname_key.TabIndex = 4;
             // 
             // GoodsInsertBtn
             // 
@@ -181,11 +166,63 @@
             this.GoodsSelectBtn.UseVisualStyleBackColor = true;
             this.GoodsSelectBtn.Click += new System.EventHandler(this.GoodsSelectBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 18);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "商品名";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // goodsname_key
+            // 
+            this.goodsname_key.Location = new System.Drawing.Point(62, 22);
+            this.goodsname_key.Name = "goodsname_key";
+            this.goodsname_key.Size = new System.Drawing.Size(133, 21);
+            this.goodsname_key.TabIndex = 4;
+            // 
+            // row_text
+            // 
+            this.row_text.Location = new System.Drawing.Point(68, 119);
+            this.row_text.Name = "row_text";
+            this.row_text.Size = new System.Drawing.Size(49, 21);
+            this.row_text.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(6, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "选中行";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshBtn.Location = new System.Drawing.Point(74, 160);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(43, 25);
+            this.refreshBtn.TabIndex = 17;
+            this.refreshBtn.Text = "刷新";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // GoodsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 453);
+            this.Controls.Add(this.refreshBtn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.row_text);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.UserName);
             this.Controls.Add(this.groupBox3);
@@ -194,7 +231,6 @@
             this.Controls.Add(this.ImportBtn);
             this.Name = "GoodsList";
             this.Text = "商品清单";
-            this.Load += new System.EventHandler(this.GoodsList_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.goods_dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -219,5 +255,8 @@
         private System.Windows.Forms.Button GoodsDeleteBtn;
         private System.Windows.Forms.Button GoodsEditBtn;
         private System.Windows.Forms.Button GoodsSelectBtn;
+        private System.Windows.Forms.TextBox row_text;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
