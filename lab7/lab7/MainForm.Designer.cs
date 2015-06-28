@@ -59,21 +59,20 @@ namespace lab7
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.staffInfoBtn);
-            this.groupBox1.Controls.Add(this.SellInfoInsertBtn);
-            this.groupBox1.Controls.Add(this.StoreInfoInsertBtn);
+            this.groupBox1.Controls.Add(this.securityLabel);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox1.Location = new System.Drawing.Point(169, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 166);
+            this.groupBox1.Size = new System.Drawing.Size(421, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "信息录入";
+            this.groupBox1.Text = "信息提示";
             // 
             // staffInfoBtn
             // 
             this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.staffInfoBtn.Location = new System.Drawing.Point(24, 42);
+            this.staffInfoBtn.Location = new System.Drawing.Point(285, 102);
             this.staffInfoBtn.Name = "staffInfoBtn";
             this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
             this.staffInfoBtn.TabIndex = 7;
@@ -84,7 +83,7 @@ namespace lab7
             // SellInfoInsertBtn
             // 
             this.SellInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SellInfoInsertBtn.Location = new System.Drawing.Point(24, 111);
+            this.SellInfoInsertBtn.Location = new System.Drawing.Point(24, 102);
             this.SellInfoInsertBtn.Name = "SellInfoInsertBtn";
             this.SellInfoInsertBtn.Size = new System.Drawing.Size(105, 38);
             this.SellInfoInsertBtn.TabIndex = 2;
@@ -95,7 +94,7 @@ namespace lab7
             // StoreInfoInsertBtn
             // 
             this.StoreInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StoreInfoInsertBtn.Location = new System.Drawing.Point(165, 111);
+            this.StoreInfoInsertBtn.Location = new System.Drawing.Point(154, 102);
             this.StoreInfoInsertBtn.Name = "StoreInfoInsertBtn";
             this.StoreInfoInsertBtn.Size = new System.Drawing.Size(105, 38);
             this.StoreInfoInsertBtn.TabIndex = 1;
@@ -106,7 +105,7 @@ namespace lab7
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(154, 177);
+            this.button1.Location = new System.Drawing.Point(24, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 38);
             this.button1.TabIndex = 6;
@@ -116,7 +115,10 @@ namespace lab7
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.StoreInfoInsertBtn);
+            this.groupBox2.Controls.Add(this.staffInfoBtn);
             this.groupBox2.Controls.Add(this.InventorySelectBtn);
+            this.groupBox2.Controls.Add(this.SellInfoInsertBtn);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.SellInfoActBtn);
             this.groupBox2.Controls.Add(this.StoreInfoActBtn);
@@ -124,7 +126,7 @@ namespace lab7
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox2.Location = new System.Drawing.Point(169, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(303, 256);
+            this.groupBox2.Size = new System.Drawing.Size(421, 256);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "查询与管理";
@@ -132,7 +134,7 @@ namespace lab7
             // InventorySelectBtn
             // 
             this.InventorySelectBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.InventorySelectBtn.Location = new System.Drawing.Point(24, 36);
+            this.InventorySelectBtn.Location = new System.Drawing.Point(154, 36);
             this.InventorySelectBtn.Name = "InventorySelectBtn";
             this.InventorySelectBtn.Size = new System.Drawing.Size(105, 38);
             this.InventorySelectBtn.TabIndex = 5;
@@ -154,7 +156,7 @@ namespace lab7
             // StoreInfoActBtn
             // 
             this.StoreInfoActBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StoreInfoActBtn.Location = new System.Drawing.Point(154, 102);
+            this.StoreInfoActBtn.Location = new System.Drawing.Point(154, 177);
             this.StoreInfoActBtn.Name = "StoreInfoActBtn";
             this.StoreInfoActBtn.Size = new System.Drawing.Size(105, 38);
             this.StoreInfoActBtn.TabIndex = 2;
@@ -164,7 +166,7 @@ namespace lab7
             // StaffInfoActBtn
             // 
             this.StaffInfoActBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StaffInfoActBtn.Location = new System.Drawing.Point(24, 102);
+            this.StaffInfoActBtn.Location = new System.Drawing.Point(285, 177);
             this.StaffInfoActBtn.Name = "StaffInfoActBtn";
             this.StaffInfoActBtn.Size = new System.Drawing.Size(105, 38);
             this.StaffInfoActBtn.TabIndex = 1;
@@ -173,8 +175,6 @@ namespace lab7
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.securityLabel);
-            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.LogoutBtn);
             this.groupBox3.Controls.Add(this.groupBox5);
@@ -191,9 +191,9 @@ namespace lab7
             this.securityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.securityLabel.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.securityLabel.Location = new System.Drawing.Point(3, 236);
+            this.securityLabel.Location = new System.Drawing.Point(7, 64);
             this.securityLabel.Name = "securityLabel";
-            this.securityLabel.Size = new System.Drawing.Size(132, 128);
+            this.securityLabel.Size = new System.Drawing.Size(271, 44);
             this.securityLabel.TabIndex = 9;
             this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
             // 
@@ -202,7 +202,7 @@ namespace lab7
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label4.Location = new System.Drawing.Point(2, 208);
+            this.label4.Location = new System.Drawing.Point(7, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 18);
             this.label4.TabIndex = 7;
@@ -214,7 +214,7 @@ namespace lab7
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(0, 172);
+            this.label1.Location = new System.Drawing.Point(6, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 5;
@@ -246,7 +246,7 @@ namespace lab7
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.UserName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.UserName.Location = new System.Drawing.Point(56, 172);
+            this.UserName.Location = new System.Drawing.Point(62, 172);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(40, 18);
             this.UserName.TabIndex = 1;
@@ -267,7 +267,7 @@ namespace lab7
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(485, 447);
+            this.ClientSize = new System.Drawing.Size(602, 447);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -275,6 +275,7 @@ namespace lab7
             this.Text = "商品信息管理系统";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
