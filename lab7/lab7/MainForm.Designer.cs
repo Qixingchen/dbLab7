@@ -72,6 +72,17 @@ namespace lab7
             // staffInfoBtn
             // 
             this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.staffInfoBtn.Location = new System.Drawing.Point(165, 42);
+            this.staffInfoBtn.Name = "staffInfoBtn";
+            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
+            this.staffInfoBtn.TabIndex = 7;
+            this.staffInfoBtn.Text = "员工信息录入";
+            this.staffInfoBtn.UseVisualStyleBackColor = true;
+            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
+            // 
+            // button1
+            // 
+            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.staffInfoBtn.Location = new System.Drawing.Point(285, 102);
             this.staffInfoBtn.Name = "staffInfoBtn";
             this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
@@ -162,6 +173,7 @@ namespace lab7
             this.StoreInfoActBtn.TabIndex = 2;
             this.StoreInfoActBtn.Text = "进货信息管理";
             this.StoreInfoActBtn.UseVisualStyleBackColor = true;
+            this.StoreInfoActBtn.Click += new System.EventHandler(this.StoreInfoActBtn_Click);
             // 
             // StaffInfoActBtn
             // 
@@ -172,6 +184,7 @@ namespace lab7
             this.StaffInfoActBtn.TabIndex = 1;
             this.StaffInfoActBtn.Text = "员工信息管理";
             this.StaffInfoActBtn.UseVisualStyleBackColor = true;
+            this.StaffInfoActBtn.Click += new System.EventHandler(this.StaffInfoActBtn_Click);
             // 
             // groupBox3
             // 

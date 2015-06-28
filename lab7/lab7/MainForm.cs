@@ -117,5 +117,24 @@ namespace lab7
             userenter.ShowDialog();
         }
         #endregion
+
+        #region 进货清单增删查
+        private void StoreInfoActBtn_Click(object sender, EventArgs e)
+        {
+            Purchase purchase = new Purchase();
+            purchase.Owner = this;
+            purchase.ShowDialog();
+        }
+        #endregion
+
+        #region 员工信息管理
+        private void StaffInfoActBtn_Click(object sender, EventArgs e)
+        {
+            Staff_Manage manage = new Staff_Manage();
+            manage.Owner = this;
+            manage.ShowDialog();
+        }
+        #endregion
+
     }
 }

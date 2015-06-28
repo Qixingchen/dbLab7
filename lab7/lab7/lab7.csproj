@@ -140,6 +140,18 @@
     <Compile Include="StockEnter.Designer.cs">
       <DependentUpon>StockEnter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Purchase.Designer.cs">
+      <DependentUpon>Update_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Staff.Designer.cs">
+      <DependentUpon>Update_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockEnter.resx">
       <DependentUpon>StockEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Purchase.resx">
+      <DependentUpon>Update_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Staff.resx">
+      <DependentUpon>Update_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserEnter.resx">
       <DependentUpon>UserEnter.cs</DependentUpon>

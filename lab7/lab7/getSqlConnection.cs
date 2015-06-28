@@ -47,13 +47,11 @@ namespace lab7
         }
 
         public SqlConnection GetConnect(string userName, string userPwd)
-
         {
             mUserName = userName;
             mUserPwd = userPwd;
 
-            strConnection = "server=localhost;database=Goods;uid="+ userName +";pwd="+userPwd+";Trusted_Connection=False";
-
+            strConnection = "server=localhost;database=Goods;uid=" + userName + ";pwd=" + userPwd + ";Trusted_Connection=False";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
             try
             {
