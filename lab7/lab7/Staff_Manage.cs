@@ -44,6 +44,7 @@ namespace lab7
         }
         #endregion
 
+        #region 删除员工信息
         private void Delete_Click(object sender, EventArgs e)
         {
             string staffid = textBox1.Text;
@@ -74,9 +75,16 @@ namespace lab7
                         break;
                 }
             }
-            
-        }
 
+        }
+        #endregion
+
+        #region 更新员工信息
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
 
     }
 }

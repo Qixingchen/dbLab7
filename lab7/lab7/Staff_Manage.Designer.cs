@@ -76,6 +76,7 @@
             this.Update.TabIndex = 3;
             this.Update.Text = "修 改";
             this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // textBox1
             // 
