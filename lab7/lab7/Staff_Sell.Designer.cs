@@ -1,6 +1,6 @@
-﻿namespace database
+﻿namespace lab7
 {
-    partial class 员工信息查询
+    partial class Staff_Sell
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -152,7 +152,7 @@
             this.Inquire.UseVisualStyleBackColor = true;
             this.Inquire.Click += new System.EventHandler(this.Inquire_Click);
             // 
-            // 员工信息查询
+            // Staff_Sell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,8 +167,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "员工信息查询";
+            this.Name = "Staff_Sell";
             this.Text = "员工销售业绩查询";
+            this.Load += new System.EventHandler(this.Staff_Sell_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -66,6 +66,7 @@
             this.Delete.TabIndex = 2;
             this.Delete.Text = "删 除";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Update
             // 

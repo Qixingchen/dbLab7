@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace database
+
+namespace lab7
 {
-    public partial class 员工信息查询 : Form
+    public partial class Staff_Sell : Form
     {
-        public 员工信息查询()
+        public Staff_Sell()
         {
             InitializeComponent();
         }
@@ -23,6 +25,11 @@ namespace database
         }
 
         private void Inquire_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Sell_Load(object sender, EventArgs e)
         {
 
         }
