@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -58,8 +51,11 @@ namespace lab7
             staffage = textBox3.Text;
             staffgender = comboBox1.Text;
 
-            string sql = "insert into staffinfo values(" + staffid + "," + staffname + "," + staffgender + "," + staffage + ")";
-            DBUtility.DbHelperSQL.ExecuteSql(sql);    
+            string sql = "insert into staffinfo values(" + staffid + "," + "'"+staffname+"'" + "," + "'"+staffgender +"'"+ "," + staffage + ")";
+            goods_methods.ExecuteSql(sql);
+
+            Popup popup = new Popup();
+            popup.ShowDialog();
 
 
         }

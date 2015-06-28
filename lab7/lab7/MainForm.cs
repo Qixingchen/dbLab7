@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
 {
     public partial class MainForm : Form
     {
+     
         #region 窗口传值（username）
         private string something;
         public string Something
@@ -104,5 +98,23 @@ namespace lab7
             inventory.ShowDialog();
         }
         #endregion 
+
+        #region 商品清单
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GoodsList goodslist = new GoodsList();
+            goodslist.Owner = this;
+            goodslist.ShowDialog();
+        }
+        #endregion
+
+        #region 员工信息录入
+        private void staffInfoBtn_Click(object sender, EventArgs e)
+        {
+            UserEnter userenter = new UserEnter();
+            userenter.Owner = this;
+            userenter.ShowDialog();
+        }
+        #endregion
     }
 }

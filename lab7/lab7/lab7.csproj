@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>lab7.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -60,7 +63,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbHelperSQL.cs" />
+    <Compile Include="GoodsInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsInsert.Designer.cs">
+      <DependentUpon>GoodsInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsList.Designer.cs">
+      <DependentUpon>GoodsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="PubConstant.cs" />
     <Compile Include="getSqlConnection.cs" />
     <Compile Include="goods_methods.cs" />
@@ -126,12 +146,24 @@
     <Compile Include="StockEnter.Designer.cs">
       <DependentUpon>StockEnter.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateProduct.Designer.cs">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserEnter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserEnter.Designer.cs">
       <DependentUpon>UserEnter.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GoodsInsert.resx">
+      <DependentUpon>GoodsInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsList.resx">
+      <DependentUpon>GoodsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
@@ -156,6 +191,9 @@
     <EmbeddedResource Include="Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SellEnter.resx">
+      <DependentUpon>SellEnter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellInfo.resx">
       <DependentUpon>SellInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff_Sell.resx">
       <DependentUpon>Staff_Sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateProduct.resx">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockEnter.resx">
+      <DependentUpon>StockEnter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

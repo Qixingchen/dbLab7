@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -16,22 +9,29 @@ namespace lab7
         public Inventory()
         {
             InitializeComponent();
+        }
 
+        private void Inventory_Load(object sender, EventArgs e)
+        {
             dataGridView1.DataSource = bindingSource;
+            dataGridView1.AutoResizeColumns(
+                DataGridViewAutoSizeColumnsMode.AllCells);
+
         }
 
 
         private void inquire_Click(object sender, EventArgs e)
         {
-            if (selectName != null)
+            if (selectName.Text.CompareTo("") == 0)
             {
                 bindingSource.DataSource = goods_methods.getInstance()
                     .getInventoryInfo();
             }
-
-            // Resize the DataGridView columns to fit the newly loaded content.
-            dataGridView1.AutoResizeColumns(
-                DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            else
+            {
+                bindingSource.DataSource = goods_methods.getInstance()
+                    .getInventoryInfo(selectName.Text);
+            }            
         }
     }
 }
