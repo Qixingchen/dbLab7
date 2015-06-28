@@ -14,6 +14,7 @@ begin
 		insert into inventoryInfo 
 			select goodsid,goodsname,@goodscount from goodsInfo where goodsid=@goodsid;
 end;
+GO
 
 create trigger T_inventory_2 on sellInfo
 for insert,update
