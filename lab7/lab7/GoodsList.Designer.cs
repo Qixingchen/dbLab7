@@ -32,7 +32,6 @@
             this.ImportBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.goods_dataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.UserName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GoodsInsertBtn = new System.Windows.Forms.Button();
@@ -44,9 +43,11 @@
             this.row_text = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.refreshBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ExportBtn
@@ -86,17 +87,11 @@
             this.goods_dataGridView.RowTemplate.Height = 23;
             this.goods_dataGridView.Size = new System.Drawing.Size(544, 355);
             this.goods_dataGridView.TabIndex = 0;
+            this.goods_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_dataGridView_CellContentClick);
             this.goods_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_dataGridView_CellContentClick);
+            this.goods_dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.goods_dataGridView_RowHeaderMouseClick);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(8, 322);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(109, 118);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            // 
-            // UserNameString
+            // UserName
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -215,17 +210,25 @@
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 322);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // GoodsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 453);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.row_text);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.UserName);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.ExportBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ImportBtn);
@@ -235,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.goods_dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +249,6 @@
         private System.Windows.Forms.Button ExportBtn;
         private System.Windows.Forms.Button ImportBtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label UserName;
         private System.Windows.Forms.DataGridView goods_dataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -258,5 +261,6 @@
         private System.Windows.Forms.TextBox row_text;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

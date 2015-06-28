@@ -149,7 +149,6 @@
             this.Controls.Add(this.id_text);
             this.Name = "GoodsInsert";
             this.Text = "商品信息";
-            this.Load += new System.EventHandler(this.GoodsInsert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace lab7
@@ -16,7 +17,7 @@ namespace lab7
             dataGridView1.DataSource = bindingSource;
             dataGridView1.AutoResizeColumns(
                 DataGridViewAutoSizeColumnsMode.AllCells);
-
+            inquire_Click(null, null);
         }
 
 
@@ -29,9 +30,8 @@ namespace lab7
             }
             else
             {
-                bindingSource.DataSource = goods_methods.getInstance()
-                    .getInventoryInfo(selectName.Text);
-            }            
+                bindingSource.DataSource = goods_methods.getInstance().getInventoryInfo(selectName.Text);
+            }
         }
     }
 }

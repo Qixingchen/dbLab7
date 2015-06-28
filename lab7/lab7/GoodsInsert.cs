@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -16,14 +9,19 @@ namespace lab7
         public string mgoodsname = string.Empty;
         public string mgoodsprice = string.Empty;
         public string mgoodsphotoid = string.Empty;
-        GoodsList goodslist = new GoodsList();
-        public GoodsInsert()
+        private GoodsList goodslist = null;
+        public GoodsInsert(GoodsList goodslist)
         {
+            this.goodslist = goodslist;
             InitializeComponent();
         }
 
         public void flush()
         {
+            string SQLString = "select goodsphotoid as sid from goodsphoto";
+            photoid_comboBox.DisplayMember = "sid";
+            photoid_comboBox.ValueMember = "sid";
+            photoid_comboBox.DataSource = goods_methods.Query(SQLString).Tables[0];
             if (mgoodsid != string.Empty)
             {
                 this.id_text.Text = mgoodsid;
@@ -34,12 +32,10 @@ namespace lab7
             }
         }
 
-        private void GoodsInsert_Load(object sender, EventArgs e)
+        public void setPhotoID(String ID)
         {
-            string SQLString = "select goodsphotoid as sid from goodsphoto";
-            photoid_comboBox.DisplayMember = "sid";
-            photoid_comboBox.ValueMember = "sid";
-            photoid_comboBox.DataSource = goods_methods.Query(SQLString).Tables[0];
+            mgoodsphotoid = ID;
+            photoid_comboBox.Text = ID;
         }
 
         private void commitBtn_Click(object sender, EventArgs e)
@@ -68,44 +64,30 @@ namespace lab7
             //更新、插入操作
             if (mgoodsid != string.Empty)  //更新
             {
-                try
-                {
-                    string SQLString = "update goodsInfo set  goodsname = '"
-                        + name_text.Text + "',goodsprice = "
-                        + price_text.Text + ", goodsphotoid =" + photoid_comboBox.Text
-                        + " where goodsid= '" + mgoodsid + "'";
-                    goods_methods.ExecuteSql(SQLString);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
+                string SQLString = "update goodsInfo set  goodsname = '"
+                    + name_text.Text + "',goodsprice = "
+                    + price_text.Text + ", goodsphotoid =" + photoid_comboBox.Text
+                    + " where goodsid= '" + mgoodsid + "'";
+                goods_methods.ExecuteSql(SQLString);
+
                 goodslist.flush();
                 this.Close();
             }
             else //插入
             {
-                try
-                {
-                    string SQLString = "insert into  goodsInfo values('" + id_text.Text + "','" + name_text.Text
-                        + "','" + price_text.Text + "','" + photoid_comboBox.Text + "')";
-                    goods_methods.ExecuteSql(SQLString);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
+                string SQLString = "insert into  goodsInfo values('" + id_text.Text + "','" + name_text.Text
+                    + "','" + price_text.Text + "','" + photoid_comboBox.Text + "')";
+                goods_methods.ExecuteSql(SQLString);
+
                 goodslist.flush();
                 this.Close();
             }
-            
+
         }
 
         private void addPhotoBtn_Click(object sender, EventArgs e)
         {
-            photoUploadForm photoupload = new photoUploadForm();
+            photoUploadForm photoupload = new photoUploadForm(this);
             photoupload.Owner = this;
             photoupload.ShowDialog();
         }

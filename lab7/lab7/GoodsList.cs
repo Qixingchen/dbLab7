@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab7
@@ -25,6 +18,7 @@ namespace lab7
         {
             bindingSource.DataSource =
                 goods_methods.getInstance().getGoodsInfo(1, "");
+            select_row(row);
         }
 
         private void GoodsSelectBtn_Click(object sender, EventArgs e)
@@ -36,11 +30,12 @@ namespace lab7
             }
             bindingSource.DataSource =
                     goods_methods.getInstance().getGoodsInfo(2, goodsname_key.Text);
+            select_row(0);
         }
 
         private void GoodsInsertBtn_Click(object sender, EventArgs e)
         {
-            GoodsInsert goodsinsert = new GoodsInsert();
+            GoodsInsert goodsinsert = new GoodsInsert(this);
             goodsinsert.Owner = this;
             goodsinsert.Text = "商品信息插入";
             goodsinsert.ShowDialog();
@@ -48,7 +43,7 @@ namespace lab7
 
         private void GoodsEditBtn_Click(object sender, EventArgs e)
         {
-            GoodsInsert goodsedit = new GoodsInsert();
+            GoodsInsert goodsedit = new GoodsInsert(this);
             goodsedit.Owner = this;
             goodsedit.Text = "商品信息更新";
             if (row < 0)
@@ -111,14 +106,30 @@ namespace lab7
         #region 定位选中的行
         private void goods_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = e.RowIndex;
-            row_text.Text = row.ToString();
+            select_row(e.RowIndex);
         }
         #endregion
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             this.flush();
+        }
+
+        private void goods_dataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            select_row(e.RowIndex);
+        }
+
+        private void select_row(int location)
+        {
+            if (location < 0)
+            {
+                return;
+            }
+            row = location;
+            row_text.Text = row.ToString();
+            pictureBox1.ImageLocation = goods_dataGridView.Rows[row].Cells["商品图片url"].Value.ToString();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
     }

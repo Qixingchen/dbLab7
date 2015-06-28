@@ -75,6 +75,7 @@ namespace lab7
             this.inquire.TabIndex = 16;
             this.inquire.Text = "查询";
             this.inquire.UseVisualStyleBackColor = true;
+            this.inquire.Click += new System.EventHandler(this.inquire_Click);
             // 
             // Inventory
             // 

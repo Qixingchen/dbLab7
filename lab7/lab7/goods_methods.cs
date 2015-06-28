@@ -51,6 +51,7 @@ GRANT insert,select,update,delete ON stockinfo TO " + username + @";
 GRANT insert,select,update,delete ON goodsinfo TO " + username + @";
 GRANT insert,select,update,delete ON goodsphoto TO " + username + @";
 GRANT insert,select,update,delete ON sellinfo TO " + username + @";
+GRANT insert,select,update,delete ON inventoryInfo TO " + username + @";
 GRANT insert,select,update,delete ON loginuser TO " + username + ";";
             }
             if (UserType.CompareTo("admin") == 0)
@@ -81,7 +82,7 @@ GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
 GRANT insert,select,update,delete ON goodsphoto TO   " + username + @";
 GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
-            goods_methods.ExecuteSql(SQL,true);
+            goods_methods.ExecuteSql(SQL, true);
 
 
 
@@ -109,6 +110,28 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             return getInventoryInfo(SQLname);
         }
         public DataTable getInventoryInfo(String SQLname)
+        {
+            String sqlSource = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
+            String SQL;
+            DataTable dataTable;
+            if (SQLname != null)
+            {
+                SQL = sqlSource + " where goodsname like '%" + SQLname + "%'";
+                dataTable = QueryDataAdapt(SQL);
+
+                if (dataTable.Rows.Count == 0)
+                {
+                    SQL = sqlSource + " where goodsid like '%" + SQLname + "%'";
+                    dataTable = QueryDataAdapt(SQL);
+                }
+            }
+            else
+            {
+                dataTable = QueryDataAdapt(sqlSource);
+            }
+            return dataTable;
+        }
+        public DataTable getInventoryInfo(int SQLname)
         {
             String sqlString = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
             if (SQLname != null)
@@ -168,7 +191,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
                     return 0;
                 }
             }
-            
+
         }
 
         #endregion
@@ -232,7 +255,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         #endregion
 
         #region 查询返回 DataTable 可以填充 DataGridView
-        public DataTable QueryDataAdapt(string selectCommand,bool isMaxpermission = false)
+        public DataTable QueryDataAdapt(string selectCommand, bool isMaxpermission = false)
         {
             SqlConnection connection = isMaxpermission
                 ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect()
@@ -253,7 +276,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             {
                 MessageBox.Show("无权操作");
             }
-            
+
             return table;
         }
         #endregion
