@@ -47,7 +47,7 @@ namespace lab7
             switch (result)
             {
                 case DialogResult.OK:
-                    //删除操作      
+//删除操作
                     string SQLString = "delete from sellInfo where sellid=" + sellid;
                     goods_methods.ExecuteSql(SQLString);
                     break;
@@ -56,8 +56,7 @@ namespace lab7
 
         private void SellInfo_Load(object sender, EventArgs e)
         {
-        }
-        
 
+        }
     }
 }

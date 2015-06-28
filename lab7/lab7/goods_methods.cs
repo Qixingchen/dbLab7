@@ -32,31 +32,67 @@ namespace lab7
         #endregion
 
         #region 新增用户
-        public string AddUser(String username, String UserType)
+        public void AddUser(String staffID, String username, String UserAge, String UserSex, String UserType)
         {
-            string SQL = @"EXEC sp_addlogin " + username + @",'123456','Goods'
-	EXEC sp_adduser " + username + "," + username;
+            String SQL =
+                "insert into staffinfo values(" + staffID + "," + "'" + username + "'" + "," + "'" + UserSex + "'" +
+                "," + UserAge + ",'" + UserType + "')";
+            goods_methods.ExecuteSql(SQL);
+
+            SQL = @"EXEC sp_addlogin " + username + @",'123456','Goods'
+EXEC sp_adduser " + username + "," + username;
 
             if (UserType.CompareTo("root") == 0)
             {
                 SQL += @"
-        GRANT insert,select,update,delete ON staffinfo TO " + username + @";
-		GRANT insert,select,update,delete ON stockinfo TO " + username + @";
-		GRANT insert,select,update,delete ON goodsinfo TO " + username + @";
-		GRANT insert,select,update,delete ON goodsphoto TO " + username + @";
-		GRANT insert,select,update,delete ON sellinfo TO " + username + @";
-		GRANT insert,select,update,delete ON loginuser TO " + username + ";";
+GRANT insert,select,update,delete ON staffinfo TO " + username + @";
+GRANT insert,select,update,delete ON stockinfo TO " + username + @";
+GRANT insert,select,update,delete ON goodsinfo TO " + username + @";
+GRANT insert,select,update,delete ON goodsphoto TO " + username + @";
+GRANT insert,select,update,delete ON sellinfo TO " + username + @";
+GRANT insert,select,update,delete ON loginuser TO " + username + ";";
+            }
+            if (UserType.CompareTo("admin") == 0)
+            {
+                SQL += @"GRANT select ON staffinfo TO " + username + @";
+GRANT select ON stockinfo TO " + username + @";
+GRANT select ON goodsinfo TO  " + username + @";
+GRANT select ON goodsphoto TO  " + username + @";
+GRANT select ON sellinfo TO " + username;
+            }
+            if (UserType.CompareTo("staff") == 0)
+            {
+                SQL += @"GRANT insert,select,update,delete ON staffinfo TO  " + username;
+            }
+            if (UserType.CompareTo("stock") == 0)
+            {
+                SQL += @"GRANT insert,select,update,delete ON stockinfo TO  " + username + @";
+GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
+GRANT insert,select,update,delete ON goodsphoto TO " + username;
+            }
+            if (UserType.CompareTo("sell") == 0)
+            {
+                SQL += @"GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
+GRANT insert,select,update,delete ON goodsphoto TO   " + username + @";
+GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
             goods_methods.MAXPermissionExecuteSql(SQL);
 
-            return null;
+
+
         }
         #endregion
 
         #region 获取用户名
-        public string getUserName()
+        public string getUserType(String userName)
         {
-            return null;
+            String SQl = "select staffInfo.staffType from staffInfo where staffname = '"
+                + userName + "'";
+            SqlDataReader reader = ExecuteReader(SQl);
+            reader.Read();
+            String ans = reader.GetString(0);
+            reader.Close();
+            return ans;
         }
         #endregion
 
@@ -81,16 +117,17 @@ namespace lab7
 
         #region 商品清单查询
 
-        public DataTable getGoodsInfo(int which,string key)
+        public DataTable getGoodsInfo(int which, string key)
         {
             String sqlString = string.Empty;
-            if(which == 1)
+            if (which == 1)
             {
                 sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
                     goodsprice as '单价',goodsphoto.goodsphotoid as '图片编号',photourl as '商品图片url'from 
                     goodsInfo,goodsphoto where goodsInfo.goodsphotoid = goodsphoto.goodsphotoid";
+
             }
-            else if(which == 2)
+            else if (which == 2)
             {
                 sqlString = @"select goodsid as '商品编号',goodsname as '商品名称',
                    goodsprice as '单价',goodsphoto.goodsphotoid as '图片编号',photourl as '商品图片url'from 
