@@ -52,18 +52,21 @@
             this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.Textbox1);
             this.groupBox1.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(57, 26);
+            this.groupBox1.Location = new System.Drawing.Point(28, 13);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1006, 137);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(503, 68);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "销售信息管理";
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(788, 54);
+            this.delete.Location = new System.Drawing.Point(394, 27);
+            this.delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(163, 48);
+            this.delete.Size = new System.Drawing.Size(82, 24);
             this.delete.TabIndex = 4;
             this.delete.Text = "删除";
             this.delete.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(559, 54);
+            this.update.Location = new System.Drawing.Point(280, 27);
+            this.update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(168, 48);
+            this.update.Size = new System.Drawing.Size(84, 24);
             this.update.TabIndex = 3;
             this.update.Text = "编辑";
             this.update.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(336, 54);
+            this.Search.Location = new System.Drawing.Point(168, 27);
+            this.Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(166, 48);
+            this.Search.Size = new System.Drawing.Size(83, 24);
             this.Search.TabIndex = 2;
             this.Search.Text = "查询";
             this.Search.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@
             // 
             // Textbox1
             // 
-            this.Textbox1.Location = new System.Drawing.Point(18, 54);
+            this.Textbox1.Location = new System.Drawing.Point(9, 27);
+            this.Textbox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Textbox1.Name = "Textbox1";
-            this.Textbox1.Size = new System.Drawing.Size(274, 35);
+            this.Textbox1.Size = new System.Drawing.Size(139, 21);
             this.Textbox1.TabIndex = 1;
             // 
             // dataGridView1
@@ -107,10 +113,11 @@
             this.Column2,
             this.商品ID,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(57, 190);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 95);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(1006, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(503, 205);
             this.dataGridView1.TabIndex = 1;
             // 
             // id
@@ -150,13 +157,15 @@
             // 
             // SellInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 626);
+            this.ClientSize = new System.Drawing.Size(572, 313);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SellInfo";
             this.Text = "SellInfo";
+            this.Load += new System.EventHandler(this.SellInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

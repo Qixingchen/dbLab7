@@ -34,9 +34,10 @@
             this.Item_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Goods_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Staff_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.Button();
+            this.Inquire = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.Item_count,
             this.Goods_ID,
             this.Staff_ID});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(608, 290);
@@ -80,47 +81,58 @@
             this.Staff_ID.HeaderText = "员工编号";
             this.Staff_ID.Name = "Staff_ID";
             // 
-            // Add
+            // Inquire
             // 
-            this.Add.Location = new System.Drawing.Point(70, 385);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 25);
-            this.Add.TabIndex = 1;
-            this.Add.Text = "增 加";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.button1_Click);
+            this.Inquire.Location = new System.Drawing.Point(269, 69);
+            this.Inquire.Name = "Inquire";
+            this.Inquire.Size = new System.Drawing.Size(75, 25);
+            this.Inquire.TabIndex = 1;
+            this.Inquire.Text = "查 询";
+            this.Inquire.UseVisualStyleBackColor = true;
+            this.Inquire.Click += new System.EventHandler(this.button1_Click);
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(287, 385);
+            this.Delete.Location = new System.Drawing.Point(394, 69);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 25);
             this.Delete.TabIndex = 2;
             this.Delete.Text = "删 除";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(504, 385);
+            this.Update.Location = new System.Drawing.Point(518, 69);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(75, 25);
             this.Update.TabIndex = 3;
             this.Update.Text = "修 改";
             this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(63, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(136, 21);
+            this.textBox1.TabIndex = 4;
             // 
             // Purchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 441);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.Inquire);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Purchase";
             this.Text = "Purchase";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -132,8 +144,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn Goods_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Staff_ID;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Inquire;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
