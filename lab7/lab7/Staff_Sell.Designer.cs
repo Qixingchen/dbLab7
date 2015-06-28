@@ -35,12 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.销售金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.销售排名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.销售金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.销售排名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inquire = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +111,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(453, 203);
             this.dataGridView1.TabIndex = 0;
             // 
+            // 销售金额
+            // 
+            this.销售金额.HeaderText = "销售金额";
+            this.销售金额.Name = "销售金额";
+            // 
+            // 销售排名
+            // 
+            this.销售排名.HeaderText = "销售排名";
+            this.销售排名.Name = "销售排名";
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(76, 70);
@@ -132,31 +142,22 @@
             this.textBox4.Size = new System.Drawing.Size(60, 21);
             this.textBox4.TabIndex = 11;
             // 
-            // button1
+            // Inquire
             // 
-            this.button1.Location = new System.Drawing.Point(209, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "查    询";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // 销售金额
-            // 
-            this.销售金额.HeaderText = "销售金额";
-            this.销售金额.Name = "销售金额";
-            // 
-            // 销售排名
-            // 
-            this.销售排名.HeaderText = "销售排名";
-            this.销售排名.Name = "销售排名";
+            this.Inquire.Location = new System.Drawing.Point(209, 116);
+            this.Inquire.Name = "Inquire";
+            this.Inquire.Size = new System.Drawing.Size(75, 23);
+            this.Inquire.TabIndex = 12;
+            this.Inquire.Text = "查    询";
+            this.Inquire.UseVisualStyleBackColor = true;
+            this.Inquire.Click += new System.EventHandler(this.Inquire_Click);
             // 
             // 员工信息查询
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 407);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Inquire);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -187,7 +188,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Inquire;
         private System.Windows.Forms.DataGridViewTextBoxColumn 销售金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 销售排名;
     }

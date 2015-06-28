@@ -21,5 +21,10 @@ namespace database
         {
 
         }
+
+        private void Inquire_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

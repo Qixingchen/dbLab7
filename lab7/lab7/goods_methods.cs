@@ -231,5 +231,22 @@ namespace lab7
             from goodsInfo where goodsid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
+        #region 查询进货信息表
+        public DataTable queryPurchaseInfo(String queryName)
+        {
+            String sqlString = @"select stockid as '进货编号',stocktime as '进货时间',
+            goodscount as '进货数量',goodsid as '物品编号', staffid as '员工编号' from stockInfo where stockid = " + queryName;
+            return QueryDataAdapt(sqlString);
+        }
+        #endregion
+
+        #region 查询员工信息表
+        public DataTable queryStaffInfo(String queryName)
+        {
+            String sqlString = @"select staffid as '员工编号',staffname as '员工姓名',
+            staffgender as '员工性别',staffage as '员工年龄',staffType as '员工类别' from staffInfo where staffid = " + queryName;
+            return QueryDataAdapt(sqlString);
+        }
+        #endregion
     }
 }

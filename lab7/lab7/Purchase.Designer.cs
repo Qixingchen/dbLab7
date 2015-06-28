@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Parchase_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parchase_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Goods_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Staff_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inquire = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
@@ -44,42 +39,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Parchase_ID,
-            this.Parchase_Time,
-            this.Item_count,
-            this.Goods_ID,
-            this.Staff_ID});
             this.dataGridView1.Location = new System.Drawing.Point(28, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(608, 290);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Parchase_ID
-            // 
-            this.Parchase_ID.HeaderText = "进货编号";
-            this.Parchase_ID.Name = "Parchase_ID";
-            // 
-            // Parchase_Time
-            // 
-            this.Parchase_Time.HeaderText = "进货时间";
-            this.Parchase_Time.Name = "Parchase_Time";
-            // 
-            // Item_count
-            // 
-            this.Item_count.HeaderText = "商品数量";
-            this.Item_count.Name = "Item_count";
-            // 
-            // Goods_ID
-            // 
-            this.Goods_ID.HeaderText = "商品编号";
-            this.Goods_ID.Name = "Goods_ID";
-            // 
-            // Staff_ID
-            // 
-            this.Staff_ID.HeaderText = "员工编号";
-            this.Staff_ID.Name = "Staff_ID";
             // 
             // Inquire
             // 
@@ -117,6 +81,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(136, 21);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Purchase
             // 
@@ -130,6 +95,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Purchase";
             this.Text = "Purchase";
+            this.Load += new System.EventHandler(this.Purchase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,11 +105,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parchase_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parchase_Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item_count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Goods_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_ID;
         private System.Windows.Forms.Button Inquire;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;

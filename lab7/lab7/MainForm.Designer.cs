@@ -35,6 +35,7 @@ namespace lab7
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.staffInfoBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SellInfoInsertBtn = new System.Windows.Forms.Button();
             this.StoreInfoInsertBtn = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace lab7
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.UserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.staffInfoBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,6 +73,17 @@ namespace lab7
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "信息录入";
+            // 
+            // staffInfoBtn
+            // 
+            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.staffInfoBtn.Location = new System.Drawing.Point(165, 42);
+            this.staffInfoBtn.Name = "staffInfoBtn";
+            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
+            this.staffInfoBtn.TabIndex = 7;
+            this.staffInfoBtn.Text = "员工信息录入";
+            this.staffInfoBtn.UseVisualStyleBackColor = true;
+            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
             // 
             // button1
             // 
@@ -175,6 +186,7 @@ namespace lab7
             this.StoreInfoActBtn.TabIndex = 2;
             this.StoreInfoActBtn.Text = "进货信息管理";
             this.StoreInfoActBtn.UseVisualStyleBackColor = true;
+            this.StoreInfoActBtn.Click += new System.EventHandler(this.StoreInfoActBtn_Click);
             // 
             // StaffInfoActBtn
             // 
@@ -279,17 +291,6 @@ namespace lab7
             this.label2.TabIndex = 3;
             this.label2.Text = "商品管理系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // staffInfoBtn
-            // 
-            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.staffInfoBtn.Location = new System.Drawing.Point(165, 42);
-            this.staffInfoBtn.Name = "staffInfoBtn";
-            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
-            this.staffInfoBtn.TabIndex = 7;
-            this.staffInfoBtn.Text = "员工信息录入";
-            this.staffInfoBtn.UseVisualStyleBackColor = true;
-            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
             // 
             // MainForm
             // 
