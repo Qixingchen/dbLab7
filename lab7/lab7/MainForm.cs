@@ -63,19 +63,19 @@ namespace lab7
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.UserName.Text = userNameString;
-            if(userType.CompareTo("rootMa") == 0 )
+            if(userType.CompareTo("root") == 0 )
             {
                 securityLabel.Text = "IT运维人员，具有所有权限";
-            }else if(userType.CompareTo("adminMa") == 0)
+            }else if(userType.CompareTo("admin") == 0)
             {
                 securityLabel.Text = "负责人，具有对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
-            }else if(userType.CompareTo("staffMa") == 0)
+            }else if(userType.CompareTo("staff") == 0)
             {
                 securityLabel.Text = "人事管理人员，具有对员工信息的所有增删改查权限";
-            }else if(userType.CompareTo("sellMa") == 0)
+            }else if(userType.CompareTo("sell") == 0)
             {
                 securityLabel.Text = "销售管理人员，具有对销售信息、商品信息、库存信息的所有增删改查权限";
-            }else if(userType.CompareTo("stockMa") == 0)
+            }else if(userType.CompareTo("stock") == 0)
             {
                 securityLabel.Text = "仓储管理人员，具有对进货信息、商品信息、库存信息的所有增删改查权限";
             }

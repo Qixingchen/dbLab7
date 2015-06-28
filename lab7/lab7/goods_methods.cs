@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace lab7
 {
@@ -54,7 +55,8 @@ GRANT insert,select,update,delete ON loginuser TO " + username + ";";
             }
             if (UserType.CompareTo("admin") == 0)
             {
-                SQL += @"GRANT select ON staffinfo TO " + username + @";
+                SQL += @"
+GRANT select ON staffinfo TO " + username + @";
 GRANT select ON stockinfo TO " + username + @";
 GRANT select ON goodsinfo TO  " + username + @";
 GRANT select ON goodsphoto TO  " + username + @";
@@ -62,21 +64,24 @@ GRANT select ON sellinfo TO " + username;
             }
             if (UserType.CompareTo("staff") == 0)
             {
-                SQL += @"GRANT insert,select,update,delete ON staffinfo TO  " + username;
+                SQL += @"
+GRANT insert,select,update,delete ON staffinfo TO  " + username;
             }
             if (UserType.CompareTo("stock") == 0)
             {
-                SQL += @"GRANT insert,select,update,delete ON stockinfo TO  " + username + @";
+                SQL += @"
+GRANT insert,select,update,delete ON stockinfo TO  " + username + @";
 GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
 GRANT insert,select,update,delete ON goodsphoto TO " + username;
             }
             if (UserType.CompareTo("sell") == 0)
             {
-                SQL += @"GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
+                SQL += @"
+GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
 GRANT insert,select,update,delete ON goodsphoto TO   " + username + @";
 GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
-            goods_methods.MAXPermissionExecuteSql(SQL);
+            goods_methods.ExecuteSql(SQL,true);
 
 
 
@@ -88,7 +93,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         {
             String SQl = "select staffInfo.staffType from staffInfo where staffname = '"
                 + userName + "'";
-            SqlDataReader reader = ExecuteReader(SQl);
+            SqlDataReader reader = ExecuteReader(SQl, true);
             reader.Read();
             String ans = reader.GetString(0);
             reader.Close();
@@ -142,61 +147,47 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         #region  执行简单SQL语句
 
         #region  执行SQL语句，返回影响的记录数
-        /// <param name="SQLString">SQL语句</param>
-        /// <returns>影响的记录数</returns>
-        public static int ExecuteSql(string SQLString)
+
+        //true时最大权限查询
+        public static int ExecuteSql(string SQLString, bool isMaxPermission = false)
         {
-            using (SqlConnection connection = getSqlConnection.getInstance().GetConnect())
+            SqlConnection connection = null;
+            connection = isMaxPermission ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect() : getSqlConnection.getInstance().GetConnect();
+            using (SqlCommand cmd = new SqlCommand(SQLString, connection))
             {
-                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                try
                 {
-                    try
-                    {
-                        int rows = cmd.ExecuteNonQuery();
-                        return rows;
-                    }
-                    catch (System.Data.SqlClient.SqlException e)
-                    {
-                        connection.Close();
-                        throw e;
-                    }
+                    int rows = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return rows;
+                }
+                catch (System.Data.SqlClient.SqlException e)
+                {
+                    connection.Close();
+                    MessageBox.Show("无权操作");
+                    return 0;
                 }
             }
-        }
-
-        #endregion
-
-        #region  最高权限执行SQL语句，返回影响的记录数
-        /// <param name="SQLString">SQL语句</param>
-        /// <returns>影响的记录数</returns>
-        public static int MAXPermissionExecuteSql(string SQLString)
-        {
-            using (SqlConnection connection = getSqlConnection.getInstance().GetMaxPermissionSQLConnect())
-            {
-                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
-                {
-                    try
-                    {
-                        int rows = cmd.ExecuteNonQuery();
-                        return rows;
-                    }
-                    catch (SqlException e)
-                    {
-                        connection.Close();
-                        throw e;
-                    }
-                }
-            }
+            
         }
 
         #endregion
 
         #region 执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
-        /// <param name="strSQL">查询语句</param>
-        /// <returns>SqlDataReader</returns>
-        public static SqlDataReader ExecuteReader(string strSQL)
+
+        //true时最大权限查询
+        public static SqlDataReader ExecuteReader(string strSQL, bool isMaxPermission = false)
         {
-            SqlConnection connection = getSqlConnection.getInstance().GetConnect();
+            SqlConnection connection;
+            if (isMaxPermission)
+            {
+                connection = getSqlConnection.getInstance().GetMaxPermissionSQLConnect();
+            }
+            else
+            {
+                connection = getSqlConnection.getInstance().GetConnect();
+            }
+
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
             {
@@ -215,38 +206,54 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         #region 执行查询语句，返回DataSet
         /// <param name="SQLString">查询语句</param>
         /// <returns>DataSet</returns>
-        public static DataSet Query(string SQLString)
+        public static DataSet Query(string SQLString, bool isMaxpermission = false)
         {
-            using (SqlConnection connection = getSqlConnection.getInstance().GetConnect())
+            SqlConnection connection = isMaxpermission
+                ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect()
+                : getSqlConnection.getInstance().GetConnect();
+
+            DataSet ds = new DataSet();
+            try
             {
-                DataSet ds = new DataSet();
-                try
-                {
-                    SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
-                    command.Fill(ds, "ds");
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-                return ds;
+                SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
+                command.Fill(ds, "ds");
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("无权操作");
+                connection.Close();
+                return null;
+            }
+            connection.Close();
+            return ds;
+
         }
 
         #endregion
 
         #region 查询返回 DataTable 可以填充 DataGridView
-        public DataTable QueryDataAdapt(string selectCommand)
+        public DataTable QueryDataAdapt(string selectCommand,bool isMaxpermission = false)
         {
+            SqlConnection connection = isMaxpermission
+                ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect()
+                : getSqlConnection.getInstance().GetConnect();
             // Create a new data adapter based on the specified query.
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
 
-            dataAdapter.SelectCommand = new SqlCommand(selectCommand, getSqlConnection.getInstance().GetConnect());
+            dataAdapter.SelectCommand = new SqlCommand(selectCommand, connection);
 
             // Populate a new data table and bind it to the BindingSource.
             DataTable table = new DataTable();
             table.Locale = CultureInfo.InvariantCulture;
-            dataAdapter.Fill(table);
+            try
+            {
+                dataAdapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("无权操作");
+            }
+            
             return table;
         }
         #endregion
