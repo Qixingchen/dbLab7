@@ -304,8 +304,6 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             from goodsInfo where goodsid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
-<<<<<<< HEAD
-=======
         #region 查询进货信息表
         public DataTable queryPurchaseInfo(String queryName)
         {
@@ -340,7 +338,6 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
             
         }
->>>>>>> origin/master
         #endregion
     }
 }
