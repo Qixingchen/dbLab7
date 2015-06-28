@@ -41,6 +41,15 @@ namespace lab7
         private void Sell_Inquire_Click(object sender, EventArgs e)
         {
             Staff_Sell staffsell = new Staff_Sell();
+            staffsell.Owner = this;
+            string staffid = textBox1.Text;
+            string SQLString = "select * from staffInfo where staffid=" + staffid;
+            SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
+            reader.Read();
+            string staffid1 = reader.GetString(0);
+            reader.Close();
+            staffsell.setValue(staffid);
+            staffsell.ShowDialog();
         }
         #endregion
 
@@ -82,7 +91,20 @@ namespace lab7
         #region 更新员工信息
         private void Update_Click(object sender, EventArgs e)
         {
-
+            Update_Staff updatestaff = new Update_Staff();
+            updatestaff.Owner = this;
+            string staffid = textBox1.Text;
+            string SQLString = "select * from staffInfo where staffid=" + staffid;
+            SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
+            reader.Read();
+            string staffid1 = reader.GetString(0);
+            string staffname = reader.GetString(1);
+            string staffgender = reader.GetString(2);
+            string staffage = reader.GetSqlInt16(3).ToString();
+            string staffType = reader.GetString(4);
+            reader.Close();
+            updatestaff.setValue(staffid1, staffname, staffgender, staffage, staffType);
+            updatestaff.ShowDialog();
         }
         #endregion
 
