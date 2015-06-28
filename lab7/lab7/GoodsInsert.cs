@@ -102,5 +102,12 @@ namespace lab7
             }
             
         }
+
+        private void addPhotoBtn_Click(object sender, EventArgs e)
+        {
+            photoUploadForm photoupload = new photoUploadForm();
+            photoupload.Owner = this;
+            photoupload.ShowDialog();
+        }
     }
 }

@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.commitBtn = new System.Windows.Forms.Button();
             this.photoid_comboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addPhotoBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // id_text
@@ -121,22 +121,23 @@
             this.photoid_comboBox.Size = new System.Drawing.Size(82, 20);
             this.photoid_comboBox.TabIndex = 28;
             // 
-            // button1
+            // addPhotoBtn
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(215, 132);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 25);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "新增图片";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addPhotoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addPhotoBtn.Location = new System.Drawing.Point(215, 132);
+            this.addPhotoBtn.Name = "addPhotoBtn";
+            this.addPhotoBtn.Size = new System.Drawing.Size(74, 25);
+            this.addPhotoBtn.TabIndex = 29;
+            this.addPhotoBtn.Text = "新增图片";
+            this.addPhotoBtn.UseVisualStyleBackColor = true;
+            this.addPhotoBtn.Click += new System.EventHandler(this.addPhotoBtn_Click);
             // 
             // GoodsInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 176);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addPhotoBtn);
             this.Controls.Add(this.photoid_comboBox);
             this.Controls.Add(this.commitBtn);
             this.Controls.Add(this.label4);
@@ -165,6 +166,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button commitBtn;
         private System.Windows.Forms.ComboBox photoid_comboBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addPhotoBtn;
     }
 }
