@@ -33,7 +33,7 @@ namespace lab7
         #endregion
 
         #region 新增用户
-        public void AddUser(String staffID, String username, String UserAge, String UserSex, String UserType)
+        public int AddUser(String staffID, String username, String UserAge, String UserSex, String UserType)
         {
             String SQL =
                 "insert into staffinfo values(" + staffID + "," + "'" + username + "'" + "," + "'" + UserSex + "'" +
@@ -82,7 +82,7 @@ GRANT insert,select,update,delete ON goodsinfo TO  " + username + @";
 GRANT insert,select,update,delete ON goodsphoto TO   " + username + @";
 GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
-            goods_methods.ExecuteSql(SQL, true);
+            return(goods_methods.ExecuteSql(SQL, true));
 
 
 
@@ -131,15 +131,6 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
             return dataTable;
         }
-        public DataTable getInventoryInfo(int SQLname)
-        {
-            String sqlString = "select goodsid as '商品编号', goodsname as '商品名称',reserve as '库存数量' from inventoryInfo";
-            if (SQLname != null)
-            {
-                sqlString += " where goodsname = '" + SQLname + "'";
-            }
-            return QueryDataAdapt(sqlString);
-        }
 
         #endregion
 
@@ -184,7 +175,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
                     connection.Close();
                     return rows;
                 }
-                catch (System.Data.SqlClient.SqlException e)
+                catch (System.Data.SqlClient.SqlException)
                 {
                     connection.Close();
                     MessageBox.Show("无权操作");
@@ -241,7 +232,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
                 SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                 command.Fill(ds, "ds");
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 MessageBox.Show("无权操作");
                 connection.Close();
@@ -283,13 +274,28 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
 
         #endregion
 
-        public DataTable querySellInfo(String queryName)
+        #region 销售信息查询
+        public DataTable querySellInfo(String queryName,int which)
         {
-            String sqlString = @"select sellid as '销售ID',selltime as '销售日期',
+            String sqlString = string.Empty;
+            if(which == 1)
+            {
+                sqlString = @"select sellid as '销售ID',selltime as '销售日期',
             sellcount as '销售数量',payment as '销售价格',goodsid as '商品ID',
-            staffid as '销售员ID' from sellInfo where sellid=" + queryName;
+            staffid as '销售员ID' from sellInfo ";
+            }
+            else if (which == 2)
+            {
+                sqlString = @"select sellid as '销售ID',selltime as '销售日期',
+            sellcount as '销售数量',payment as '销售价格',goodsid as '商品ID',
+            staffid as '销售员ID' from sellInfo where goodsid in (select goodsid
+            from goodsInfo where goodsname = '" + queryName + "')";
+            }
             return QueryDataAdapt(sqlString);
         }
+        #endregion 
+
+        #region 商品信息查询
         public DataTable queryProductInfo(String queryName)
         {
             String sqlString = @"select goodsid as '商品ID',goodsname as '商品名称',
@@ -298,5 +304,6 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             from goodsInfo where goodsid=" + queryName;
             return QueryDataAdapt(sqlString);
         }
+        #endregion
     }
 }

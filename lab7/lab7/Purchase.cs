@@ -26,10 +26,5 @@ namespace lab7
         {
 
         }
-
-        private void Update_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
