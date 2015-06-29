@@ -13,6 +13,7 @@ namespace lab7
 {
     public partial class Staff_Manage : Form
     {
+        private int row = -1;
         BindingSource bindingSource = new BindingSource();
         public Staff_Manage()
         {
@@ -25,10 +26,12 @@ namespace lab7
 
         }
 
+        #region 定位选中的行
         private void Staff_Info_Manage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            select_row_info(e.RowIndex);
         }
+        #endregion
 
         #region 信息查询
         private void Info_Inquire_Click(object sender, EventArgs e)
@@ -126,6 +129,23 @@ namespace lab7
             }
         }
         #endregion
+
+        #region 获取选中行信息
+        private void select_row_info(int location)
+        {
+            if (location < 0)
+            {
+                return;
+            }
+            row = location;
+            textBox1.Text = Staff_Info_Manage.CurrentRow.Cells[0].Value.ToString();
+        }
+        #endregion
+
+        private void Staff_Info_Manage_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            select_row_info(e.RowIndex);
+        }
 
     }
 }

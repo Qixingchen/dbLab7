@@ -106,5 +106,24 @@ namespace lab7
             }
         }
         #endregion
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            select_row_info(e.RowIndex);
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            select_row_info(e.RowIndex);
+        }
+
+        private void select_row_info(int location)
+        {
+            if(location<0)
+            {
+                return;
+            }
+            textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
     }
 }
