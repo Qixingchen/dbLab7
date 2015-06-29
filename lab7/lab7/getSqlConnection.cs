@@ -52,7 +52,7 @@ namespace lab7
             mUserName = userName;
             mUserPwd = userPwd;
 
-            strConnection = "server=mac-PC\\SQLEXPRESS;database=Goods;Trusted_Connection=False";
+            strConnection = "server=mac-PC\\SQLEXPRESS;database=Goods;Trusted_Connection=SSPI";
             getConnect = new SqlConnection(strConnection); //连接数据库，返回数据库连接对象
             try
             {
