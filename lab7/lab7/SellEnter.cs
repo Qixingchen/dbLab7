@@ -65,6 +65,31 @@ namespace lab7
             string sellcount = count_text.Text;
             string staffid = staff_id.Text;
             DateTime selltime = dateTimePicker1.Value;
+            if(sellid == "")
+            {
+                MessageBox.Show("销售编号不允许为空");
+                return;
+            }
+            if (goodsid == "")
+            {
+                MessageBox.Show("商品编号不允许为空");
+                return;
+            }
+            if (payment == "")
+            {
+                MessageBox.Show("付款金额不允许为空");
+                return;
+            }
+            if (sellcount == "")
+            {
+                MessageBox.Show("销售数量不允许为空");
+                return;
+            }
+            if (staffid == "")
+            {
+                MessageBox.Show("员工编号不允许为空");
+                return;
+            }
             if (isUpdate)
             {
                 string SQLString1 = "update sellInfo set sellid=" + sellid + ", goodsid = '" + goodsid + "', payment = " + payment + ",sellcount = " + sellcount + ", staffid =" + staffid + ",selltime = '" + selltime + "' where sellid=" + sellid;

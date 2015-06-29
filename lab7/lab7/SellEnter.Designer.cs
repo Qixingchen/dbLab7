@@ -76,7 +76,7 @@ namespace lab7
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 14);
             this.label3.TabIndex = 2;
-            this.label3.Text = "商品名称";
+            this.label3.Text = "商品编号";
             // 
             // label4
             // 
@@ -156,7 +156,7 @@ namespace lab7
             // 
             this.name_text.FormattingEnabled = true;
             this.name_text.Location = new System.Drawing.Point(119, 82);
-            this.name_text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.name_text.Margin = new System.Windows.Forms.Padding(2);
             this.name_text.Name = "name_text";
             this.name_text.Size = new System.Drawing.Size(97, 20);
             this.name_text.TabIndex = 14;
@@ -165,7 +165,7 @@ namespace lab7
             // 
             this.staff_id.FormattingEnabled = true;
             this.staff_id.Location = new System.Drawing.Point(343, 148);
-            this.staff_id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.staff_id.Margin = new System.Windows.Forms.Padding(2);
             this.staff_id.Name = "staff_id";
             this.staff_id.Size = new System.Drawing.Size(100, 20);
             this.staff_id.TabIndex = 15;
