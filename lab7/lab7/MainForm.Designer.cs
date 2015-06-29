@@ -35,13 +35,12 @@ namespace lab7
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.staffInfoBtn = new System.Windows.Forms.Button();
             this.SellInfoInsertBtn = new System.Windows.Forms.Button();
             this.StoreInfoInsertBtn = new System.Windows.Forms.Button();
-            this.StaffInfoInsertBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.InventorySelectBtn = new System.Windows.Forms.Button();
-            this.GoodsInfoActBtn = new System.Windows.Forms.Button();
             this.SellInfoActBtn = new System.Windows.Forms.Button();
             this.StoreInfoActBtn = new System.Windows.Forms.Button();
             this.StaffInfoActBtn = new System.Windows.Forms.Button();
@@ -53,7 +52,6 @@ namespace lab7
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.UserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.staffInfoBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,34 +59,42 @@ namespace lab7
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.staffInfoBtn);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.SellInfoInsertBtn);
-            this.groupBox1.Controls.Add(this.StoreInfoInsertBtn);
-            this.groupBox1.Controls.Add(this.StaffInfoInsertBtn);
+            this.groupBox1.Controls.Add(this.securityLabel);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox1.Location = new System.Drawing.Point(169, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 166);
+            this.groupBox1.Size = new System.Drawing.Size(421, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "信息录入";
+            this.groupBox1.Text = "信息提示";
+            // 
+            // staffInfoBtn
+            // 
+            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.staffInfoBtn.Location = new System.Drawing.Point(165, 42);
+            this.staffInfoBtn.Name = "staffInfoBtn";
+            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
+            this.staffInfoBtn.TabIndex = 7;
+            this.staffInfoBtn.Text = "员工信息录入";
+            this.staffInfoBtn.UseVisualStyleBackColor = true;
+            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
             // 
             // button1
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(24, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "商品清单";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.staffInfoBtn.Location = new System.Drawing.Point(285, 102);
+            this.staffInfoBtn.Name = "staffInfoBtn";
+            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
+            this.staffInfoBtn.TabIndex = 7;
+            this.staffInfoBtn.Text = "员工信息录入";
+            this.staffInfoBtn.UseVisualStyleBackColor = true;
+            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
             // 
             // SellInfoInsertBtn
             // 
             this.SellInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SellInfoInsertBtn.Location = new System.Drawing.Point(24, 111);
+            this.SellInfoInsertBtn.Location = new System.Drawing.Point(24, 102);
             this.SellInfoInsertBtn.Name = "SellInfoInsertBtn";
             this.SellInfoInsertBtn.Size = new System.Drawing.Size(105, 38);
             this.SellInfoInsertBtn.TabIndex = 2;
@@ -99,7 +105,7 @@ namespace lab7
             // StoreInfoInsertBtn
             // 
             this.StoreInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StoreInfoInsertBtn.Location = new System.Drawing.Point(165, 111);
+            this.StoreInfoInsertBtn.Location = new System.Drawing.Point(154, 102);
             this.StoreInfoInsertBtn.Name = "StoreInfoInsertBtn";
             this.StoreInfoInsertBtn.Size = new System.Drawing.Size(105, 38);
             this.StoreInfoInsertBtn.TabIndex = 1;
@@ -107,28 +113,31 @@ namespace lab7
             this.StoreInfoInsertBtn.UseVisualStyleBackColor = true;
             this.StoreInfoInsertBtn.Click += new System.EventHandler(this.StoreInfoInsertBtn_Click);
             // 
-            // StaffInfoInsertBtn
+            // button1
             // 
-            this.StaffInfoInsertBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StaffInfoInsertBtn.Location = new System.Drawing.Point(24, 42);
-            this.StaffInfoInsertBtn.Name = "StaffInfoInsertBtn";
-            this.StaffInfoInsertBtn.Size = new System.Drawing.Size(105, 38);
-            this.StaffInfoInsertBtn.TabIndex = 0;
-            this.StaffInfoInsertBtn.Text = "员工信息录入";
-            this.StaffInfoInsertBtn.UseVisualStyleBackColor = true;
-            this.StaffInfoInsertBtn.Click += new System.EventHandler(this.StaffInfoInsertBtn_Click);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Location = new System.Drawing.Point(24, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 38);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "商品清单管理";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.StoreInfoInsertBtn);
+            this.groupBox2.Controls.Add(this.staffInfoBtn);
             this.groupBox2.Controls.Add(this.InventorySelectBtn);
-            this.groupBox2.Controls.Add(this.GoodsInfoActBtn);
+            this.groupBox2.Controls.Add(this.SellInfoInsertBtn);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.SellInfoActBtn);
             this.groupBox2.Controls.Add(this.StoreInfoActBtn);
             this.groupBox2.Controls.Add(this.StaffInfoActBtn);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox2.Location = new System.Drawing.Point(169, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(303, 256);
+            this.groupBox2.Size = new System.Drawing.Size(421, 256);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "查询与管理";
@@ -136,24 +145,13 @@ namespace lab7
             // InventorySelectBtn
             // 
             this.InventorySelectBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.InventorySelectBtn.Location = new System.Drawing.Point(24, 36);
+            this.InventorySelectBtn.Location = new System.Drawing.Point(154, 36);
             this.InventorySelectBtn.Name = "InventorySelectBtn";
             this.InventorySelectBtn.Size = new System.Drawing.Size(105, 38);
             this.InventorySelectBtn.TabIndex = 5;
             this.InventorySelectBtn.Text = "库存信息查询";
             this.InventorySelectBtn.UseVisualStyleBackColor = true;
             this.InventorySelectBtn.Click += new System.EventHandler(this.InventorySelectBtn_Click);
-            // 
-            // GoodsInfoActBtn
-            // 
-            this.GoodsInfoActBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.GoodsInfoActBtn.Location = new System.Drawing.Point(154, 177);
-            this.GoodsInfoActBtn.Name = "GoodsInfoActBtn";
-            this.GoodsInfoActBtn.Size = new System.Drawing.Size(105, 38);
-            this.GoodsInfoActBtn.TabIndex = 4;
-            this.GoodsInfoActBtn.Text = "商品信息管理";
-            this.GoodsInfoActBtn.UseVisualStyleBackColor = true;
-            this.GoodsInfoActBtn.Click += new System.EventHandler(this.GoodsInfoActBtn_Click);
             // 
             // SellInfoActBtn
             // 
@@ -169,27 +167,27 @@ namespace lab7
             // StoreInfoActBtn
             // 
             this.StoreInfoActBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StoreInfoActBtn.Location = new System.Drawing.Point(154, 102);
+            this.StoreInfoActBtn.Location = new System.Drawing.Point(154, 177);
             this.StoreInfoActBtn.Name = "StoreInfoActBtn";
             this.StoreInfoActBtn.Size = new System.Drawing.Size(105, 38);
             this.StoreInfoActBtn.TabIndex = 2;
             this.StoreInfoActBtn.Text = "进货信息管理";
             this.StoreInfoActBtn.UseVisualStyleBackColor = true;
+            this.StoreInfoActBtn.Click += new System.EventHandler(this.StoreInfoActBtn_Click);
             // 
             // StaffInfoActBtn
             // 
             this.StaffInfoActBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StaffInfoActBtn.Location = new System.Drawing.Point(24, 102);
+            this.StaffInfoActBtn.Location = new System.Drawing.Point(285, 177);
             this.StaffInfoActBtn.Name = "StaffInfoActBtn";
             this.StaffInfoActBtn.Size = new System.Drawing.Size(105, 38);
             this.StaffInfoActBtn.TabIndex = 1;
             this.StaffInfoActBtn.Text = "员工信息管理";
             this.StaffInfoActBtn.UseVisualStyleBackColor = true;
+            this.StaffInfoActBtn.Click += new System.EventHandler(this.StaffInfoActBtn_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.securityLabel);
-            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.LogoutBtn);
             this.groupBox3.Controls.Add(this.groupBox5);
@@ -206,9 +204,9 @@ namespace lab7
             this.securityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.securityLabel.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.securityLabel.Location = new System.Drawing.Point(3, 236);
+            this.securityLabel.Location = new System.Drawing.Point(7, 64);
             this.securityLabel.Name = "securityLabel";
-            this.securityLabel.Size = new System.Drawing.Size(132, 128);
+            this.securityLabel.Size = new System.Drawing.Size(408, 44);
             this.securityLabel.TabIndex = 9;
             this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
             // 
@@ -217,7 +215,7 @@ namespace lab7
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label4.Location = new System.Drawing.Point(2, 208);
+            this.label4.Location = new System.Drawing.Point(7, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 18);
             this.label4.TabIndex = 7;
@@ -229,7 +227,7 @@ namespace lab7
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(0, 172);
+            this.label1.Location = new System.Drawing.Point(6, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 5;
@@ -261,7 +259,7 @@ namespace lab7
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.UserName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.UserName.Location = new System.Drawing.Point(56, 172);
+            this.UserName.Location = new System.Drawing.Point(62, 172);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(40, 18);
             this.UserName.TabIndex = 1;
@@ -280,20 +278,9 @@ namespace lab7
             this.label2.Text = "商品管理系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // staffInfoBtn
-            // 
-            this.staffInfoBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.staffInfoBtn.Location = new System.Drawing.Point(165, 42);
-            this.staffInfoBtn.Name = "staffInfoBtn";
-            this.staffInfoBtn.Size = new System.Drawing.Size(105, 38);
-            this.staffInfoBtn.TabIndex = 7;
-            this.staffInfoBtn.Text = "员工信息录入";
-            this.staffInfoBtn.UseVisualStyleBackColor = true;
-            this.staffInfoBtn.Click += new System.EventHandler(this.staffInfoBtn_Click);
-            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(485, 447);
+            this.ClientSize = new System.Drawing.Size(602, 447);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -301,6 +288,7 @@ namespace lab7
             this.Text = "商品信息管理系统";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -310,32 +298,11 @@ namespace lab7
 
         #endregion
 
-        /*private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button SellInfoInsertBtn;
-        private System.Windows.Forms.Button StoreInfoInsertBtn;
-        private System.Windows.Forms.Button StaffInfoInsertBtn;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button InventorySelectBtn;
-        private System.Windows.Forms.Button GoodsInfoActBtn;
-        private System.Windows.Forms.Button SellInfoActBtn;
-        private System.Windows.Forms.Button StoreInfoActBtn;
-        private System.Windows.Forms.Button StaffInfoActBtn;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Label UserName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label securityLabel;
-        private System.Windows.Forms.Button button1;*/
         private GroupBox groupBox1;
         private Button SellInfoInsertBtn;
         private Button StoreInfoInsertBtn;
-        private Button StaffInfoInsertBtn;
         private GroupBox groupBox2;
         private Button InventorySelectBtn;
-        private Button GoodsInfoActBtn;
         private Button SellInfoActBtn;
         private Button StoreInfoActBtn;
         private Button StaffInfoActBtn;

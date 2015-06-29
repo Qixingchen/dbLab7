@@ -32,12 +32,12 @@ namespace lab7
         private void InitializeComponent()
         {
             this.groupbox = new System.Windows.Forms.GroupBox();
+            this.insert = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.insert = new System.Windows.Forms.Button();
             this.groupbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,16 @@ namespace lab7
             this.groupbox.TabIndex = 0;
             this.groupbox.TabStop = false;
             this.groupbox.Text = "商品信息管理";
+            // 
+            // insert
+            // 
+            this.insert.Location = new System.Drawing.Point(998, 59);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(168, 50);
+            this.insert.TabIndex = 4;
+            this.insert.Text = "插入";
+            this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // delete
             // 
@@ -90,7 +100,7 @@ namespace lab7
             // 
             this.textBox1.Location = new System.Drawing.Point(16, 59);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 35);
+            this.textBox1.Size = new System.Drawing.Size(262, 21);
             this.textBox1.TabIndex = 0;
             // 
             // dataGridView1
@@ -102,16 +112,6 @@ namespace lab7
             this.dataGridView1.Size = new System.Drawing.Size(1208, 370);
             this.dataGridView1.TabIndex = 1;
             // 
-            // insert
-            // 
-            this.insert.Location = new System.Drawing.Point(998, 59);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(168, 50);
-            this.insert.TabIndex = 4;
-            this.insert.Text = "插入";
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_Click);
-            // 
             // ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -122,6 +122,7 @@ namespace lab7
             this.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "ProductInfo";
             this.Text = "ProductInfo";
+            this.Load += new System.EventHandler(this.ProductInfo_Load);
             this.groupbox.ResumeLayout(false);
             this.groupbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

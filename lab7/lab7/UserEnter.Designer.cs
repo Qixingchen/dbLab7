@@ -33,120 +33,137 @@ namespace lab7
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new Label();
-            this.label2 = new Label();
-            this.label3 = new Label();
-            this.label4 = new Label();
-            this.comboBox1 = new ComboBox();
-            this.textBox1 = new TextBox();
-            this.textBox2 = new TextBox();
-            this.textBox3 = new TextBox();
-            this.button1 = new Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.gender_text = new System.Windows.Forms.ComboBox();
+            this.name_text = new System.Windows.Forms.TextBox();
+            this.age_text = new System.Windows.Forms.TextBox();
+            this.commitBtn = new System.Windows.Forms.Button();
+            this.staffType_text = new System.Windows.Forms.ComboBox();
+            this.id_text = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new Point(36, 31);
+            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(36, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new Size(63, 14);
+            this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 0;
-            this.label1.Text = "员工编号";
-            this.label1.Click += new EventHandler(this.label1_Click);
+            this.label1.Text = "员工类型";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new Point(266, 31);
+            this.label2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(266, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new Size(63, 14);
+            this.label2.Size = new System.Drawing.Size(63, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "员工姓名";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new Point(36, 145);
+            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(36, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new Size(63, 14);
+            this.label3.Size = new System.Drawing.Size(63, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "员工性别";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new Point(266, 145);
+            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(266, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new Size(63, 14);
+            this.label4.Size = new System.Drawing.Size(63, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "员工年龄";
             // 
-            // comboBox1
+            // gender_text
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.gender_text.FormattingEnabled = true;
+            this.gender_text.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.comboBox1.Location = new Point(105, 144);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new Size(100, 20);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.gender_text.Location = new System.Drawing.Point(105, 144);
+            this.gender_text.Name = "gender_text";
+            this.gender_text.Size = new System.Drawing.Size(100, 20);
+            this.gender_text.TabIndex = 4;
             // 
-            // textBox1
+            // name_text
             // 
-            this.textBox1.Location = new Point(105, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new Size(100, 21);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new EventHandler(this.textBox1_TextChanged);
+            this.name_text.Location = new System.Drawing.Point(341, 27);
+            this.name_text.Name = "name_text";
+            this.name_text.Size = new System.Drawing.Size(100, 21);
+            this.name_text.TabIndex = 6;
             // 
-            // textBox2
+            // age_text
             // 
-            this.textBox2.Location = new Point(341, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new Size(100, 21);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.TextChanged += new EventHandler(this.textBox2_TextChanged);
+            this.age_text.Location = new System.Drawing.Point(341, 143);
+            this.age_text.Name = "age_text";
+            this.age_text.Size = new System.Drawing.Size(100, 21);
+            this.age_text.TabIndex = 7;
             // 
-            // textBox3
+            // commitBtn
             // 
-            this.textBox3.Location = new Point(341, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Size(100, 21);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new EventHandler(this.textBox3_TextChanged);
+            this.commitBtn.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.commitBtn.Location = new System.Drawing.Point(200, 211);
+            this.commitBtn.Name = "commitBtn";
+            this.commitBtn.Size = new System.Drawing.Size(75, 23);
+            this.commitBtn.TabIndex = 8;
+            this.commitBtn.Text = "录入";
+            this.commitBtn.UseVisualStyleBackColor = true;
+            this.commitBtn.Click += new System.EventHandler(this.commitBtn_Click);
             // 
-            // button1
+            // staffType_text
             // 
-            this.button1.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new Point(200, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "录入";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new EventHandler(this.button1_Click);
+            this.staffType_text.FormattingEnabled = true;
+            this.staffType_text.Location = new System.Drawing.Point(105, 75);
+            this.staffType_text.Name = "staffType_text";
+            this.staffType_text.Size = new System.Drawing.Size(100, 20);
+            this.staffType_text.TabIndex = 9;
+            // 
+            // id_text
+            // 
+            this.id_text.Location = new System.Drawing.Point(111, 27);
+            this.id_text.Name = "id_text";
+            this.id_text.Size = new System.Drawing.Size(100, 21);
+            this.id_text.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(36, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 14);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "员工ID";
             // 
             // UserEnter
             // 
-            this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.ClientSize = new Size(499, 269);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(499, 269);
+            this.Controls.Add(this.id_text);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.staffType_text);
+            this.Controls.Add(this.commitBtn);
+            this.Controls.Add(this.age_text);
+            this.Controls.Add(this.name_text);
+            this.Controls.Add(this.gender_text);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserEnter";
             this.Text = "UserEnter";
+            this.Load += new System.EventHandler(this.On_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,11 +175,13 @@ namespace lab7
         private Label label2;
         private Label label3;
         private Label label4;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Button button1;
+        private ComboBox gender_text;
+        private TextBox name_text;
+        private TextBox age_text;
+        private Button commitBtn;
+        private ComboBox staffType_text;
+        private TextBox id_text;
+        private Label label5;
 
     }
 }

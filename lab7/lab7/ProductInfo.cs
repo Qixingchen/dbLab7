@@ -68,5 +68,10 @@ namespace lab7
                     break;
             }
         }
+
+        private void ProductInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
