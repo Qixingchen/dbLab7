@@ -6,7 +6,6 @@ namespace lab7
     public partial class GoodsList : Form
     {
         private int row = -1;
-        private string GoodsDataIDSelected;
         BindingSource bindingSource = new BindingSource();
         public GoodsList()
         {

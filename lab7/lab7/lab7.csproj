@@ -81,12 +81,6 @@
     <Compile Include="photoUploadForm.Designer.cs">
       <DependentUpon>photoUploadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popup.Designer.cs">
-      <DependentUpon>Popup.cs</DependentUpon>
-    </Compile>
     <Compile Include="PubConstant.cs" />
     <Compile Include="getSqlConnection.cs" />
     <Compile Include="goods_methods.cs" />
@@ -134,12 +128,6 @@
     <Compile Include="Staff_Manage.Designer.cs">
       <DependentUpon>Staff_Manage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff_Sell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff_Sell.Designer.cs">
-      <DependentUpon>Staff_Sell.cs</DependentUpon>
-    </Compile>
     <Compile Include="StockEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,9 +170,6 @@
     <EmbeddedResource Include="photoUploadForm.resx">
       <DependentUpon>photoUploadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup.resx">
-      <DependentUpon>Popup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -205,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff_Manage.resx">
       <DependentUpon>Staff_Manage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff_Sell.resx">
-      <DependentUpon>Staff_Sell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockEnter.resx">
       <DependentUpon>StockEnter.cs</DependentUpon>

@@ -40,7 +40,7 @@ namespace lab7
             // 
             // selectName
             // 
-            this.selectName.Location = new System.Drawing.Point(118, 12);
+            this.selectName.Location = new System.Drawing.Point(92, 12);
             this.selectName.Name = "selectName";
             this.selectName.Size = new System.Drawing.Size(100, 21);
             this.selectName.TabIndex = 0;
@@ -48,10 +48,10 @@ namespace lab7
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(654, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(368, 326);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
@@ -59,7 +59,7 @@ namespace lab7
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(44, 13);
+            this.label1.Location = new System.Drawing.Point(18, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 15;
@@ -69,7 +69,7 @@ namespace lab7
             // inquire
             // 
             this.inquire.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.inquire.Location = new System.Drawing.Point(244, 9);
+            this.inquire.Location = new System.Drawing.Point(218, 9);
             this.inquire.Name = "inquire";
             this.inquire.Size = new System.Drawing.Size(60, 25);
             this.inquire.TabIndex = 16;
@@ -81,7 +81,7 @@ namespace lab7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 400);
+            this.ClientSize = new System.Drawing.Size(402, 400);
             this.Controls.Add(this.inquire);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);

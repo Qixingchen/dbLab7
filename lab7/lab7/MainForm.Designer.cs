@@ -206,7 +206,7 @@ namespace lab7
             this.securityLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.securityLabel.Location = new System.Drawing.Point(7, 64);
             this.securityLabel.Name = "securityLabel";
-            this.securityLabel.Size = new System.Drawing.Size(271, 44);
+            this.securityLabel.Size = new System.Drawing.Size(408, 44);
             this.securityLabel.TabIndex = 9;
             this.securityLabel.Text = "对员工信息、销售信息、进货信息、商品信息、库存信息的查询权限";
             // 
