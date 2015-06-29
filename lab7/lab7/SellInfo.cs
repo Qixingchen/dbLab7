@@ -30,13 +30,13 @@ namespace lab7
         {
             SellEnter sells = new SellEnter();
             sells.Owner = this;
-            string sellid = key_words.Text;
+            string sellid = sell_dataGridView.Rows[row].Cells["销售ID"].Value.ToString();
             string SQLString = "select * from sellInfo where sellid=" + sellid;
             SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
             reader.Read();
             DateTime selltime = reader.GetDateTime(1);
             string sellcount = reader.GetInt16(2).ToString();
-            string payment = reader.GetInt16(3).ToString();
+            string payment = reader.GetSqlMoney(3).ToString();
             string goodsid = reader.GetString(4);
             string staffid = reader.GetString(5);
             reader.Close();
@@ -64,6 +64,7 @@ namespace lab7
                     goods_methods.ExecuteSql(SQLString);
                     break;
             }
+            SellInfo_Load(null,null);
         }
 
         private void SellInfo_Load(object sender, EventArgs e)
@@ -80,6 +81,11 @@ namespace lab7
         }
 
         private void sell_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            select_row(e.RowIndex);
+        }
+
+        private void sell_dataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             select_row(e.RowIndex);
         }

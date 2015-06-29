@@ -134,6 +134,7 @@ namespace lab7
             this.sell_dataGridView.Size = new System.Drawing.Size(503, 248);
             this.sell_dataGridView.TabIndex = 1;
             this.sell_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sell_dataGridView_CellContentClick);
+            this.sell_dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.sell_dataGridView_RowHeaderMouseClick);
             // 
             // SellInfo
             // 
