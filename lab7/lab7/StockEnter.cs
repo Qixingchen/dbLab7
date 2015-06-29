@@ -10,6 +10,14 @@ namespace lab7
             InitializeComponent();
         }
 
+        public void flush()
+        {
+            stockid_text.Text = string.Empty;
+            goodsid_text.Text = string.Empty;
+            count_text.Text = string.Empty;
+            staffid_text.Text = string.Empty;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             String stockid;
@@ -18,10 +26,10 @@ namespace lab7
             String goodscount;
             String staffid;
 
-            stockid = textBox1.Text;  //获取窗口数据
-            goodsid = textBox2.Text;
-            goodscount = textBox4.Text;
-            staffid = textBox8.Text;
+            stockid = stockid_text.Text;  //获取窗口数据
+            goodsid = goodsid_text.Text;
+            goodscount = count_text.Text;
+            staffid = staffid_text.Text;
             stocktime = dateTimePicker1.Value.ToString();
 
             string sql = "insert into stockinfo values(" + stockid + "," + "'" + stocktime + "'" + "," + goodscount + "," + goodsid + "," + staffid + ")";
@@ -29,8 +37,12 @@ namespace lab7
 
             if (result != 0)
             {
-                Popup popup = new Popup();
-                popup.ShowDialog();
+                this.flush();
+            }
+            else
+            {
+                MessageBox.Show("录入不成功！");
+                return;
             }
 
         }

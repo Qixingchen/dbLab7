@@ -11,61 +11,75 @@ namespace lab7
         {
             InitializeComponent();
         }
+        public void flush()
+        {
+            id_text.Text = string.Empty;
+            name_text.Text = string.Empty;
+            count_text.Text = string.Empty;
+            payment_text.Text = string.Empty;
+            staff_id.Text = string.Empty;
+        }
         private void SellEnter_Load(object sender, EventArgs e)
         {
 
             string SQLString = "select goodsid as sid from goodsInfo";
-            comboBox1.DisplayMember = "sid";
-            comboBox1.ValueMember = "sid";
+            name_text.DisplayMember = "sid";
+            name_text.ValueMember = "sid";
             DataSet dataset = goods_methods.Query(SQLString);
             if (dataset==null)
             {
                 Hide();
                 return;
             }
-            comboBox1.DataSource = dataset.Tables[0];
+            name_text.DataSource = dataset.Tables[0];
             
             SQLString = "select staffid as sid1 from staffInfo";
-            comboBox2.DisplayMember = "sid1";
-            comboBox2.ValueMember = "sid1";
+            staff_id.DisplayMember = "sid1";
+            staff_id.ValueMember = "sid1";
             dataset = goods_methods.Query(SQLString);
             if (dataset == null)
             {
                 this.Hide();
                 return;
             }
-            comboBox2.DataSource = dataset.Tables[0];
+            staff_id.DataSource = dataset.Tables[0];
 
         }
         public void setValue(string sellid, DateTime selltime, string sellcount, string payment, string goodsid, string staffid)
         {
-            textBox1.Text = sellid;
-            comboBox1.Text = goodsid;
-            textBox4.Text = payment;
-            textBox3.Text = sellcount;
-            comboBox2.Text = staffid;
+            id_text.Text = sellid;
+            name_text.Text = goodsid;
+            payment_text.Text = payment;
+            count_text.Text = sellcount;
+            staff_id.Text = staffid;
             dateTimePicker1.Value = selltime;
-            textBox1.ReadOnly = true;
+            id_text.ReadOnly = true;
             isUpdate = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sellid = textBox1.Text;
-            string goodsid = comboBox1.Text;
-            string payment = textBox4.Text;
-            string sellcount = textBox3.Text;
-            string staffid = comboBox2.Text;
+            string sellid = id_text.Text;
+            string goodsid = name_text.Text;
+            string payment = payment_text.Text;
+            string sellcount = count_text.Text;
+            string staffid = staff_id.Text;
             DateTime selltime = dateTimePicker1.Value;
             if (isUpdate)
             {
                 string SQLString1 = "update sellInfo set sellid=" + sellid + ", goodsid = '" + goodsid + "', payment = " + payment + ",sellcount = " + sellcount + ", staffid =" + staffid + ",selltime = '" + selltime + "' where sellid=" + sellid;
-                goods_methods.ExecuteSql(SQLString1);
+                if (goods_methods.ExecuteSql(SQLString1) != 0)
+                {
+                    this.flush();
+                }
             }
             else
             {
                 string SQLString2 = "insert into  sellInfo values('" + sellid + "','" + selltime + "','" + sellcount + "','" + payment + "','" + goodsid + "','" + staffid + "')";
-                goods_methods.ExecuteSql(SQLString2);
+                if(goods_methods.ExecuteSql(SQLString2) != 0)
+                {
+                    this.flush();
+                }
             }
         }
     }

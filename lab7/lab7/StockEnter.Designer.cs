@@ -34,13 +34,13 @@ namespace lab7
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.stockid_text = new System.Windows.Forms.TextBox();
+            this.goodsid_text = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.count_text = new System.Windows.Forms.TextBox();
+            this.staffid_text = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -74,19 +74,19 @@ namespace lab7
             this.label3.TabIndex = 2;
             this.label3.Text = "商品编号";
             // 
-            // textBox1
+            // stockid_text
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 4;
+            this.stockid_text.Location = new System.Drawing.Point(103, 24);
+            this.stockid_text.Name = "stockid_text";
+            this.stockid_text.Size = new System.Drawing.Size(100, 21);
+            this.stockid_text.TabIndex = 4;
             // 
-            // textBox2
+            // goodsid_text
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 5;
+            this.goodsid_text.Location = new System.Drawing.Point(103, 75);
+            this.goodsid_text.Name = "goodsid_text";
+            this.goodsid_text.Size = new System.Drawing.Size(100, 21);
+            this.goodsid_text.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
@@ -115,19 +115,19 @@ namespace lab7
             this.label10.TabIndex = 13;
             this.label10.Text = "操作人编号";
             // 
-            // textBox4
+            // count_text
             // 
-            this.textBox4.Location = new System.Drawing.Point(311, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 14;
+            this.count_text.Location = new System.Drawing.Point(311, 75);
+            this.count_text.Name = "count_text";
+            this.count_text.Size = new System.Drawing.Size(100, 21);
+            this.count_text.TabIndex = 14;
             // 
-            // textBox8
+            // staffid_text
             // 
-            this.textBox8.Location = new System.Drawing.Point(117, 132);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 21);
-            this.textBox8.TabIndex = 18;
+            this.staffid_text.Location = new System.Drawing.Point(117, 132);
+            this.staffid_text.Name = "staffid_text";
+            this.staffid_text.Size = new System.Drawing.Size(100, 21);
+            this.staffid_text.TabIndex = 18;
             // 
             // button1
             // 
@@ -146,13 +146,13 @@ namespace lab7
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 193);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.staffid_text);
+            this.Controls.Add(this.count_text);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.goodsid_text);
+            this.Controls.Add(this.stockid_text);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -169,13 +169,13 @@ namespace lab7
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox stockid_text;
+        private System.Windows.Forms.TextBox goodsid_text;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox count_text;
+        private System.Windows.Forms.TextBox staffid_text;
         private System.Windows.Forms.Button button1;
 
     }
