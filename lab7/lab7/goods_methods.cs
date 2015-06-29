@@ -164,21 +164,21 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
 
         //true时最大权限查询
         public static int ExecuteSql(string SQLString, bool isMaxPermission = false)
-            {
+        {
             SqlConnection connection = null;
             connection = isMaxPermission ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect() : getSqlConnection.getInstance().GetConnect();
-                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+            using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+            {
+                try
                 {
-                    try
-                    {
-                        int rows = cmd.ExecuteNonQuery();
+                    int rows = cmd.ExecuteNonQuery();
                     connection.Close();
-                        return rows;
-                    }
-                    catch (System.Data.SqlClient.SqlException e)
-                    {
-                        connection.Close();
-                    MessageBox.Show("无权操作");
+                    return rows;
+                }
+                catch (System.Data.SqlClient.SqlException e)
+                {
+                    connection.Close();
+                    MessageBox.Show("无权操作" + e.Message);
                     return 0;
                 }
             }
@@ -191,16 +191,16 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
 
         //true时最大权限查询
         public static SqlDataReader ExecuteReader(string strSQL, bool isMaxPermission = false)
-                {
+        {
             SqlConnection connection;
             if (isMaxPermission)
-                    {
+            {
                 connection = getSqlConnection.getInstance().GetMaxPermissionSQLConnect();
-                    }
+            }
             else
-                    {
+            {
                 connection = getSqlConnection.getInstance().GetConnect();
-        }
+            }
 
             SqlCommand cmd = new SqlCommand(strSQL, connection);
             try
@@ -210,7 +210,9 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             }
             catch (SqlException e)
             {
-                throw e;
+                connection.Close();
+                MessageBox.Show("无权操作" + e.Message);
+                return null;
             }
 
         }
@@ -221,25 +223,25 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         /// <param name="SQLString">查询语句</param>
         /// <returns>DataSet</returns>
         public static DataSet Query(string SQLString, bool isMaxpermission = false)
-            {
+        {
             SqlConnection connection = isMaxpermission
                 ? getSqlConnection.getInstance().GetMaxPermissionSQLConnect()
                 : getSqlConnection.getInstance().GetConnect();
 
-                DataSet ds = new DataSet();
-                try
-                {
-                    SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
-                    command.Fill(ds, "ds");
-                }
-            catch (SqlException)
-                {
-                MessageBox.Show("无权操作");
+            DataSet ds = new DataSet();
+            try
+            {
+                SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
+                command.Fill(ds, "ds");
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("无权操作"+e.Message);
                 connection.Close();
                 return null;
-                }
+            }
             connection.Close();
-                return ds;
+            return ds;
 
         }
 
@@ -261,11 +263,11 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             table.Locale = CultureInfo.InvariantCulture;
             try
             {
-            dataAdapter.Fill(table);
+                dataAdapter.Fill(table);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("无权操作");
+                MessageBox.Show("无权操作:"+e.Message);
             }
 
             return table;
@@ -309,7 +311,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
         #region 查询进货信息表
         public DataTable queryPurchaseInfo(String queryName)
         {
-            if(queryName == "")
+            if (queryName == "")
             {
                 String sqlString1 = @"select * from stockInfo";
                 return QueryDataAdapt(sqlString1);
@@ -320,14 +322,14 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
                 goodscount as '进货数量',goodsid as '物品编号', staffid as '员工编号' from stockInfo where stockid = " + queryName;
                 return QueryDataAdapt(sqlString);
             }
-            
+
         }
         #endregion
 
         #region 查询员工信息表
         public DataTable queryStaffInfo(String queryName)
         {
-            if(queryName == "")
+            if (queryName == "")
             {
                 String sqlString1 = @"select * from staffInfo";
                 return QueryDataAdapt(sqlString1);
@@ -338,7 +340,7 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
                 staffgender as '员工性别',staffage as '员工年龄',staffType as '员工类别' from staffInfo where staffid = " + queryName;
                 return QueryDataAdapt(sqlString);
             }
-            
+
         }
         #endregion
 

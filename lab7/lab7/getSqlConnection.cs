@@ -58,9 +58,9 @@ namespace lab7
                 getConnect.Open(); //打开数据库
                 return getConnect;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("无权操作");
+                MessageBox.Show("无权操作:" + e.Message);
                 return null;
             }
         }
@@ -77,9 +77,9 @@ namespace lab7
                 getConnect.Open(); //打开数据库
                 return getConnect;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("无权操作");
+                MessageBox.Show("无权操作:" + e.Message);
                 return null;
             }
         }
