@@ -46,6 +46,7 @@
             this.Staff_Info_Manage.RowTemplate.Height = 23;
             this.Staff_Info_Manage.Size = new System.Drawing.Size(635, 271);
             this.Staff_Info_Manage.TabIndex = 0;
+            this.Staff_Info_Manage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellClick);
             this.Staff_Info_Manage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellContentClick);
             this.Staff_Info_Manage.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Staff_Info_Manage_RowHeaderMouseClick);
             // 

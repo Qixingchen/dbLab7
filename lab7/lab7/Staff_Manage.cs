@@ -21,6 +21,10 @@ namespace lab7
             Staff_Info_Manage.DataSource = bindingSource;
         }
 
+        public void show()
+        {
+            bindingSource.DataSource = goods_methods.getInstance().queryStaffInfo(textBox1.Text);
+        }
         private void Staff_Manage_Load(object sender, EventArgs e)
         {
 
@@ -143,6 +147,11 @@ namespace lab7
         #endregion
 
         private void Staff_Info_Manage_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            select_row_info(e.RowIndex);
+        }
+
+        private void Staff_Info_Manage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             select_row_info(e.RowIndex);
         }

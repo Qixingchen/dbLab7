@@ -20,6 +20,10 @@ namespace lab7
             dataGridView1.DataSource = bindingSource;
         }
 
+        public void show()
+        {
+            bindingSource.DataSource = goods_methods.getInstance().queryPurchaseInfo(textBox1.Text);
+        }
         #region 查询
         private void button1_Click(object sender, EventArgs e)
         {
@@ -112,10 +116,12 @@ namespace lab7
             select_row_info(e.RowIndex);
         }
 
+        #region 行点击显示主键信息
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             select_row_info(e.RowIndex);
         }
+        #endregion
 
         private void select_row_info(int location)
         {
@@ -125,5 +131,12 @@ namespace lab7
             }
             textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
+
+        #region 单元格点击显示主键信息
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            select_row_info(e.RowIndex);
+        }
+        #endregion
     }
 }

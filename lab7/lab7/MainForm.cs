@@ -123,6 +123,7 @@ namespace lab7
         {
             Purchase purchase = new Purchase();
             purchase.Owner = this;
+            purchase.show();
             purchase.ShowDialog();
         }
         #endregion
@@ -132,6 +133,7 @@ namespace lab7
         {
             Staff_Manage manage = new Staff_Manage();
             manage.Owner = this;
+            manage.show();
             manage.ShowDialog();
         }
         #endregion
