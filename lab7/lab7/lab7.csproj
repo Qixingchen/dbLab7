@@ -134,12 +134,6 @@
     <Compile Include="Staff_Manage.Designer.cs">
       <DependentUpon>Staff_Manage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff_Sell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff_Sell.Designer.cs">
-      <DependentUpon>Staff_Sell.cs</DependentUpon>
-    </Compile>
     <Compile Include="StockEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff_Manage.resx">
       <DependentUpon>Staff_Manage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff_Sell.resx">
-      <DependentUpon>Staff_Sell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockEnter.resx">
       <DependentUpon>StockEnter.cs</DependentUpon>

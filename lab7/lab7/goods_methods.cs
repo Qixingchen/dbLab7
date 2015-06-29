@@ -333,5 +333,22 @@ GRANT insert,select,update,delete ON sellinfo TO   " + username;
             
         }
         #endregion
+
+        #region 查询员工销售信息表
+        public DataTable queryStaffSellInfo(string queryName)
+        {
+            if(queryName == "")
+            {
+                String sqlString1 = @"select * from sellInfo";
+                return QueryDataAdapt(sqlString1);
+            }
+            else
+            {
+                string sqlString = @"select staffid as '员工编号',sellid as '销售编号',selltime as '销售时间',sellcount as '销售数量',
+                payment as '销售金额',goodsid as '销售物品编号' from sellInfo where staffid = " + queryName;
+                return QueryDataAdapt(sqlString);
+            }
+        }
+        #endregion
     }
 }

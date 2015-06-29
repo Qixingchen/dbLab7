@@ -40,71 +40,76 @@ namespace lab7
         #region 销售业绩查询
         private void Sell_Inquire_Click(object sender, EventArgs e)
         {
-            Staff_Sell staffsell = new Staff_Sell();
-            staffsell.Owner = this;
-            string staffid = textBox1.Text;
-            string SQLString = "select * from staffInfo where staffid=" + staffid;
-            SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
-            reader.Read();
-            string staffid1 = reader.GetString(0);
-            reader.Close();
-            staffsell.setValue(staffid);
-            staffsell.ShowDialog();
+            bindingSource.DataSource = goods_methods.getInstance().queryStaffSellInfo(textBox1.Text);
+            
         }
         #endregion
 
         #region 删除员工信息
         private void Delete_Click(object sender, EventArgs e)
         {
-            string staffid = textBox1.Text;
-            string SQLString1 = "select * from staffInfo where staffid = " + staffid;
-            SqlDataReader reader = goods_methods.ExecuteReader(SQLString1);
-            reader.Read();
-            string staffType = reader.GetString(4);
-            reader.Close();
-            /*判断员工类型是不是disable*/
-            if (staffType == "disable")
+            if(textBox1.Text == "")/*若输入为空则无法删除*/
             {
-                string caption1 = "删除警告";
-                string text1 = "没有您要删除的员工信息";
-                DialogResult result1 = MessageBox.Show(text1, caption1, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("员工编号不能为空！");
             }
             else
             {
-                string caption = "删除员工信息";
-                string text = "您确定要将员工编号为" + staffid + "的员工信息删除？删除后将无法恢复";
-                DialogResult result = MessageBox.Show(text, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-                switch (result)
+                string staffid = textBox1.Text;
+                string SQLString1 = "select * from staffInfo where staffid = " + staffid;
+                SqlDataReader reader = goods_methods.ExecuteReader(SQLString1);
+                reader.Read();
+                string staffType = reader.GetString(4);
+                reader.Close();
+                /*判断员工类型是不是disable*/
+                if (staffType == "disable")
                 {
-                    case DialogResult.OK: /*将员工类型更改为disable*/
-                        string SQLString2 = "update staffInfo set staffType = " + "'disable'" + "where staffid = " + staffid;
-                        goods_methods.ExecuteSql(SQLString2);
-                        bindingSource.DataSource = goods_methods.getInstance().queryStaffInfo(textBox1.Text);
-                        break;
+                    string caption1 = "删除警告";
+                    string text1 = "没有您要删除的员工信息";
+                    DialogResult result1 = MessageBox.Show(text1, caption1, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string caption = "删除员工信息";
+                    string text = "您确定要将员工编号为" + staffid + "的员工信息删除？删除后将无法恢复";
+                    DialogResult result = MessageBox.Show(text, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    switch (result)
+                    {
+                        case DialogResult.OK: /*将员工类型更改为disable*/
+                            string SQLString2 = "update staffInfo set staffType = " + "'disable'" + "where staffid = " + staffid;
+                            goods_methods.ExecuteSql(SQLString2);
+                            bindingSource.DataSource = goods_methods.getInstance().queryStaffInfo(textBox1.Text);
+                            break;
+                    }
                 }
             }
-
         }
         #endregion
 
         #region 更新员工信息
         private void Update_Click(object sender, EventArgs e)
         {
-            Update_Staff updatestaff = new Update_Staff();
-            updatestaff.Owner = this;
-            string staffid = textBox1.Text;
-            string SQLString = "select * from staffInfo where staffid=" + staffid;
-            SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
-            reader.Read();
-            string staffid1 = reader.GetString(0);
-            string staffname = reader.GetString(1);
-            string staffgender = reader.GetString(2);
-            string staffage = reader.GetSqlInt16(3).ToString();
-            string staffType = reader.GetString(4);
-            reader.Close();
-            updatestaff.setValue(staffid1, staffname, staffgender, staffage, staffType);
-            updatestaff.ShowDialog();
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("员工编号不能为空！");
+            }
+            else
+            {
+                Update_Staff updatestaff = new Update_Staff();
+                updatestaff.Owner = this;
+                string staffid = textBox1.Text;
+                string SQLString = "select * from staffInfo where staffid=" + staffid;
+                SqlDataReader reader = goods_methods.ExecuteReader(SQLString);
+                reader.Read();
+                string staffid1 = reader.GetString(0);
+                string staffname = reader.GetString(1);
+                string staffgender = reader.GetString(2);
+                string staffage = reader.GetSqlInt16(3).ToString();
+                string staffType = reader.GetString(4);
+                reader.Close();
+                updatestaff.setValue(staffid1, staffname, staffgender, staffage, staffType);
+                updatestaff.ShowDialog();
+            }
         }
         #endregion
 
