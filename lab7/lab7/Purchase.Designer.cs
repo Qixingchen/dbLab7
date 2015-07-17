@@ -40,10 +40,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(534, 290);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -51,7 +51,7 @@
             // 
             // Inquire
             // 
-            this.Inquire.Location = new System.Drawing.Point(269, 69);
+            this.Inquire.Location = new System.Drawing.Point(252, 69);
             this.Inquire.Name = "Inquire";
             this.Inquire.Size = new System.Drawing.Size(75, 25);
             this.Inquire.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(394, 69);
+            this.Delete.Location = new System.Drawing.Point(377, 69);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 25);
             this.Delete.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(518, 69);
+            this.Update.Location = new System.Drawing.Point(487, 68);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(75, 25);
             this.Update.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 441);
+            this.ClientSize = new System.Drawing.Size(591, 441);
             this.Controls.Add(this.Purchase_ID);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Update);

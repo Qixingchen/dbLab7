@@ -56,7 +56,7 @@ namespace lab7
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(503, 68);
+            this.groupBox1.Size = new System.Drawing.Size(617, 68);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -84,7 +84,7 @@ namespace lab7
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(415, 26);
+            this.delete.Location = new System.Drawing.Point(530, 28);
             this.delete.Margin = new System.Windows.Forms.Padding(2);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(59, 24);
@@ -95,7 +95,7 @@ namespace lab7
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(326, 25);
+            this.update.Location = new System.Drawing.Point(441, 27);
             this.update.Margin = new System.Windows.Forms.Padding(2);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(57, 24);
@@ -131,8 +131,9 @@ namespace lab7
             this.sell_dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.sell_dataGridView.Name = "sell_dataGridView";
             this.sell_dataGridView.RowTemplate.Height = 37;
-            this.sell_dataGridView.Size = new System.Drawing.Size(503, 248);
+            this.sell_dataGridView.Size = new System.Drawing.Size(617, 352);
             this.sell_dataGridView.TabIndex = 1;
+            this.sell_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sell_dataGridView_CellContentClick);
             this.sell_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sell_dataGridView_CellContentClick);
             this.sell_dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.sell_dataGridView_RowHeaderMouseClick);
             // 
@@ -140,7 +141,7 @@ namespace lab7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 356);
+            this.ClientSize = new System.Drawing.Size(639, 460);
             this.Controls.Add(this.sell_dataGridView);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);

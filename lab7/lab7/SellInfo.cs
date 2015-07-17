@@ -19,7 +19,8 @@ namespace lab7
         {
             if(key_words.Text == "")
             {
-                MessageBox.Show("关键字不能为空！");
+                bindingSource.DataSource = goods_methods.getInstance().querySellInfo(key_words.Text, 1);
+                select_row(row);
                 return;
             }
             bindingSource.DataSource = goods_methods.getInstance().querySellInfo(key_words.Text,2);
@@ -28,6 +29,11 @@ namespace lab7
 
         private void update_Click(object sender, EventArgs e)
         {
+            if(row < 0)
+            {
+                MessageBox.Show("请选择要编辑的行");
+                return;
+            }
             SellEnter sells = new SellEnter();
             sells.Owner = this;
             string sellid = sell_dataGridView.Rows[row].Cells["销售ID"].Value.ToString();

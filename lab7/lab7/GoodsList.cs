@@ -37,6 +37,7 @@ namespace lab7
             GoodsInsert goodsinsert = new GoodsInsert(this);
             goodsinsert.Owner = this;
             goodsinsert.Text = "商品信息插入";
+            goodsinsert.flush();
             goodsinsert.ShowDialog();
         }
 

@@ -44,7 +44,7 @@
             this.Staff_Info_Manage.Location = new System.Drawing.Point(26, 118);
             this.Staff_Info_Manage.Name = "Staff_Info_Manage";
             this.Staff_Info_Manage.RowTemplate.Height = 23;
-            this.Staff_Info_Manage.Size = new System.Drawing.Size(635, 271);
+            this.Staff_Info_Manage.Size = new System.Drawing.Size(533, 271);
             this.Staff_Info_Manage.TabIndex = 0;
             this.Staff_Info_Manage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellClick);
             this.Staff_Info_Manage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Staff_Info_Manage_CellContentClick);
@@ -52,7 +52,7 @@
             // 
             // Info_Inquire
             // 
-            this.Info_Inquire.Location = new System.Drawing.Point(400, 21);
+            this.Info_Inquire.Location = new System.Drawing.Point(284, 21);
             this.Info_Inquire.Name = "Info_Inquire";
             this.Info_Inquire.Size = new System.Drawing.Size(75, 23);
             this.Info_Inquire.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(400, 72);
+            this.Delete.Location = new System.Drawing.Point(284, 72);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(525, 72);
+            this.Update.Location = new System.Drawing.Point(409, 72);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(75, 23);
             this.Update.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 49);
+            this.textBox1.Location = new System.Drawing.Point(100, 49);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(91, 21);
             this.textBox1.TabIndex = 4;
@@ -90,7 +90,7 @@
             // staffid
             // 
             this.staffid.AutoSize = true;
-            this.staffid.Location = new System.Drawing.Point(144, 52);
+            this.staffid.Location = new System.Drawing.Point(28, 52);
             this.staffid.Name = "staffid";
             this.staffid.Size = new System.Drawing.Size(53, 12);
             this.staffid.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // Sell_Inquire
             // 
-            this.Sell_Inquire.Location = new System.Drawing.Point(525, 21);
+            this.Sell_Inquire.Location = new System.Drawing.Point(409, 21);
             this.Sell_Inquire.Name = "Sell_Inquire";
             this.Sell_Inquire.Size = new System.Drawing.Size(75, 23);
             this.Sell_Inquire.TabIndex = 6;
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 408);
+            this.ClientSize = new System.Drawing.Size(586, 408);
             this.Controls.Add(this.Sell_Inquire);
             this.Controls.Add(this.staffid);
             this.Controls.Add(this.textBox1);
